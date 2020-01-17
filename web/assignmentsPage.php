@@ -7,6 +7,7 @@
         <h1>Living in East Tennessee</h1>
         <p>Snapshots of life in Knoxville, TN</p>
     </div>
+    <?php include('navigation.php');?>
         <p>Coming Soon!</p>
     </body>
     
