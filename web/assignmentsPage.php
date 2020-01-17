@@ -9,6 +9,7 @@
     </div>
     <?php include('navigation.php');?>
         <p>Coming Soon!</p>
+    <?php include('footer.php');?>
     </body>
     
 </html>
