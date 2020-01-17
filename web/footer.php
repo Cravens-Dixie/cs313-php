@@ -1,5 +1,5 @@
 <?php
-include '<div class="jumbotron text-center mb-0">
+echo '<div class="jumbotron text-center mb-0">
                     <p>Pictures taken by Dixie Cravens as she discovers the world around her.</p>
                 </div>
 
