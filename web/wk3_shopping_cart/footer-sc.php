@@ -1,5 +1,5 @@
 <?php
-        <!-- footer -->
+        
 echo '<div class="jumbotron text-center mt-2 mb-2">
         <p>Game night should not be boring.</p>
       </div>

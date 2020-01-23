@@ -128,7 +128,7 @@ $_SESSION["item8"] = "False";
         </div>
     </div>
 </div>
-<!-- todo take out footer and use include, change file to .php -->
+
  <?php include('footer-sc.php'); ?>
 
 </body>
