@@ -13,7 +13,7 @@ session_start();
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="wk3css.css">
+    <link rel="stylesheet" href="wk3_shopping_cart/wk3css.css">
 
     <<script src="https://kit.fontawesome.com/bdc36ef2b6.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -48,10 +48,10 @@ $_SESSION["item8"] = "False";
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="checkout.html">Check Out</a>
+                <a class="nav-link" href="wk3_shopping_cart/checkout.html">Check Out</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="cart.php"><i class="fas fa-shopping-cart"></i>
+                <a class="nav-link" href="wk3_shopping_cart/cart.php"><i class="fas fa-shopping-cart"></i>
                     <span id="cart-item" class="badge badge-danger">2</span></a>
             </li>
         </ul>
@@ -60,7 +60,7 @@ $_SESSION["item8"] = "False";
 
 <div class="card-deck mt-2">
     <div class="card">
-        <img src="cs331-games/catan.webp" class="card-img-top" alt="Settlers of Catan game">
+        <img src="wk3_shopping_cart/cs331-games/catan.webp" class="card-img-top" alt="Settlers of Catan game">
         <div class="card-body">
             <h5 class="text-center">Settlers of Catan</h5>
             <h6 class="text-center">$29.99</h6>
@@ -72,7 +72,7 @@ $_SESSION["item8"] = "False";
         </div>
     </div>
     <div class="card">
-        <img src="cs331-games/seafarers.jpg" class="card-img-top" alt="Seafarers game">
+        <img src="wk3_shopping_cart/cs331-games/seafarers.jpg" class="card-img-top" alt="Seafarers game">
         <div class="card-body">
             <h5 class="text-center">Catan-Seafarers Expansion</h5>
             <h6 class="text-center">$24.99</h6>
@@ -83,7 +83,7 @@ $_SESSION["item8"] = "False";
         </div>
     </div>
     <div class="card">
-        <img src="cs331-games/dominion.webp" class="card-img-top" alt="Dominion game">
+        <img src="wk3_shopping_cart/cs331-games/dominion.webp" class="card-img-top" alt="Dominion game">
         <div class="card-body">
             <h5 class="text-center">Dominion</h5>
             <h6 class="text-center">$27.99</h6>
@@ -95,7 +95,7 @@ $_SESSION["item8"] = "False";
         </div>
     </div>
     <div class="card">
-        <img src="cs331-games/tickettoride.webp" class="card-img-top" alt="Ticket to Ride game">
+        <img src="wk3_shopping_cart/cs331-games/tickettoride.webp" class="card-img-top" alt="Ticket to Ride game">
         <div class="card-body">
             <h5 class="text-center">Ticket To Ride</h5>
             <h6 class="text-center">$31.99</h6>
@@ -110,7 +110,7 @@ $_SESSION["item8"] = "False";
 
 <div class="card-deck mt-2">
     <div class="card">
-        <img src="cs331-games/pandemic.webp" class="card-img-top" alt="Pandemic game">
+        <img src="wk3_shopping_cart/cs331-games/pandemic.webp" class="card-img-top" alt="Pandemic game">
         <div class="card-body">
             <h5 class="text-center">Pandemic</h5>
             <h6 class="text-center">$19.99</h6>
@@ -122,7 +122,7 @@ $_SESSION["item8"] = "False";
         </div>
     </div>
     <div class="card">
-        <img src="cs331-games/rummikub.webp" class="card-img-top" alt="Rummikub game">
+        <img src="wk3_shopping_cart/cs331-games/rummikub.webp" class="card-img-top" alt="Rummikub game">
         <div class="card-body">
             <h5 class="text-center">Rummikub</h5>
             <h6 class="text-center">$14.99</h6>
@@ -135,7 +135,7 @@ $_SESSION["item8"] = "False";
         </div>
     </div>
     <div class="card">
-        <img src="cs331-games/yamslam.webp" class="card-img-top" alt="Yam Slam game">
+        <img src="wk3_shopping_cart/cs331-games/yamslam.webp" class="card-img-top" alt="Yam Slam game">
         <div class="card-body">
             <h5 class="text-center">Yam Slam</h5>
             <h6 class="text-center">$22.99</h6>
@@ -146,7 +146,7 @@ $_SESSION["item8"] = "False";
         </div>
     </div>
     <div class="card">
-        <img src="cs331-games/quadrillion.webp" class="card-img-top" alt="Quadrillion game">
+        <img src="wk3_shopping_cart/cs331-games/quadrillion.webp" class="card-img-top" alt="Quadrillion game">
         <div class="card-body">
             <h5 class="text-center">Quadrillion</h5>
             <h6 class="text-center">$17.99</h6>
@@ -170,6 +170,6 @@ $_SESSION["item8"] = "False";
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-<script src="wk3js.js"></script>
+<script src="wk3_shopping_cart/wk3js.js"></script>
 </body>
 </html>
