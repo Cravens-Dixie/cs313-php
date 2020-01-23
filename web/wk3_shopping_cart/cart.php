@@ -1,7 +1,7 @@
 <?php
-$cart;
-
+session_start();
 ?>
+
 <!doctype html>
 <html lang="en">
 <?php include('header-sc.php'); ?>
@@ -11,7 +11,9 @@ $cart;
     <h4>Shopping Cart!</h4>
 </div>
 <?php include('nav-sc.php'); ?>
-
+<?php
+print_r($_SESSION);
+?>
 
 
 
