@@ -10,5 +10,5 @@ echo '<head>
         <script src="https://kit.fontawesome.com/bdc36ef2b6.js" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <title>Shopping Cart Assignment</title>
-</head>'
+      </head>'
 ?>

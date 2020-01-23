@@ -9,6 +9,10 @@ echo '<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
               <li class="nav-item">
                   <a class="nav-link" href="assignmentsPage.php">Assignments</a>
               </li>
+              <li class="nav-item">
+                              <a class="nav-link" href="wk3_shopping_cart/cart.php"><i class="fas fa-shopping-cart"></i>
+                                  <span id="cart-item" class="badge badge-danger">2</span></a>
+                          </li>
             </ul>
           </div>
       </nav>'
