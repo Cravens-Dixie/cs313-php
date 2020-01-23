@@ -1,6 +1,6 @@
 <?php
 echo '<div class="jumbotron text-center mb-0">
-                    <p>Pictures taken by Dixie Cravens as she discovers the world around her.</p>
+                    <p>Pictures taken by Dixie Cravens.</p>
                 </div>
 
               <!-- Optional JavaScript -->
