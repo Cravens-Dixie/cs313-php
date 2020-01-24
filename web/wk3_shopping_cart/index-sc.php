@@ -5,7 +5,7 @@ session_start();
 <!doctype html>
 <html lang="en">
 
-<?php include('header-sc.php'); ?>
+<?php include('header-sc.php');?>
 
 <body>
 <?php
@@ -25,7 +25,7 @@ $_SESSION["item8"] = "False";
 </div>
 
 
-<?php include('nav-sc.php'); ?>
+<?php include('nav-sc.php');?>
 
 
 <div class="card-deck mt-2">
@@ -129,7 +129,7 @@ $_SESSION["item8"] = "False";
     </div>
 </div>
 
- <?php include('footer-sc.php'); ?>
+ <?php include('footer-sc.php');?>
 
 </body>
 </html>
