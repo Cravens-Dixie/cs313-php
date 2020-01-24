@@ -54,14 +54,14 @@ session_start();
     $pId = $_POST['pId'].val();
     $_SESSION[$pId] = true;
 }
-?>
+?>*/
 <!doctype html>
 <html lang="en">
 
 <?php include('header-sc.php');?>
 
 <body>
-<?php
+/*<?php
 $_SESSION["1"] = false;
 $_SESSION["2"] = false;
 $_SESSION["3"] = false;
