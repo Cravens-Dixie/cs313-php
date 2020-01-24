@@ -39,6 +39,6 @@ function createXML() {
         }
     };
     //open the request and send it
-    myXML.open('get', '/JSON_Text.txt', true);
+    myXML.open('get', 'products.json', true);
     myXML.send();
 }
