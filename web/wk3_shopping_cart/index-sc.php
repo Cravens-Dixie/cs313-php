@@ -2,6 +2,59 @@
 // Start the session
 session_start();
 ?>
+//<?php
+/*$productobj = '{
+                 "1": {
+                   "name": "Catan",
+                   "pId": 1,
+                   "image": "wk3_shopping_cart/cs331-games/catan.webp",
+                   "price": 29.99,
+                   "selected": false
+                 },
+                 "2": {
+                   "name": "Catan Expansion-Seafarers",
+                   "image": "wk3_shopping_cart/cs331-games/seafarers.jpg",
+                   "price": 24.99
+                 },
+                 "3": {
+                   "name": "Dominion",
+                   "image": "wk3_shopping_cart/cs331-games/dominion.webp",
+                   "price": 27.99
+                 },
+                 "4": {
+                   "name": "Ticket to Ride",
+                   "image": "wk3_shopping_cart/cs331-games/tickettoride.webp",
+                   "price": 31.99
+                 },
+                 "5": {
+                   "name": "Pandemic",
+                   "image": "wk3_shopping_cart/cs331-games/pandemic.webp",
+                   "price": 19.99
+                 },
+                 "6": {
+                   "name": "Rummikub",
+                   "image": "wk3_shopping_cart/cs331-games/rummikub.webp",
+                   "price": 14.99
+                 },
+                 "7": {
+                   "name": "Yam Slam",
+                   "image": "wk3_shopping_cart/cs331-games/yamslam.webp",
+                   "price": 22.99
+                 },
+                 "8": {
+                   "name": "Quadrillion",
+                   "image": "wk3_shopping_cart/cs331-games/quadrillion.webp",
+                   "price": 17.99
+                 }
+               }';
+?>*/
+//<?php
+/*if(isset($_POST['submit']))
+{
+    $pId = $_POST['pId'].val();
+    $_SESSION[$pId] = true;
+}
+?>
 <!doctype html>
 <html lang="en">
 
@@ -9,15 +62,15 @@ session_start();
 
 <body>
 <?php
-$_SESSION["item1"] = "False";
-$_SESSION["item2"] = "False";
-$_SESSION["item3"] = "False";
-$_SESSION["item4"] = "False";
-$_SESSION["item5"] = "False";
-$_SESSION["item6"] = "False";
-$_SESSION["item7"] = "False";
-$_SESSION["item8"] = "False";
-?>
+$_SESSION["1"] = false;
+$_SESSION["2"] = false;
+$_SESSION["3"] = false;
+$_SESSION["4"] = false;
+$_SESSION["5"] = false;;
+$_SESSION["6"] = false;
+$_SESSION["7"] = false;
+$_SESSION["8"] = false;
+?>*/
 
 <div class="jumbotron text-center mb-0">
     <h1>BoardGamers</h1>
@@ -42,7 +95,13 @@ $_SESSION["item8"] = "False";
                 make up your own rules (like rearranging the resource tiles once the game gets going--badly).</p>
         </div>
         <div class="card-footer">
-            <button type="button" class="btn btn-info btn-block" id="item1">Add To Cart</button>
+            <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="form-submit">
+            <input type="hidden" class="pId" value="1">
+            // I can have as many hidden inputs as needed to pass info
+            <input type="submit" name="submit" value="Add To Cart" class="btn btn-info btn-block" id="addItemBtn">
+            //<i class="fas fa-cart-plus"></i>&nbsp;&nbsp;Add To Cart</button>
+            </form>
+
         </div>
     </div>
     <div class="card">

@@ -1,27 +1,36 @@
-var catan = {
+/*var catan = {
     itemId: 1,
     game: "Settlers of Catan",
     itemPrice: 29.99
-};
+};*/
+
+
+$/*(document).ready(function(){
+    $(".addItemBtn").click(function(e) {
+        //keep screen from refreshing
+        e.preventDefault();
+        //tell code where to find values for variables
+        var $form = (this).closest(".form-submit");
+        //get values for variables from hidden inputs in form in the card-footer
+        var pId = $form.find(".pId").valueOf();
+
+        e.submitInfo() {
+            $(".form-submit") echo 'action = <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" >'
+            $_SESSION[$pId] = true;
+        }
 
 
 
-$("#myBtn").click(function(){
-    var str = $("#myInput").val();
-
-    $("#myDiv").css("background-color", str);
+    })*/
 })
 
 
-$("button").click(function() {
-    var $itemId = $(this).attr("id");
-    changeCart($itemId);
-})
 
 
-function changeCart(itemId) {
-    sessionStorage.setItem(itemId, "True");
-}
+
+
+
+
 
 //Create a function to create a XMLHttpRequest object and return the text from a txt file (JSON_Text.txt)
 function createXML() {
@@ -32,6 +41,8 @@ function createXML() {
         if (myXML.readyState == 4) {
             if (myXML.status == 200) {
                 document.getElementById("getMethod").textContent = myXML.responseText;
+                var prod = myXML.responseText;
+                alert(prod);
             }
             if (myXML.status == 404) {
                 document.getElementById("getMethod").textContent = "That file could not be found.";
