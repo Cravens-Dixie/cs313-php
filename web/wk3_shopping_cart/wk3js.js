@@ -41,8 +41,8 @@ function createXML() {
         if (myXML.readyState == 4) {
             if (myXML.status == 200) {
                 document.getElementById("getMethod").textContent = myXML.responseText;
-                var prod = myXML.responseText;
-                alert(prod);
+               /* var prod = myXML.responseText;
+                alert(prod);*/
             }
             if (myXML.status == 404) {
                 document.getElementById("getMethod").textContent = "That file could not be found.";
