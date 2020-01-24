@@ -26,9 +26,13 @@ $_SESSION["item8"] = "False";
 
 
 <?php include('nav-sc.php');?>
+ <div id="XMLHttp">
+        <h2>Topic 4 XMLHttpRequest Object</h2>
+        <h3>GET Method</h3>
+        <p id="getMethod"></p>
+        <button onclick="createXML()">Get XML Message</button>
 
-
-<div class="card-deck mt-2">
+<div class="card-deck mt-2 mx-md-1 mx-lg-1">
     <div class="card">
         <img src="cs331-games/catan.webp" class="card-img-top" alt="Settlers of Catan game">
         <div class="card-body">
@@ -78,7 +82,7 @@ $_SESSION["item8"] = "False";
     </div>
 </div>
 
-<div class="card-deck mt-2">
+<div class="card-deck mt-2 mx-md-1 mx-lg-1">
     <div class="card">
         <img src="cs331-games/pandemic.webp" class="card-img-top" alt="Pandemic game">
         <div class="card-body">

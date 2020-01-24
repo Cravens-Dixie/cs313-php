@@ -1,0 +1,32 @@
+{
+  "1": {
+    "name": "name of first product",
+    "image": "p1.png",
+    "price": 2.95
+  },
+  "2": {
+    "name": "name of second product",
+    "image": "p1.png",
+    "price": 3.95
+  },
+  "3": {
+    "name": "name of third product",
+    "image": "p1.png",
+    "price": 3.95
+  },
+  "4": {
+    "name": "name of fourth product",
+    "image": "p1.png",
+    "price": 3.95
+  },
+  "5": {
+    "name": "name of fifth product",
+    "image": "p1.png",
+    "price": 3.95
+  },
+  "6": {
+    "name": "name of sixth product",
+    "image": "p1.png",
+    "price": 3.95
+  }
+}
