@@ -1,6 +1,6 @@
 <?php
 echo '<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-          <a class="navbar-brand" href="index-sc.html">Home</a>
+          <a class="navbar-brand" href="index-sc.php">Home</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse"  data-target="#collapsibleNavbar">
               <span class="navbar-toggler-icon"></span>
           </button>

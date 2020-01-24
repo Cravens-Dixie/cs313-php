@@ -3,51 +3,51 @@
 session_start();
 ?>
 
-/*$productobj = '{
-                 "1": {
-                   "name": "Catan",
-                   "pId": 1,
-                   "image": "wk3_shopping_cart/cs331-games/catan.webp",
-                   "price": 29.99,
-                   "selected": false
-                 },
-                 "2": {
-                   "name": "Catan Expansion-Seafarers",
-                   "image": "wk3_shopping_cart/cs331-games/seafarers.jpg",
-                   "price": 24.99
-                 },
-                 "3": {
-                   "name": "Dominion",
-                   "image": "wk3_shopping_cart/cs331-games/dominion.webp",
-                   "price": 27.99
-                 },
-                 "4": {
-                   "name": "Ticket to Ride",
-                   "image": "wk3_shopping_cart/cs331-games/tickettoride.webp",
-                   "price": 31.99
-                 },
-                 "5": {
-                   "name": "Pandemic",
-                   "image": "wk3_shopping_cart/cs331-games/pandemic.webp",
-                   "price": 19.99
-                 },
-                 "6": {
-                   "name": "Rummikub",
-                   "image": "wk3_shopping_cart/cs331-games/rummikub.webp",
-                   "price": 14.99
-                 },
-                 "7": {
-                   "name": "Yam Slam",
-                   "image": "wk3_shopping_cart/cs331-games/yamslam.webp",
-                   "price": 22.99
-                 },
-                 "8": {
-                   "name": "Quadrillion",
-                   "image": "wk3_shopping_cart/cs331-games/quadrillion.webp",
-                   "price": 17.99
-                 }
-               }';
-?>*/
+<!--$productobj = '{-->
+<!--                 "1": {-->
+<!--                   "name": "Catan",-->
+<!--                   "pId": 1,-->
+<!--                   "image": "wk3_shopping_cart/cs331-games/catan.webp",-->
+<!--                   "price": 29.99,-->
+<!--                   "selected": false-->
+<!--                 },-->
+<!--                 "2": {-->
+<!--                   "name": "Catan Expansion-Seafarers",-->
+<!--                   "image": "wk3_shopping_cart/cs331-games/seafarers.jpg",-->
+<!--                   "price": 24.99-->
+<!--                 },-->
+<!--                 "3": {-->
+<!--                   "name": "Dominion",-->
+<!--                   "image": "wk3_shopping_cart/cs331-games/dominion.webp",-->
+<!--                   "price": 27.99-->
+<!--                 },-->
+<!--                 "4": {-->
+<!--                   "name": "Ticket to Ride",-->
+<!--                   "image": "wk3_shopping_cart/cs331-games/tickettoride.webp",-->
+<!--                   "price": 31.99-->
+<!--                 },-->
+<!--                 "5": {-->
+<!--                   "name": "Pandemic",-->
+<!--                   "image": "wk3_shopping_cart/cs331-games/pandemic.webp",-->
+<!--                   "price": 19.99-->
+<!--                 },-->
+<!--                 "6": {-->
+<!--                   "name": "Rummikub",-->
+<!--                   "image": "wk3_shopping_cart/cs331-games/rummikub.webp",-->
+<!--                   "price": 14.99-->
+<!--                 },-->
+<!--                 "7": {-->
+<!--                   "name": "Yam Slam",-->
+<!--                   "image": "wk3_shopping_cart/cs331-games/yamslam.webp",-->
+<!--                   "price": 22.99-->
+<!--                 },-->
+<!--                 "8": {-->
+<!--                   "name": "Quadrillion",-->
+<!--                   "image": "wk3_shopping_cart/cs331-games/quadrillion.webp",-->
+<!--                   "price": 17.99-->
+<!--                 }-->
+<!--               }';-->
+<!--?>-->
 
 
 <!doctype html>

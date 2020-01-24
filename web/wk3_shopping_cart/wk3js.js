@@ -5,24 +5,24 @@
 };*/
 
 
-$/*(document).ready(function(){
-    $(".addItemBtn").click(function(e) {
-        //keep screen from refreshing
-        e.preventDefault();
-        //tell code where to find values for variables
-        var $form = (this).closest(".form-submit");
-        //get values for variables from hidden inputs in form in the card-footer
-        var pId = $form.find(".pId").valueOf();
-
-        e.submitInfo() {
-            $(".form-submit") echo 'action = <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" >'
-            $_SESSION[$pId] = true;
-        }
-
-
-
-    })*/
-})
+// $(document).ready(function(){
+//     $(".addItemBtn").click(function(e) {
+//         //keep screen from refreshing
+//         e.preventDefault();
+//         //tell code where to find values for variables
+//         var $form = (this).closest(".form-submit");
+//         //get values for variables from hidden inputs in form in the card-footer
+//         var pId = $form.find(".pId").valueOf();
+//
+//         e.submitInfo() {
+//             $(".form-submit") echo 'action = <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" >'
+//             $_SESSION[$pId] = true;
+//         }
+//
+//
+//
+//     })
+// })
 
 
 
@@ -38,13 +38,13 @@ function createXML() {
     const myXML = new XMLHttpRequest();
     //check readystatechange for correct readyState and status
     myXML.onreadystatechange = function () {
-        if (myXML.readyState == 4) {
-            if (myXML.status == 200) {
+        if (myXML.readyState === 4) {
+            if (myXML.status === 200) {
                 document.getElementById("getMethod").textContent = myXML.responseText;
                /* var prod = myXML.responseText;
                 alert(prod);*/
             }
-            if (myXML.status == 404) {
+            if (myXML.status === 404) {
                 document.getElementById("getMethod").textContent = "That file could not be found.";
             }
         }
