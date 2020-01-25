@@ -25,12 +25,11 @@ echo '</pre>';
 //loop through session array to get ind.products
 foreach($_SESSION as $prodId) {
     foreach ($productsArr as $key => $value) {
-        echo $key . "\n";
-        foreach ($value as $sub_key => $sub_val) {
-            echo $sub_key. " = " .$sub_val ."\n";
-        }
         if ($prodId == $key){
-            echo "<b>" . $key . "<b>";
+            foreach ($value as list($name, $image, $price)) {
+                echo "<b>" . $name, $price . "<b>";
+            }
+
         }
     }
 }
