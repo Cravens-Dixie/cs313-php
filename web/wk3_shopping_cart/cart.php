@@ -25,7 +25,7 @@ echo '</pre>';
 //loop through session array to get ind.products
 foreach($_SESSION['pId'] as $id => $product) {
     echo $product;
-    foreach ($productsArr as $key) {
+    foreach ($productsArr as $pid => $key) {
         echo $key;
 
         if ($key == $product){
