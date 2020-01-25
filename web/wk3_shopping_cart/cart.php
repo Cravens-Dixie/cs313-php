@@ -23,8 +23,8 @@ echo '<pre>';
 print_r($productsArr);
 echo '</pre>';
 //loop through session array to get ind.products
-foreach($_SESSION as $key => $value) {
-    echo $key;
+foreach($_SESSION['pId'] as $id => $product) {
+    echo $product;
 //    foreach ($productsArr as $key) {
 //        if ($prodId == "$key"){
 //            foreach ($key as list($name, $image, $price)) {
