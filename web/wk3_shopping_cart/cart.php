@@ -16,8 +16,10 @@ $pId = $_SESSION['pId'];
 <?php
 $products = file_get_contents('products.json');
 $productsArr = json_decode($products, true);
-echo $productsArr;
-print_r($_SESSION);
+echo  '<pre>';
+print_r($productsArr);
+echo '</pre>'
+//print_r($_SESSION);
 
 ?>
 
