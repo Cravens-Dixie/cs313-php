@@ -13,7 +13,7 @@ session_start();
 <?php
 if (isset($_POST['submit'])) {
     $pId = $_POST['pId'];
-    $name = $_POST['name']
+    $name = $_POST['name'];
 
     $_SESSION[$pId] = true;
     echo "Session variable set";
