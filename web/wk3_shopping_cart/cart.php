@@ -18,17 +18,7 @@ $pId = $_SESSION['pId'];
 //create Product array
 $products = file_get_contents('products.json');
 $productsArr = json_decode($products, true);
-print_r($_SESSION);
-echo '<pre>';
-print_r($productsArr);
-echo '</pre>';
-//loop through session array to get ind.products
-foreach($_SESSION['pId'] as $id => $product) {
-    //echo $product;
-    foreach ($productsArr as $pid => $key) {
-        if ($pid == $product){
-            //echo $pid;
-            echo '<div class="container">
+echo '<div class="container">
                       <h2>Shopping Cart</h2>            
                       <table class="table">
                         <thead>
@@ -38,14 +28,22 @@ foreach($_SESSION['pId'] as $id => $product) {
                             <th>Product Price</th>
                           </tr>
                         </thead>';
+//loop through session array to get ind.products
+foreach($_SESSION['pId'] as $id => $product) {
+    //echo $product;
+    foreach ($productsArr as $pid => $key) {
+        if ($pid == $product){
+            //echo $pid;
+
             foreach ($key as $subkey => $subval) {
+                foreach ($subval as list($name, $image, $price))
                 //echo "<b>" . $subkey, $subval. "<b>";
                 //echo $subkey . " = " . $subval . "\n";
                 echo ' <tbody>
                           <tr>
-                            <td><?php echo $subval[image]; ?></td>
-                            <td><?php echo $subval[name]; ?></td>
-                            <td><?php echo $subval[price]; ?></td>
+                            <td><?php echo $subval[$image]; ?></td>
+                            <td><?php echo $subval[$name]; ?></td>
+                            <td><?php echo $subval[$price]; ?></td>
                           </tr>
                           
                         </tbody>
