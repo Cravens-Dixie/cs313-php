@@ -26,8 +26,9 @@ echo '</pre>';
 foreach($_SESSION as $prodId) {
     foreach ($productsArr as $key => $value) {
         if ($prodId == $key){
-            foreach ($value as $sub_key => $sub_val) {
-                echo "{$sub_key} \"=\" {$sub_val}.\"\n\"";
+            echo $key;
+//            foreach ($value as $sub_key => $sub_val) {
+//                echo "{$sub_key} \"=\" {$sub_val}.\"\n\"";
             }
         }
 
