@@ -7,7 +7,7 @@ if (isset($_POST['submit'])) {
     $pId = $_POST['pId'];
     $name = $_POST['name'];
     $_SESSION['name'] = $name;
-    $_SESSION[$pId] = true;
+    $_SESSION[$pId] = $pId;
     echo "Session variable set";
     echo "Hello $name";
 }
