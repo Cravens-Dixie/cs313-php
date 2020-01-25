@@ -26,8 +26,9 @@ echo '</pre>';
 foreach($_SESSION['pId'] as $id => $product) {
     echo $product;
     foreach ($productsArr as $key) {
+        echo $key;
+
         if ($key == $product){
-            echo $key;
 //            foreach ($product as list($name, $image, $price)) {
 //                echo "<b>" . $name, $price . "<b>";
 //            }
