@@ -1,5 +1,7 @@
 <?php
 session_start();
+$name = $_SESSION['name'];
+$pId = $_SESSION['pId'];
 ?>
 
 <!doctype html>
@@ -13,6 +15,8 @@ session_start();
 <?php include('nav-sc.php'); ?>
 <?php
 print_r($_SESSION);
+echo $name;
+echo $pId;
 ?>
 
 

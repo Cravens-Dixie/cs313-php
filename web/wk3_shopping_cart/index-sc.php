@@ -3,13 +3,15 @@
 session_start();
 
 $_SESSION["favcolor"] = "green";
+$_SESSION['name'];
+$_SESSION['pId'];
+
 if (isset($_POST['submit'])) {
     $pId = $_POST['pId'];
     $name = $_POST['name'];
     $_SESSION['name'] = $name;
     $_SESSION[$pId] = $pId;
-    echo "Session variable set";
-    echo "Hello $name";
+
 }
 
 ?>
@@ -21,13 +23,12 @@ if (isset($_POST['submit'])) {
 <?php include('header-sc.php');?>
 
 <body>
+<!--todo change to onload instead of onclick -->
 <div id="XMLHttp">
-    <h2>Topic 4 XMLHttpRequest Object</h2>
-    <h3>GET Method</h3>
-    <p id="getMethod"></p>
+    <p id="getMessage"></p>
     <button onclick="createXML()">Get XML Message</button>
-
 </div>
+
 <div class="jumbotron text-center mb-0">
     <h1>BoardGamers</h1>
     <p>Bring Back Game Night!</p>

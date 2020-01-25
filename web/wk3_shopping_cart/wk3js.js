@@ -45,7 +45,7 @@ function createXML() {
                 alert(prod);
             }
             if (myXML.status === 404) {
-                document.getElementById("getMethod").textContent = "That file could not be found.";
+                document.getElementById("getMessage").textContent = "That file could not be found.";
             }
         }
     };
