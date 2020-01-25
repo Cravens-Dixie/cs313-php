@@ -31,19 +31,25 @@ echo '<div class="container">
 //loop through session array to get ind.products
 foreach($_SESSION['pId'] as $id => $product) {
     //echo $product;
-    foreach ($productsArr as $pid => $key) {
-        if ($pid == $product){
+    foreach ($productsArr as $pid => $prodarr) {
+        if ($pid == $product) {
             //echo $pid;
 
-            foreach ($key as $subkey) {
-                foreach ($subkey as list($name, $image, $price))
-                echo "<b>" . $subkey . "<b>";
-                //echo $subkey . " = " . $subval . "\n";
-                echo ' <tbody>
+            foreach ($prodarr as $prodelem) {
+                foreach ($prodelem as list($name, $image, $price)) {
+                    echo "<b>" . $prodelem . "<b>";
+                    //echo $subkey . " = " . $subval . "\n";
+                    echo ' <tbody>
                           <tr>
-                            <td>'; echo $subkey[$image]; echo '</td>
-                            <td>'; echo $subkey[$name];  echo '</td>
-                            <td>'; echo $subkey[$price];  echo '</td>
+                            <td>';
+                    echo $prodelem[$image];
+                    echo '</td>
+                            <td>';
+                    echo $prodelem[$name];
+                    echo '</td>
+                            <td>';
+                    echo $prodelem[$price];
+                    echo '</td>
                           </tr>
                           
                         </tbody>
@@ -51,8 +57,9 @@ foreach($_SESSION['pId'] as $id => $product) {
                     </div>
 
                 ';
-            }
+                }
 
+            }
         }
     }
 }
