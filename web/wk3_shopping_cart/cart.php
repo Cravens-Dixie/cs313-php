@@ -28,9 +28,31 @@ foreach($_SESSION['pId'] as $id => $product) {
     foreach ($productsArr as $pid => $key) {
         if ($pid == $product){
             //echo $pid;
+            echo '<div class="container">
+                      <h2>Shopping Cart</h2>            
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th>Product Image</th>
+                            <th>Product Name</th>
+                            <th>Product Price</th>
+                          </tr>
+                        </thead>';
             foreach ($key as $subkey => $subval) {
                 //echo "<b>" . $subkey, $subval. "<b>";
-                echo $subkey . " = " . $subval . "\n";
+                //echo $subkey . " = " . $subval . "\n";
+                echo ' <tbody>
+                          <tr>
+                            <td><?php echo $subval[image]; ?></td>
+                            <td><?php echo $subval[name]; ?></td>
+                            <td><?php echo $subval[price]; ?></td>
+                          </tr>
+                          
+                        </tbody>
+                      </table>
+                    </div>
+
+                ';
             }
 
         }
