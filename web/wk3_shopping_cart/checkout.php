@@ -4,13 +4,13 @@ session_start();
 
 <!doctype html>
 <html>
-<!--<?php include('header-sc.php'); ?> -->
+<?php include('header-sc.php'); ?>
 <body>
 <div class="jumbotron text-center mb-0">
     <h1>BoardGamers</h1>
     <h4>Check Out</h4>
 </div>
-<!-- <?php include('nav-sc.php'); ?> -->
+<?php include('nav-sc.php'); ?>
 
 <form action="confirmpage.php">
     <div class="form-group">
@@ -34,7 +34,7 @@ session_start();
 
 
 
-<!--<?php include('footer-sc.php'); ?> -->
+<?php include('footer-sc.php'); ?>
 </body>
 </html>
 
