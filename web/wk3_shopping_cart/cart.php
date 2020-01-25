@@ -15,8 +15,8 @@ $pId = $_SESSION['pId'];
 <?php include('nav-sc.php'); ?>
 <?php
 $products = file_get_contents('products.json');
-$products = json_decode($products, true);
-echo $products;
+$productsArr = json_decode($products, true);
+echo $productsArr;
 print_r($_SESSION);
 
 ?>
