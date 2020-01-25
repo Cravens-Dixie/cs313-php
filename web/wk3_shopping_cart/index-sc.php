@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
     $pId = $_POST['pId'];
 
     $_SESSION[$pId] = true;
-    echo "Session variable set"
+    echo "Session variable set";
 }
 ?>
 
