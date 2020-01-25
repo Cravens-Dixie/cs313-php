@@ -1,16 +1,13 @@
 <?php
 // Start the session
 session_start();
-
-$_SESSION["favcolor"] = "green";
-$_SESSION['name'];
-$_SESSION['pId'];
+if (empty($_SESSION['pId'])) {
+    $_SESSION['pId'] = array();
+}
 
 if (isset($_POST['submit'])) {
     $pId = $_POST['pId'];
-    $name = $_POST['name'];
-    $_SESSION['name'] = $name;
-    $_SESSION['pId'] = $pId;
+    array_push($_SESSION['pId'], $_POST['pId']);
 
 }
 
