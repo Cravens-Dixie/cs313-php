@@ -10,7 +10,7 @@ if (isset($_POST['submit'])) {
     $pId = $_POST['pId'];
     $name = $_POST['name'];
     $_SESSION['name'] = $name;
-    $_SESSION[$pId] = $pId;
+    $_SESSION['pId'] = $pId;
 
 }
 
