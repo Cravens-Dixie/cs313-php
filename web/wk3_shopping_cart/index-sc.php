@@ -11,6 +11,7 @@ session_start();
 
 <body>
 <?php
+$_SESSION["favcolor"] = "green";
 if (isset($_POST['submit'])) {
     $pId = $_POST['pId'];
     $name = $_POST['name'];
