@@ -14,9 +14,14 @@ $pId = $_SESSION['pId'];
 </div>
 <?php include('nav-sc.php'); ?>
 <?php
+
 //create Product array
 $products = file_get_contents('products.json');
 $productsArr = json_decode($products, true);
+print_r($_SESSION);
+echo '<pre>';
+print_r($productsArr);
+echo '</pre>';
 //loop through session array to get ind.products
 foreach($_SESSION as $prodId) {
     foreach ($productsArr as $key => $value) {
