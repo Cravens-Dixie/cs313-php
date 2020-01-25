@@ -29,16 +29,9 @@ foreach($_SESSION as $prodId) {
             echo $key;
 //            foreach ($value as $sub_key => $sub_val) {
 //                echo "{$sub_key} \"=\" {$sub_val}.\"\n\"";
-            }
+           // }
         }
-
-
     }
-
-
-
-
-
 }
 
 ?>
