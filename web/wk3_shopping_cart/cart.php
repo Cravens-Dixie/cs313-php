@@ -36,19 +36,19 @@ foreach($_SESSION['pId'] as $id => $product) {
             //echo $pid;
 
             foreach ($prodarr as $prodelem) {
-                foreach ($prodelem as list($name, $image, $price)) {
+
                     echo "<b>" . $prodelem . "<b>";
                     //echo $subkey . " = " . $subval . "\n";
                     echo ' <tbody>
                           <tr>
                             <td>';
-                    echo $prodelem[$image];
+                    echo $prodelem['image'];
                     echo '</td>
                             <td>';
-                    echo $prodelem[$name];
+                    echo $prodelem['name'];
                     echo '</td>
                             <td>';
-                    echo $prodelem[$price];
+                    echo $prodelem['price'];
                     echo '</td>
                           </tr>
                           
@@ -57,7 +57,7 @@ foreach($_SESSION['pId'] as $id => $product) {
                     </div>
 
                 ';
-                }
+
 
             }
         }
