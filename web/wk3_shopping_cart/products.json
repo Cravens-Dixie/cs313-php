@@ -1,10 +1,8 @@
 {
   "p101": {
     "name": "Catan",
-    "pId": 1,
     "image": "wk3_shopping_cart/cs331-games/catan.webp",
-    "price": 29.99,
-    "selected": false
+    "price": 29.99
   },
   "p102": {
     "name": "Catan Expansion-Seafarers",
