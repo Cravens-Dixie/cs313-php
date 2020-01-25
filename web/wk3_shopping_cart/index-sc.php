@@ -1,6 +1,19 @@
 <?php
 // Start the session
 session_start();
+
+$_SESSION["favcolor"] = "green";
+$_SESSION['name'];
+$_SESSION['pId'];
+
+if (isset($_POST['submit'])) {
+    $pId = $_POST['pId'];
+    $name = $_POST['name'];
+    $_SESSION['name'] = $name;
+    $_SESSION['pId'] = $pId;
+
+}
+
 ?>
 
 
@@ -10,14 +23,11 @@ session_start();
 <?php include('header-sc.php');?>
 
 <body>
-<?php
-if (isset($_POST['submit'])) {
-    $pId = $_POST['pId'];
-
-    $_SESSION[$pId] = true;
-    echo "Session variable set";
-}
-?>
+<!--todo change to onload instead of onclick -->
+<div id="XMLHttp">
+    <p id="getMessage"></p>
+    <button onclick="createXML()">Get XML Message</button>
+</div>
 
 <div class="jumbotron text-center mb-0">
     <h1>BoardGamers</h1>
@@ -39,6 +49,7 @@ if (isset($_POST['submit'])) {
         <div class="card-footer">
             <form method="post" action="<?php echo ($_SERVER["PHP_SELF"]);?>" class="form-submit">
                 <input type="hidden" name="pId" class="pId" value="1">
+                <input type="hidden" name="name" value="Bozo">
                 <input type="submit" name="submit" class="btn btn-info btn-block" id="addItemBtn" value="Add to Cart">
             </form>
         </div>
@@ -51,7 +62,10 @@ if (isset($_POST['submit'])) {
             <p class="card-text"> I really want this expansion pack. It looks like fun.</p>
         </div>
         <div class="card-footer">
-            <button type="button" class="btn btn-info btn-block" id="item2">Add To Cart</button>
+            <form method="post" action="<?php echo ($_SERVER["PHP_SELF"]);?>" class="form-submit">
+                <input type="hidden" name="pId" class="pId" value="2">
+                <input type="submit" name="submit" class="btn btn-info btn-block" id="addItemBtn" value="Add to Cart">
+            </form>
         </div>
     </div>
     <div class="card">
@@ -63,7 +77,10 @@ if (isset($_POST['submit'])) {
             strategy that I don't understand. The virtual gamers like this game a lot.</p>
         </div>
         <div class="card-footer">
-            <button type="button" class="btn btn-info btn-block" id="item3">Add To Cart</button>
+            <form method="post" action="<?php echo ($_SERVER["PHP_SELF"]);?>" class="form-submit">
+                <input type="hidden" name="pId" class="pId" value="3">
+                <input type="submit" name="submit" class="btn btn-info btn-block" id="addItemBtn" value="Add to Cart">
+            </form>
         </div>
     </div>
     <div class="card">
@@ -75,7 +92,10 @@ if (isset($_POST['submit'])) {
                 player's tracks is not nice. </p>
         </div>
         <div class="card-footer">
-            <button type="button" class="btn btn-info btn-block" id="item4">Add To Cart</button>
+            <form method="post" action="<?php echo ($_SERVER["PHP_SELF"]);?>" class="form-submit">
+                <input type="hidden" name="pId" class="pId" value="4">
+                <input type="submit" name="submit" class="btn btn-info btn-block" id="addItemBtn" value="Add to Cart">
+            </form>
         </div>
     </div>
 </div>
@@ -90,7 +110,10 @@ if (isset($_POST['submit'])) {
                 playing against the game.</p>
         </div>
         <div class="card-footer">
-            <button type="button" class="btn btn-info btn-block" id="item5">Add To Cart</button>
+            <form method="post" action="<?php echo ($_SERVER["PHP_SELF"]);?>" class="form-submit">
+                <input type="hidden" name="pId" class="pId" value="5">
+                <input type="submit" name="submit" class="btn btn-info btn-block" id="addItemBtn" value="Add to Cart">
+            </form>
         </div>
     </div>
     <div class="card">
@@ -103,7 +126,10 @@ if (isset($_POST['submit'])) {
                 you will like this game.</p>
         </div>
         <div class="card-footer">
-            <button type="button" class="btn btn-info btn-block" id="item6">Add To Cart</button>
+            <form method="post" action="<?php echo ($_SERVER["PHP_SELF"]);?>" class="form-submit">
+                <input type="hidden" name="pId" class="pId" value="6">
+                <input type="submit" name="submit" class="btn btn-info btn-block" id="addItemBtn" value="Add to Cart">
+            </form>
         </div>
     </div>
     <div class="card">
@@ -114,7 +140,10 @@ if (isset($_POST['submit'])) {
             <p class="card-text"> This looks like a really fun game. It's on my wish list.</p>
         </div>
         <div class="card-footer">
-            <button type="button" class="btn btn-info btn-block" id="item7">Add To Cart</button>
+            <form method="post" action="<?php echo ($_SERVER["PHP_SELF"]);?>" class="form-submit">
+                <input type="hidden" name="pId" class="pId" value="7">
+                <input type="submit" name="submit" class="btn btn-info btn-block" id="addItemBtn" value="Add to Cart">
+            </form>
         </div>
     </div>
     <div class="card">
@@ -126,7 +155,10 @@ if (isset($_POST['submit'])) {
             game for  puzzle lovers.</p>
         </div>
         <div class="card-footer">
-            <button type="button" class="btn btn-info btn-block" id="item8">Add To Cart</button>
+            <form method="post" action="<?php echo ($_SERVER["PHP_SELF"]);?>" class="form-submit">
+                <input type="hidden" name="pId" class="pId" value="8">
+                <input type="submit" name="submit" class="btn btn-info btn-block" id="addItemBtn" value="Add to Cart">
+            </form>
         </div>
     </div>
 </div>
