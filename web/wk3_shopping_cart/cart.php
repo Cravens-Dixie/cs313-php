@@ -23,16 +23,16 @@ echo '<pre>';
 print_r($productsArr);
 echo '</pre>';
 //loop through session array to get ind.products
-foreach($_SESSION as $prodId) {
-    echo $prodId;
-    foreach ($productsArr as $key) {
-        if ($prodId == "$key"){
-            foreach ($key as list($name, $image, $price)) {
-                echo "<b>" . $name, $price . "<b>";
-            }
-
-        }
-    }
+foreach($_SESSION as $key => $value) {
+    echo $key;
+//    foreach ($productsArr as $key) {
+//        if ($prodId == "$key"){
+//            foreach ($key as list($name, $image, $price)) {
+//                echo "<b>" . $name, $price . "<b>";
+//            }
+//
+//        }
+//    }
 }
 
 ?>
