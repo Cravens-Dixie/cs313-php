@@ -35,15 +35,15 @@ foreach($_SESSION['pId'] as $id => $product) {
         if ($pid == $product){
             //echo $pid;
 
-            foreach ($key as $subkey => $subval) {
-                foreach ($subval as list($name, $image, $price))
+            foreach ($key as $subkey) {
+                foreach ($subkey as list($name, $image, $price))
                 //echo "<b>" . $subkey, $subval. "<b>";
                 //echo $subkey . " = " . $subval . "\n";
                 echo ' <tbody>
                           <tr>
-                            <td><?php echo $subval[$image]; ?></td>
-                            <td><?php echo $subval[$name]; ?></td>
-                            <td><?php echo $subval[$price]; ?></td>
+                            <td><?php echo $image; ?></td>
+                            <td><?php echo $name; ?></td>
+                            <td><?php echo $price; ?></td>
                           </tr>
                           
                         </tbody>
