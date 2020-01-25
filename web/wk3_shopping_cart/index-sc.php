@@ -13,9 +13,11 @@ session_start();
 <?php
 if (isset($_POST['submit'])) {
     $pId = $_POST['pId'];
+    $name = $_POST['name']
 
     $_SESSION[$pId] = true;
     echo "Session variable set";
+    echo "Hello $name";
 }
 ?>
 
@@ -39,6 +41,7 @@ if (isset($_POST['submit'])) {
         <div class="card-footer">
             <form method="post" action="<?php echo ($_SERVER["PHP_SELF"]);?>" class="form-submit">
                 <input type="hidden" name="pId" class="pId" value="1">
+                <input type="hidden" name="name" value="Bozo">
                 <input type="submit" name="submit" class="btn btn-info btn-block" id="addItemBtn" value="Add to Cart">
             </form>
         </div>
