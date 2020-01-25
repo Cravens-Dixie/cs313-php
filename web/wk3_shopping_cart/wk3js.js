@@ -32,24 +32,24 @@
 
 
 
-// //Create a function to create a XMLHttpRequest object and return the text from a txt file (JSON_Text.txt)
-// function createXML() {
-//     //create a XMLHttpRequest object
-//     const myXML = new XMLHttpRequest();
-//     //check readystatechange for correct readyState and status
-//     myXML.onreadystatechange = function () {
-//         if (myXML.readyState === 4) {
-//             if (myXML.status === 200) {
-//                 document.getElementById("getMethod").textContent = myXML.responseText;
-//                /* var prod = myXML.responseText;
-//                 alert(prod);*/
-//             }
-//             if (myXML.status === 404) {
-//                 document.getElementById("getMethod").textContent = "That file could not be found.";
-//             }
-//         }
-//     };
-//     //open the request and send it
-//     myXML.open('get', 'products.json', true);
-//     myXML.send();
-// }
+//Create a function to create a XMLHttpRequest object and return the text from a txt file (JSON_Text.txt)
+function createXML() {
+    //create a XMLHttpRequest object
+    const myXML = new XMLHttpRequest();
+    //check readystatechange for correct readyState and status
+    myXML.onreadystatechange = function () {
+        if (myXML.readyState === 4) {
+            if (myXML.status === 200) {
+                // document.getElementById("getMethod").textContent = myXML.responseText;
+                var prod = myXML.responseText;
+                alert(prod);
+            }
+            if (myXML.status === 404) {
+                document.getElementById("getMethod").textContent = "That file could not be found.";
+            }
+        }
+    };
+    //open the request and send it
+    myXML.open('get', 'products.json', true);
+    myXML.send();
+}

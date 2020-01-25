@@ -21,8 +21,13 @@ if (isset($_POST['submit'])) {
 <?php include('header-sc.php');?>
 
 <body>
+<div id="XMLHttp">
+    <h2>Topic 4 XMLHttpRequest Object</h2>
+    <h3>GET Method</h3>
+    <p id="getMethod"></p>
+    <button onclick="createXML()">Get XML Message</button>
 
-
+</div>
 <div class="jumbotron text-center mb-0">
     <h1>BoardGamers</h1>
     <p>Bring Back Game Night!</p>
