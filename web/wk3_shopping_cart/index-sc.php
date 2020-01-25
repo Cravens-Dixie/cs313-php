@@ -45,7 +45,7 @@ if (isset($_POST['submit'])) {
         </div>
         <div class="card-footer">
             <form method="post" action="<?php echo ($_SERVER["PHP_SELF"]);?>" class="form-submit">
-                <input type="hidden" name="pId" class="pId" value="1">
+                <input type="hidden" name="pId" class="pId" value="p101">
                 <input type="hidden" name="name" value="Bozo">
                 <input type="submit" name="submit" class="btn btn-info btn-block" id="addItemBtn" value="Add to Cart">
             </form>
@@ -60,7 +60,7 @@ if (isset($_POST['submit'])) {
         </div>
         <div class="card-footer">
             <form method="post" action="<?php echo ($_SERVER["PHP_SELF"]);?>" class="form-submit">
-                <input type="hidden" name="pId" class="pId" value="2">
+                <input type="hidden" name="pId" class="pId" value="p102">
                 <input type="submit" name="submit" class="btn btn-info btn-block" id="addItemBtn" value="Add to Cart">
             </form>
         </div>
@@ -75,7 +75,7 @@ if (isset($_POST['submit'])) {
         </div>
         <div class="card-footer">
             <form method="post" action="<?php echo ($_SERVER["PHP_SELF"]);?>" class="form-submit">
-                <input type="hidden" name="pId" class="pId" value="3">
+                <input type="hidden" name="pId" class="pId" value="p103">
                 <input type="submit" name="submit" class="btn btn-info btn-block" id="addItemBtn" value="Add to Cart">
             </form>
         </div>
@@ -90,7 +90,7 @@ if (isset($_POST['submit'])) {
         </div>
         <div class="card-footer">
             <form method="post" action="<?php echo ($_SERVER["PHP_SELF"]);?>" class="form-submit">
-                <input type="hidden" name="pId" class="pId" value="4">
+                <input type="hidden" name="pId" class="pId" value="p104">
                 <input type="submit" name="submit" class="btn btn-info btn-block" id="addItemBtn" value="Add to Cart">
             </form>
         </div>
@@ -108,7 +108,7 @@ if (isset($_POST['submit'])) {
         </div>
         <div class="card-footer">
             <form method="post" action="<?php echo ($_SERVER["PHP_SELF"]);?>" class="form-submit">
-                <input type="hidden" name="pId" class="pId" value="5">
+                <input type="hidden" name="pId" class="pId" value="p105">
                 <input type="submit" name="submit" class="btn btn-info btn-block" id="addItemBtn" value="Add to Cart">
             </form>
         </div>
@@ -124,7 +124,7 @@ if (isset($_POST['submit'])) {
         </div>
         <div class="card-footer">
             <form method="post" action="<?php echo ($_SERVER["PHP_SELF"]);?>" class="form-submit">
-                <input type="hidden" name="pId" class="pId" value="6">
+                <input type="hidden" name="pId" class="pId" value="p106">
                 <input type="submit" name="submit" class="btn btn-info btn-block" id="addItemBtn" value="Add to Cart">
             </form>
         </div>
@@ -138,7 +138,7 @@ if (isset($_POST['submit'])) {
         </div>
         <div class="card-footer">
             <form method="post" action="<?php echo ($_SERVER["PHP_SELF"]);?>" class="form-submit">
-                <input type="hidden" name="pId" class="pId" value="7">
+                <input type="hidden" name="pId" class="pId" value="p107">
                 <input type="submit" name="submit" class="btn btn-info btn-block" id="addItemBtn" value="Add to Cart">
             </form>
         </div>
@@ -153,7 +153,7 @@ if (isset($_POST['submit'])) {
         </div>
         <div class="card-footer">
             <form method="post" action="<?php echo ($_SERVER["PHP_SELF"]);?>" class="form-submit">
-                <input type="hidden" name="pId" class="pId" value="8">
+                <input type="hidden" name="pId" class="pId" value="p108">
                 <input type="submit" name="submit" class="btn btn-info btn-block" id="addItemBtn" value="Add to Cart">
             </form>
         </div>
