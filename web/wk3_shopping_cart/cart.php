@@ -25,7 +25,7 @@ echo '</pre>';
 //loop through session array to get ind.products
 foreach($_SESSION as $prodId) {
     foreach ($productsArr as $key => $value) {
-        if ($prodId == $key){
+        if ($prodId == "$key"){
             foreach ($value as list($name, $image, $price)) {
                 echo "<b>" . $name, $price . "<b>";
             }
