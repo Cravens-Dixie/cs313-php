@@ -30,8 +30,7 @@ foreach($_SESSION as $prodId) {
             echo $sub_key. " = " .$sub_val ."\n";
         }
         if ($prodId == $key){
-            echo $key;
-
+            echo "<b>" . $key . "<b>";
         }
     }
 }
