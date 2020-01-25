@@ -37,7 +37,7 @@ foreach($_SESSION['pId'] as $id => $product) {
 
             foreach ($key as $subkey) {
                 foreach ($subkey as list($name, $image, $price))
-                //echo "<b>" . $subkey, $subval. "<b>";
+                echo "<b>" . $subkey . "<b>";
                 //echo $subkey . " = " . $subval . "\n";
                 echo ' <tbody>
                           <tr>
