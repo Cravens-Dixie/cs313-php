@@ -24,12 +24,13 @@ print_r($productsArr);
 echo '</pre>';
 //loop through session array to get ind.products
 foreach($_SESSION['pId'] as $id => $product) {
-    echo $product;
+    //echo $product;
     foreach ($productsArr as $pid => $key) {
         if ($pid == $product){
-            echo $pid;
+            //echo $pid;
             foreach ($key as $subkey => $subval) {
-                echo "<b>" . $subkey, $subval. "<b>";
+                //echo "<b>" . $subkey, $subval. "<b>";
+                echo $subkey . " = " . $subval . "\n";
             }
 
         }
