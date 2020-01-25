@@ -30,9 +30,9 @@ foreach($_SESSION['pId'] as $id => $product) {
 
         if ($pid == $product){
             echo $pid;
-//            foreach ($product as list($name, $image, $price)) {
-//                echo "<b>" . $name, $price . "<b>";
-//            }
+            foreach ($pid as list($name, $image, $price)) {
+                echo "<b>" . $name, $price . "<b>";
+            }
 
         }
     }
