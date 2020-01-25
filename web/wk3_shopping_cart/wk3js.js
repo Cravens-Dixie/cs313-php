@@ -42,7 +42,8 @@ function createXML() {
             if (myXML.status === 200) {
                 // document.getElementById("getMethod").textContent = myXML.responseText;
                 var prod = myXML.responseText;
-                alert(prod);
+                var productObj = JSON.parse(prod);
+
             }
             if (myXML.status === 404) {
                 document.getElementById("getMessage").textContent = "That file could not be found.";

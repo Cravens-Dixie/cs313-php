@@ -20,11 +20,7 @@ if (isset($_POST['submit'])) {
 <?php include('header-sc.php');?>
 
 <body>
-<!--todo change to onload instead of onclick -->
-<div id="XMLHttp">
-    <p id="getMessage"></p>
-    <button onclick="createXML()">Get XML Message</button>
-</div>
+
 
 <div class="jumbotron text-center mb-0">
     <h1>BoardGamers</h1>
