@@ -1,16 +1,7 @@
 <?php
 // Start the session
 session_start();
-?>
 
-
-<!doctype html>
-<html lang="en">
-
-<?php include('header-sc.php');?>
-
-<body>
-<?php
 $_SESSION["favcolor"] = "green";
 if (isset($_POST['submit'])) {
     $pId = $_POST['pId'];
@@ -20,7 +11,17 @@ if (isset($_POST['submit'])) {
     echo "Session variable set";
     echo "Hello $name";
 }
+
 ?>
+
+
+<!doctype html>
+<html lang="en">
+
+<?php include('header-sc.php');?>
+
+<body>
+
 
 <div class="jumbotron text-center mb-0">
     <h1>BoardGamers</h1>

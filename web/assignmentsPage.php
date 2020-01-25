@@ -14,7 +14,7 @@
                 <div class="card-body">
                     <h5 class="text-center">Week 3 Assignment</h5>
                     <h6 class="text-center">Shopping Cart</h6>
-                    <a href="/wk3_shopping_cart/test.php" class="btn btn-info btn-block" role="button">Go To Assignment</a>
+                    <a href="/wk3_shopping_cart/index-sc.php" class="btn btn-info btn-block" role="button">Go To Assignment</a>
                 </div>
             </div>
              <div class="card">
