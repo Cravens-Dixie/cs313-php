@@ -41,9 +41,9 @@ foreach($_SESSION['pId'] as $id => $product) {
                 //echo $subkey . " = " . $subval . "\n";
                 echo ' <tbody>
                           <tr>
-                            <td>'; echo $image; echo '</td>
-                            <td>'; echo $name;  echo '</td>
-                            <td>'; echo $price;  echo '</td>
+                            <td>'; echo $subkey[$image]; echo '</td>
+                            <td>'; echo $subkey[$name];  echo '</td>
+                            <td>'; echo $subkey[$price];  echo '</td>
                           </tr>
                           
                         </tbody>
