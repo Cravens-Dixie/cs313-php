@@ -19,8 +19,7 @@ $pId = $_SESSION['pId'];
 $products = file_get_contents('products.json');
 $productsArr = json_decode($products, true);
 echo '<div class="container">
-  <h2>Basic Table</h2>
-  <p>The .table class adds basic styling (light padding and horizontal dividers) to a table:</p>            
+  <h2>Shopping Cart</h2>         
   <table class="table">
     <thead>
       <tr>
@@ -38,7 +37,8 @@ foreach($_SESSION['pId'] as $id => $product) {
         if ($pid == $product) {
            echo ' <tr>
         <td>';
-            echo $prodarr['image'];
+
+            echo '<img src="' . $prodarr['image'] . '" alt="product">';
             echo '</td>
         <td>';
             echo $prodarr['name'];
