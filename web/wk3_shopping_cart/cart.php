@@ -35,7 +35,7 @@ foreach($_SESSION['pId'] as $id => $product) {
             //echo $pid;
 
             foreach ($prodarr as $prodelem => $elem) {
-                echo $prodelem;
+                //echo $prodelem;
                 echo $elem;
                    echo $elem['name'];
 
