@@ -1,42 +1,42 @@
 {
   "p101": {
     "name": "Catan",
-    "image": "wk3_shopping_cart/cs331-games/catan.webp",
+    "image": "cs331-games/catan.webp",
     "price": 29.99
   },
   "p102": {
     "name": "Catan Expansion-Seafarers",
-    "image": "wk3_shopping_cart/cs331-games/seafarers.jpg",
+    "image": "cs331-games/seafarers.jpg",
     "price": 24.99
   },
   "p103": {
     "name": "Dominion",
-    "image": "wk3_shopping_cart/cs331-games/dominion.webp",
+    "image": "cs331-games/dominion.webp",
     "price": 27.99
   },
   "p104": {
     "name": "Ticket to Ride",
-    "image": "wk3_shopping_cart/cs331-games/tickettoride.webp",
+    "image": "cs331-games/tickettoride.webp",
     "price": 31.99
   },
   "p105": {
     "name": "Pandemic",
-    "image": "wk3_shopping_cart/cs331-games/pandemic.webp",
+    "image": "cs331-games/pandemic.webp",
     "price": 19.99
   },
   "p106": {
     "name": "Rummikub",
-    "image": "wk3_shopping_cart/cs331-games/rummikub.webp",
+    "image": "cs331-games/rummikub.webp",
     "price": 14.99
   },
   "p107": {
     "name": "Yam Slam",
-    "image": "wk3_shopping_cart/cs331-games/yamslam.webp",
+    "image": "cs331-games/yamslam.webp",
     "price": 22.99
   },
   "p108": {
     "name": "Quadrillion",
-    "image": "wk3_shopping_cart/cs331-games/quadrillion.webp",
+    "image": "cs331-games/quadrillion.webp",
     "price": 17.99
   }
 }
