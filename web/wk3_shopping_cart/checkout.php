@@ -18,7 +18,7 @@ $pId = $_SESSION['pId'];
 $products = file_get_contents('products.json');
 $productsArr = json_decode($products, true);
 echo '<div class="container">
-  <h2>Shopping Cart</h2>         
+  <h2>Checkout</h2>         
   <table class="table">
     <thead>
       <tr>
@@ -58,28 +58,25 @@ echo '</td>
 </div>';
 ?>
 
-<form action="confirmpage.php">
+<form action="confirmpage.php" method="post">
     <div class="form-group">
         <label for="custname">Full Name:</label>
-        <input type="text" class="form-control" placeholder="Enter full name" id="custname">
+        <input type="text" name="name" class="form-control" placeholder="Enter full name" id="custname">
     </div>
     <div class="form-group">
         <label for="custaddr">Customer address:</label>
-        <input type="text" class="form-control" placeholder="Enter Street" id="custaddr">
+        <input type="text" name="address" class="form-control" placeholder="Enter Street" id="custaddr">
         <label for="custcity">Customer city:</label>
-        <input type="text" class="form-control" placeholder="Enter City" id="custcity">
+        <input type="text" name="city" class="form-control" placeholder="Enter City" id="custcity">
         <label for="custstate">Customer state:</label>
-        <input type="text" class="form-control" placeholder="Enter State" id="custstate">
+        <input type="text" name="state" class="form-control" placeholder="Enter State" id="custstate">
         <label for="custzip">Customer zip code:</label>
-        <input type="text" class="form-control" placeholder="Enter Zip Code" id="custzip">
+        <input type="text" name="zipcode" class="form-control" placeholder="Enter Zip Code" id="custzip">
     </div>
-<!--    <div class="container">-->
-<!--        <a href="index-sc.php" class="btn btn-info" role="button">Keep Shopping</a>-->
-<!--        <form method="post" action="checkout.php" class="form-submit">-->
-<!--            <input type="submit" class="btn btn-info" value="Checkout">-->
-<!--        </form>-->
-<!--    </div>-->
-    <button type="submit" class="btn btn-primary">Complete Purchase</button>
+
+        <input type="submit" name="submit" class="btn btn-info btn-block" value="Complete Purchase">
+    </form>
+    <
     <a href="index-sc.php" class="btn btn-info" role="button">Keep Shopping</a>
 </form>
 
