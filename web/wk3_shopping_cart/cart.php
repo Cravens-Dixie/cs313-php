@@ -33,11 +33,12 @@ foreach($_SESSION['pId'] as $id => $product) {
     foreach ($productsArr as $pid => $prodarr) {
         if ($pid == $product) {
             //echo $pid;
+            echo $prodarr['name'];
 
             foreach ($prodarr as $prodelem => $elem) {
                 //echo $prodelem;
                 echo $elem;
-                   echo $elem['name'];
+
 
                     //echo "<b>" . $prodelem . "<b>";
                     //echo $subkey . " = " . $subval . "\n";
