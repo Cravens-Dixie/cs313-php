@@ -45,6 +45,7 @@ foreach($_SESSION['pId'] as $id => $product) {
             echo '</td>
         <td>';
             echo $prodarr['price'];
+            $total += floatval($prodarr['price']);
             echo '</td>
       </tr>';
 
@@ -54,8 +55,8 @@ foreach($_SESSION['pId'] as $id => $product) {
 
    echo'<tr>
       <td></td>
-      <td>Total</td>
-      <td>';
+      <td><b>Total</b></td>
+      <td> $';
       echo $total;
        echo '</td>
     </tr>
