@@ -34,8 +34,9 @@ foreach($_SESSION['pId'] as $id => $product) {
         if ($pid == $product) {
             //echo $pid;
 
-            foreach ($prodarr as $prodelem) {
+            foreach ($prodarr as $prodelem => $elem) {
                 echo $prodelem;
+                echo $elem;
 
 
                     //echo "<b>" . $prodelem . "<b>";
