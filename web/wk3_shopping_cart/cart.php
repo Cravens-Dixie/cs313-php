@@ -37,7 +37,7 @@ foreach($_SESSION['pId'] as $id => $product) {
             foreach ($prodarr as $prodelem => $elem) {
                 echo $prodelem;
                 echo $elem;
-
+                   echo $elem['name'];
 
                     //echo "<b>" . $prodelem . "<b>";
                     //echo $subkey . " = " . $subval . "\n";
