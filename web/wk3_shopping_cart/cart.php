@@ -46,14 +46,16 @@ foreach($_SESSION['pId'] as $id => $product) {
         <td>';
             echo $prodarr['price'];
             echo '</td>
-      </tr>
-    </tbody>
-  </table>
-</div>';
+      </tr>';
+
 
             }
         }
 }
+
+   echo' </tbody>
+  </table>
+</div>';
 
 ?>
 
