@@ -18,15 +18,15 @@ $pId = $_SESSION['pId'];
 //create Product array
 $products = file_get_contents('products.json');
 $productsArr = json_decode($products, true);
-echo '<div class="container">
-                      <h2>Shopping Cart</h2>            
-                      <table class="table">
-                        <thead>
-                          <tr>
-                            <th>Product </th>
-                            
-                          </tr>
-                        </thead>';
+//echo '<div class="container">
+//                      <h2>Shopping Cart</h2>
+//                      <table class="table">
+//                        <thead>
+//                          <tr>
+//                            <th>Product </th>
+//
+//                          </tr>
+//                        </thead>';
 //loop through session array to get ind.products
 foreach($_SESSION['pId'] as $id => $product) {
     //echo $product;
@@ -35,22 +35,23 @@ foreach($_SESSION['pId'] as $id => $product) {
             //echo $pid;
 
             foreach ($prodarr as $prodelem) {
+                echo $prodelem;
 
 
                     //echo "<b>" . $prodelem . "<b>";
                     //echo $subkey . " = " . $subval . "\n";
-                    echo ' <tbody>
-                          <tr>
-                            <td>';
-                    echo $prodelem;
-                    echo '</td>                            
-                           </tr>
-                          
-                        </tbody>
-                      </table>
-                    </div>
-
-                ';
+//                    echo ' <tbody>
+//                          <tr>
+//                            <td>';
+//                    echo $prodelem;
+//                    echo '</td>
+//                           </tr>
+//
+//                        </tbody>
+//                      </table>
+//                    </div>
+//
+//                ';
 
 
             }
