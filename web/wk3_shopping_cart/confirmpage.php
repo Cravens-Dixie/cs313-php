@@ -1,6 +1,7 @@
 <?php
 session_start();
 $pId = $_SESSION['pId'];
+
 ?>
 
 <!doctype html>
