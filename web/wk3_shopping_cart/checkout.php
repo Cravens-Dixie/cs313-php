@@ -1,6 +1,26 @@
 <?php
 session_start();
 $pId = $_SESSION['pId'];
+
+// define variables and set to empty values
+$name = $address = $city = $state = $zipcode = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = test_input($_POST["name"]);
+    $address = test_input($_POST["address"]);
+    $city = test_input($_POST["city"]);
+    $state = test_input($_POST["state"]);
+    $zipcode = test_input($_POST["zipcode"]);
+}
+
+function test_input($data)
+{
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+
 ?>
 
 <!doctype html>
@@ -58,7 +78,7 @@ echo '</td>
 </div>';
 ?>
 
-<form action="confirmpage.php" method="post">
+<form action="<?php echo htmlspecialchars("confirmpage.php");?>" method="post">
     <div class="form-group">
         <label for="custname">Full Name:</label>
         <input type="text" name="name" class="form-control" placeholder="Enter full name" id="custname">
