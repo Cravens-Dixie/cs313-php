@@ -57,6 +57,12 @@ echo '</td>
 </div>';
 ?>
 <body>
+<div class="container">
+    <p>Mail To:</p>
+    <p><?php echo $_POST["name"]; ?><br></p>
+    <p><?php echo $_POST["address"]; ?><br></p>
+    <p><?php echo $_POST["city"] . ", " .  $_POST["state"] . " " .  $_POST["zipcode"]; ?><br></p>
+</div>
 <p><b>Good job! Now go play some games!</b></p>
 <?php include('footer-sc.php'); ?>
 </body>
