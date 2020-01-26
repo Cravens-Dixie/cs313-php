@@ -34,10 +34,12 @@ foreach($_SESSION['pId'] as $id => $product) {
         if ($pid == $product) {
             //echo $pid;
             echo $prodarr['name'];
+            echo $prodarr['image'];
+            echo $prodarr['price'];
 
-            foreach ($prodarr as $prodelem => $elem) {
+            //foreach ($prodarr as $prodelem => $elem) {
                 //echo $prodelem;
-                echo $elem;
+               // echo $elem;
 
 
                     //echo "<b>" . $prodelem . "<b>";
@@ -58,7 +60,7 @@ foreach($_SESSION['pId'] as $id => $product) {
 
             }
         }
-    }
+   // }
 }
 
 ?>
