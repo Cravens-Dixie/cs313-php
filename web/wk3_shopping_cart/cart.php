@@ -23,6 +23,7 @@ echo '<div class="container">
                       <table class="table">
                         <thead>
                           <tr>
+                            <th>Product Image</th>
                             <th>Product Name</th>
                             <th>Product Price</th>
                           </tr>
@@ -35,11 +36,15 @@ foreach($_SESSION['pId'] as $id => $product) {
             //echo $pid;
 
             foreach ($prodarr as $prodelem) {
+                foreach ($prodelem as list($name, $image, $price)) {
 
                     echo "<b>" . $prodelem . "<b>";
                     //echo $subkey . " = " . $subval . "\n";
                     echo ' <tbody>
                           <tr>
+                            <td>';
+                    echo $prodelem['image']; //todo this needs to be inside <img src="">
+                    echo '</td>
                             <td>';
                     echo $prodelem['name'];
                     echo '</td>
@@ -53,7 +58,7 @@ foreach($_SESSION['pId'] as $id => $product) {
                     </div>
 
                 ';
-
+                }
 
             }
         }
