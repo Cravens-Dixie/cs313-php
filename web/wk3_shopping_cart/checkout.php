@@ -77,8 +77,8 @@ echo '</td>
   </table>
 </div>';
 ?>
+<form method="post" action="<?php echo htmlspecialchars($_SERVER["confirmpage.php"]);?>">
 
-<form action="<?php echo htmlspecialchars("confirmpage.php");?>" method="post">
     <div class="form-group">
         <label for="custname">Full Name:</label>
         <input type="text" name="name" class="form-control" placeholder="Enter full name" id="custname">
