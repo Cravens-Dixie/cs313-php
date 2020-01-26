@@ -23,9 +23,8 @@ echo '<div class="container">
                       <table class="table">
                         <thead>
                           <tr>
-                            <th>Product Image</th>
-                            <th>Product Name</th>
-                            <th>Product Price</th>
+                            <th>Product </th>
+                            
                           </tr>
                         </thead>';
 //loop through session array to get ind.products
