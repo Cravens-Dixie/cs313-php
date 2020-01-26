@@ -3,7 +3,7 @@ session_start();
 ?>
 
 <!doctype html>
-<html>
+<html lang="en">
 <?php include('header-sc.php'); ?>
 <body>
 <div class="jumbotron text-center mb-0">
@@ -27,7 +27,14 @@ session_start();
         <label for="custzip">Customer zip code:</label>
         <input type="text" class="form-control" placeholder="Enter Zip Code" id="custzip">
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+<!--    <div class="container">-->
+<!--        <a href="index-sc.php" class="btn btn-info" role="button">Keep Shopping</a>-->
+<!--        <form method="post" action="checkout.php" class="form-submit">-->
+<!--            <input type="submit" class="btn btn-info" value="Checkout">-->
+<!--        </form>-->
+<!--    </div>-->
+    <button type="submit" class="btn btn-primary">Complete Purchase</button>
+    <a href="index-sc.php" class="btn btn-info" role="button">Keep Shopping</a>
 </form>
 
 
