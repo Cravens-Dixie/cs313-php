@@ -2,7 +2,7 @@
 session_start();
 $pId = $_SESSION['pId'];
 
-// define variables and set to empty values
+/*// define variables and set to empty values
 $name = $address = $city = $state = $zipcode = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -19,7 +19,7 @@ function test_input($data)
     $data = stripslashes($data);
     $data = htmlspecialchars($data);
     return $data;
-}
+}*/
 
 ?>
 
