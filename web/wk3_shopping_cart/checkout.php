@@ -48,7 +48,6 @@ foreach($_SESSION['pId'] as $id => $product) {
 }
 
 echo'<tr>
-      <td></td>
       <td><b>Total</b></td>
       <td> $';
 echo $total;
