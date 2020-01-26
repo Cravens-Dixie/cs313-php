@@ -62,7 +62,13 @@ foreach($_SESSION['pId'] as $id => $product) {
     </tr>
       </tbody>
   </table>
-</div>';
+</div>
+<div class="container">
+  <a href="index-sc.php" class="btn btn-info" role="button">Keep Shopping</a>
+  <form method="post" action="checkout.php" class="form-submit">
+  <input type="submit" class="btn btn-info" value="Checkout">
+  </form>
+  </div>';
 
 ?>
 
