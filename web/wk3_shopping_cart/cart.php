@@ -29,7 +29,7 @@ echo '<div class="container">
       </tr>
     </thead>
     <tbody>';
-
+$total = 0;
 //loop through session array to get ind.products
 foreach($_SESSION['pId'] as $id => $product) {
     //echo $product;
@@ -48,12 +48,18 @@ foreach($_SESSION['pId'] as $id => $product) {
             echo '</td>
       </tr>';
 
-
             }
         }
 }
 
-   echo' </tbody>
+   echo'<tr>
+      <td></td>
+      <td>Total</td>
+      <td>';
+      echo $total;
+       echo '</td>
+    </tr>
+      </tbody>
   </table>
 </div>';
 
