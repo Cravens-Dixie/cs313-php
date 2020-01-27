@@ -38,7 +38,7 @@ foreach($_SESSION['pId'] as $id => $product) {
            echo ' <tr>
         <td>';
 
-            echo '<img src="' . $prodarr['image'] . '" alt="product">';
+            echo '<img class="img-fluid" src="' . $prodarr['image'] . '" alt="product">';
             echo '</td>
         <td>';
             echo $prodarr['name'];
