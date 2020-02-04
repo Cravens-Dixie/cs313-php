@@ -13,7 +13,7 @@
                <div class="col-sm-4">
                    <h2>Morning Sunshine</h2>
                    <h5>Photo of my mornings:</h5>
-                   <img class="img-fluid" src="sunthroughthetrees.jpg" alt="sunshine makes me happy">
+                   <img class="img-fluid" src="/mainPg_images/sunthroughthetrees.jpg" alt="sunshine makes me happy">
                    <p> This where I spend my mornings. I walk, think, pray, and get ready for the day
                        in these woods. Oh, and I walk the dog too.
                    </p>
@@ -22,7 +22,7 @@
 
                    <h2>April Flowers</h2>
                    <h5>Spring flowers are my favorite season!</h5>
-                   <img  id="flowers" class="img-fluid" src="appletreeinapril.jpg" alt="Apple trees have the prettiest flowers">
+                   <img  id="flowers" class="img-fluid" src="/mainPg_images/appletreeinapril.jpg" alt="Apple trees have the prettiest flowers">
                    <p> East TN isn't the best place for fruit trees...too wet. So finding this old apple tree was like
                        finding hidden treasure!
                    </p>
@@ -32,7 +32,7 @@
 
                    <h2>Too Close to OakRidge</h2>
                    <h5>You were meant to stand out...</h5>
-                   <img class="img-fluid" src="fourheadeddaisy.jpg" alt="Be who you are, even if that is a 4-headed daisy">
+                   <img class="img-fluid" src="/mainPg_images/fourheadeddaisy.jpg" alt="Be who you are, even if that is a 4-headed daisy">
                    <p> "Too close to OakRidge" is the local joke whenever you see something a "little" different in nature.
                        I laughed at this flower for several weeks. It needs a good meme...something about being who you are,
                        even if that is a 4-headed daisy in a patch of 1-headed daisies. The fields that surround the woods
@@ -47,7 +47,7 @@
                <div class="col-sm-8">
                    <h2>Walking the Dog</h2>
                    <h5>My personal trainer has four legs.</h5>
-                   <img class="img-fluid" src="louieinsnowywoods.jpg" alt="Louie likes the snowy woods">
+                   <img class="img-fluid" src="/mainPg_images/louieinsnowywoods.jpg" alt="Louie likes the snowy woods">
                    <p> The fall of 2019 was the earliest snow-on-the-ground that I have experienced in Tennessee.
                        I've lived here for 31 years! Fortunately it was the perfect snow for East TN...beautiful
                        and melted off the roads by late afternoon. Louie and I enjoyed our snowy walk.
@@ -58,7 +58,7 @@
 
                    <h2>Camping in the Smoky Mountains</h2>
                    <h5>Father's Day 2019.</h5>
-                   <img class="img-fluid" src="juneinthesmokymountains.jpg" alt="Forest in the Smoky Mountain National Park">
+                   <img class="img-fluid" src="/mainPg_images/juneinthesmokymountains.jpg" alt="Forest in the Smoky Mountain National Park">
                    <p> Father's day weekend was surprisingly cold. We were camping in Treemont so we could see the (end)
                        of the synchronous firefly show. (This happens in only two places...the Smoky Mountains and somewhere
                        in China.) We knew it was going to be cool...in the valley. We froze in the mountains. You might call
