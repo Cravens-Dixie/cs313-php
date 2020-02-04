@@ -1,0 +1,36 @@
+CREATE TABLE notes
+(
+  notes_id  	serial 	 		 	PRIMARY KEY   	NOT NULL
+, notes	 	VARCHAR(50)		 					NOT NULL
+, speaker_id  INT		 				NOT NULL     REFERENCES speaker(speaker_id)
+, account_id 	INT 	 						NOT NULL  	REFERENCES account(account_id)
+, session_id 	INT 					NOT NULL 	 REFERENCES session(session_id)
+); 
+
+CREATE TABLE session
+(
+  session_id 	 serial  		 	PRIMARY KEY   	NOT NULL
+, session		 VARCHAR(255)					 	NULL
+);
+
+CREATE TABLE speaker
+(
+  speaker_id 		serial 	 		PRIMARY KEY  	NOT NULL
+, speaker_name	 	VARCHAR(50) 						NOT NULL
+);
+
+CREATE TABLE account
+(
+  account_id           serial	 		PRIMARY KEY 	NOT NULL
+, account_name        	VARCHAR(50) 					NOT NULL
+);
+
+INSERT INTO  notes(notes, speaker_id, account_id, session_id)
+VALUES ('Awww yeah note #2 babyyyy'
+,(SELECT speaker_id FROM speaker WHERE speaker_name = 'Stefnie Russel Ballard')
+,(SELECT account_id FROM account WHERE account_name = 'Corbin')
+,(SELECT session_id FROM session WHERE session = 'October 2020'));
+
+SELECT notes, speaker_name FROM notes INNER JOIN speaker ON notes.speaker_id = speaker.speaker_id
+WHERE session_id = 1;
+
