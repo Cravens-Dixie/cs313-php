@@ -30,7 +30,13 @@ catch (PDOException $ex)
 </head>
     <body>
         <h2> Scripture Resources</h2>
-    <p></p>
+        <p><?php
+            foreach ($db->query('SELECT book, chapter, verse, content FROM scriptures')AS $row)
+            {
+                echo '<b>' . $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . "-" . '</b>';
+                echo '"' . $row['content'] . '"'. "<br/>";
+            }
+            ?></p>
     </body>
 
 </html>
