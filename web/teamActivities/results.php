@@ -15,7 +15,7 @@ var_dump($_POST);
 <h2>Results</h2>
 <?php
 
-foreach ($db->query('SELECT book, chapter, verse, content FROM scriptures WHERE book = /"' .  $_POST['book'] . '/"') AS $row) {
+foreach ($db->query('SELECT book, chapter, verse, content FROM scriptures WHERE book = \'' .  $_POST['book'] . '\';') AS $row) {
     echo '<b>' . $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . "-" . '</b>';
     echo '"' . $row['content'] . '"' . "<br/>";
 }
