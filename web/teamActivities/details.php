@@ -13,11 +13,11 @@ require('dbconnect.php');
 <body>
 <?php
 
-echo($db->query('SELECT id, book, chapter, verse, content FROM scriptures WHERE id = \'' . $_GET['id'] . '\';') AS $row) {
+foreach($db->query('SELECT id, book, chapter, verse, content FROM scriptures WHERE id = \'' . $_GET['id'] . '\';') AS $row) {
 
     echo $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . "- " . $row['content'];
 
-
+}
 ?>
 
 </body>
