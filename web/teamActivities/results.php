@@ -1,6 +1,7 @@
 <?php
 
 require('dbconnect.php');
+var_dump($_POST);
 ?>
 
 <!doctype html>
@@ -11,6 +12,7 @@ require('dbconnect.php');
     <title>CS 331 Team Activity</title>
 </head>
 <body>
+<h2>Results</h2>
 <?php
 
 foreach ($db->query('SELECT book, chapter, verse, content FROM scriptures WHERE book = ' .  $_POST['book']) AS $row) {
