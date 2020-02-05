@@ -1,5 +1,5 @@
 <?php
-$_POST['book']
+
 require ('dbconnect.php');
 ?>
 
@@ -12,7 +12,13 @@ require ('dbconnect.php');
 </head>
 <body>
 <?php
-echo $_POST['book'];
+
+foreach ($db->query('SELECT book, chapter, verse, content FROM scriptures WHERE book = $_POST[\'book\']') AS $row) {
+    echo '<b>' . $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . "-" . '</b>';
+    echo '"' . $row['content'] . '"' . "<br/>";
+}
+
+
 ?>
 
 </body>
