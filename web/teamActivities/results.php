@@ -16,8 +16,8 @@ var_dump($_POST);
 <?php
 
 foreach ($db->query('SELECT book, chapter, verse, content FROM scriptures WHERE book = \'' .  $_POST['book'] . '\';') AS $row) {
-    echo '<b>' . $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . "-" . '</b>';
-    echo '"' . $row['content'] . '"' . "<br/>";
+    echo '<a href="details.php"><b>' . $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . "-" . '</b></a>';
+    $_SESSION['content'] = $row['content'];
 }
 
 

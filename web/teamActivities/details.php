@@ -1,6 +1,6 @@
 <?php
 
-require ('dbconnect.php');
+
 ?>
 
 <!doctype html>
@@ -11,7 +11,9 @@ require ('dbconnect.php');
     <title>CS 331 Team Activity</title>
 </head>
 <body>
-
+<?php
+echo $_SESSION['content'];
+?>
 
 </body>
 </html>
