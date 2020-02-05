@@ -1,3 +1,5 @@
+Team Activity week 05
+
 CREATE TABLE scriptures (
 id SERIAL NOT NULL PRIMARY KEY,
 book VARCHAR(50) NOT NULL,
@@ -20,3 +22,6 @@ knoweth all things.'),
 ('Mosiah', '16', '9', 'He is the light and the life of the world; yea, 
 a light that is endless, that can never be darkened; yea, and also a
  life which is endless, that there can be no more death.');
+
+
+https://morning-wildwood-68647.herokuapp.com/assignmentsPage.php

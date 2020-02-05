@@ -26,7 +26,7 @@ catch (PDOException $ex)
     <meta charset="UTF-8">
     <meta name="author" content="Dixie Cravens">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CS 331 Hello World</title>
+    <title>CS 331 Team Activity</title>
 </head>
     <body>
         <h2> Scripture Resources</h2>
@@ -36,7 +36,14 @@ catch (PDOException $ex)
                 echo '<b>' . $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . "-" . '</b>';
                 echo '"' . $row['content'] . '"'. "<br/>";
             }
-            ?></p>
+            ?>
+        </p>
+
+         <form action="results.php" method="post">
+            Book: <input type="text" name="book"><br>
+            <input type="submit">
+        </form>
+
     </body>
 
 </html>
