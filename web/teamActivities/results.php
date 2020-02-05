@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require('dbconnect.php');
 var_dump($_POST);
 ?>
