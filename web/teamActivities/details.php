@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+require('dbconnect.php');
 ?>
 
 <!doctype html>
@@ -12,7 +12,12 @@ session_start();
 </head>
 <body>
 <?php
-echo $_SESSION['content'];
+
+echo($db->query('SELECT id, book, chapter, verse, content FROM scriptures WHERE id = \'' . $_GET['id'] . '\';') AS $row) {
+
+    echo $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . "- " . $row['content'];
+
+
 ?>
 
 </body>

@@ -15,9 +15,11 @@ var_dump($_POST);
 <h2>Results</h2>
 <?php
 
-foreach ($db->query('SELECT book, chapter, verse, content FROM scriptures WHERE book = \'' .  $_POST['book'] . '\';') AS $row) {
-    echo '<a href="details.php"><b>' . $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . "-" . '</b></a>';
-    $_SESSION['content'] = $row['content'];
+foreach ($db->query('SELECT id, book, chapter, verse, content FROM scriptures WHERE book = \'' .  $_POST['book'] . '\';') AS $row) {
+
+    echo '<a href="details.php?id=' . $row['id'] . '\">' .  $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . '</a>';
+?>
+
 }
 
 
