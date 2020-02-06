@@ -10,7 +10,7 @@ include 'student_header.php';
 <div class="container">
     <h2>Create a new student</h2>
     <p>Type in the new student's full name in the box below.</p>
-<!--    TODO fill in correct action page-->
+<!--    TODO create correct form action-->
     <form action="#">
         <div class="form-group">
             <label for="name">Full Name:</label>
@@ -29,6 +29,7 @@ include 'student_header.php';
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
     </form>
+</div>
 </div>
 
 
