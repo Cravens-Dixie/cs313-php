@@ -15,16 +15,16 @@ include 'student_header.php';
         <input type="text" class="form-control" id="name">
     </div>
     <h2>Select Courses</h2>
-    <p>The form below contains three checkboxes. The last option is disabled:</p>
+    <p>Check every course student is taking:</p>
     <form>
         <div class="checkbox">
-            <label><input type="checkbox" value="">Option 1</label>
+            <label><input type="checkbox" value="">Course 1</label>
         </div>
         <div class="checkbox">
-            <label><input type="checkbox" value="">Option 2</label>
+            <label><input type="checkbox" value="">Course 2</label>
         </div>
-        <div class="checkbox disabled">
-            <label><input type="checkbox" value="" disabled>Option 3</label>
+        <div class="checkbox">
+            <label><input type="checkbox" value="">Course 3</label>
         </div>
     </form>
 </div>
