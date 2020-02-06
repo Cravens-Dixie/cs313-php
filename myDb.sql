@@ -22,6 +22,7 @@ student_id  	int  	NOT NULL   	REFERENCES students(student_id),
 assignment_id 	int 	NOT NULL 	REFERENCES assignments(assignment_id) 
 );
 
+
 #insert data into tables---------------------------------------------------------
 #table students---------------------------Key(1=Seth, 2=Catherine, 3=Dixie)--
 INSERT INTO students(student_name)
@@ -30,6 +31,13 @@ INSERT INTO students(student_name)
 VALUES ('Catherine Cravens');
 INSERT INTO students(student_name)
 VALUES ('Dixie Cravens');
+
+#2/4/20 could have done:
+#INSERT INTO students(student_name)
+#VALUES 
+#('Seth Cravens'),
+#('Catherine Cravens'),
+#('Dixie Cravens');
 
 #table courses -------------------------Key(1=Pre-Algebra, 2=Epsilon, 3=LA-11, 4=LA-5,
  #---------------------------6=Spanish,7=World History, 8=Piano, 9=Anatomy, 10=CS313)-- 
