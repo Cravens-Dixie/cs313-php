@@ -12,6 +12,7 @@ include 'student_header.php';
         <h2>Create a new Assignment</h2>
         <p>Select a course from the menu. Note, the course must exist before any assignments are created.</p>
         <p>Click on the desired course and the fields will become available.</p>
+        <!--    TODO create correct form action-->
         <form action="#">
             <div class="dropdown">
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Courses
