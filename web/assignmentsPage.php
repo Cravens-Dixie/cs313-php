@@ -20,7 +20,7 @@
              <div class="card">
                   <img src="notComplete.jpg" class="card-img-top" alt="Shopping cart">
                   <div class="card-body">
-                       <h5 class="text-center">Week 5 Assignment</h5>
+                       <h5 class="text-center">Team Assignments</h5>
                        <h6 class="text-center">Working</h6>
                         <a href="/teamActivities/teamAct05.php" class="btn btn-info btn-block" role="button">Go To Assignment</a>
                   </div>
@@ -28,15 +28,15 @@
               <div class="card">
                 <img src="notComplete.jpg" class="card-img-top" alt="Shopping cart">
                 <div class="card-body">
-                     <h5 class="text-center">Week 6 Assignment</h5>
+                     <h5 class="text-center">Week 5 Assignment</h5>
                      <h6 class="text-center">Not Completed</h6>
-                     <a href="#" class="btn btn-info btn-block" role="button">Go To Assignment</a>
+                     <a href="/wk5_studentAssignments/index_stdntDB.php" class="btn btn-info btn-block" role="button">Go To Assignment</a>
                 </div>
               </div>
                <div class="card">
                    <img src="notComplete.jpg" class="card-img-top" alt="Shopping cart">
                    <div class="card-body">
-                         <h5 class="text-center">Week 7 Assignment</h5>
+                         <h5 class="text-center">Week 6 Assignment</h5>
                          <h6 class="text-center">Not Completed</h6>
                          <a href="#" class="btn btn-info btn-block" role="button">Go To Assignment</a>
                    </div>
