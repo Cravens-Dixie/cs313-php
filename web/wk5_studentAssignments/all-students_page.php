@@ -26,7 +26,7 @@ include 'student_header.php';
 
         foreach ($db->query('SELECT student_id, student_name FROM students') AS $row) {
 
-            echo '<a href="student_page.php?id=' . $row['student_id'] . '">' .  $row['student_name'] . '</a>';
+            echo '<a href="student_page.php?id=' . $row['student_id'] . '">' .  $row['student_name'] . '</a><br>';
         }
         ?>
     </div>
