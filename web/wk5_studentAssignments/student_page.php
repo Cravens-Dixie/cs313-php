@@ -1,7 +1,7 @@
 <?php
 session_start();
 require('dbConnect.php');
-$db = get_db();
+#$db = get_db();
 
 $student_id = htmlspecialchars($_GET["id"]);
 print_r($_SESSION);
