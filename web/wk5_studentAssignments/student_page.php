@@ -3,14 +3,25 @@
 require('dbConnect.php');
 $db = get_db();
 $id = htmlspecialchars($_GET["id"]);
-$query = 'SELECT c.student_name, s.assignment_id FROM student_assignment AS s JOIN students AS c
- ON s.student_id = c.student_id WHERE c.student_id=:id';
+$query = 'SELECT 
+students.student_name, 
+courses.course_name, 
+assignments.assignment, 
+assignments.due_date    
+FROM students
+INNER JOIN student_assignment ON student_assignment.student_id = students.student_id
+INNER JOIN assignments ON student_assignment.assignment_id = assignments.assignment_id
+INNER JOIN courses ON assignments.course_id = courses.course_id
+WHERE students.student_id=:id
+ORDER BY courses.course_name';
 $stmt = $db->prepare($query);
 $stmt->bindValue(':id', $id, PDO::PARAM_INT);
 $stmt->execute();
 $names = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $name = $names[0]['student_name'];
-$asId = $names[1]['assignment_id'];
+$course_name = $names[1]['course_name'];
+$asmt = $names[2]['assignment'];
+$due_date = $names[3]['due_date'];
 #print_r($_SESSION);
 #var_dump($_GET);
 ?>
@@ -23,7 +34,6 @@ include 'student_header.php';
     <body>
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
-        <!--        TODO php tp pull student name into welcome statement-->
                 <h1 class="display-4">Welcome <?php
                     echo $name;?>!</h1>
                 <p class="lead"> Listed are courses and related assignments for the next 7 days. To see a full assignment list, click on the course.</p>
@@ -31,9 +41,19 @@ include 'student_header.php';
             </div>
         </div>
         <div class="container">
-<!--           TODO php to pull student-assignment table for selected student-->
+            <?php
+                foreach ($names as $assignment){
+                    echo "<p><ul><li>$course_name: $asmt --$due_date </li></ul></p>";
+//                    $name = $assignment['course_name'];
+//                    $stAssignment = $assignment['assignment'];
+//                    $dueDate = $assignment['due_date'];
+//                    $id = $assignment['course_id'];
+//
+//                    echo "<p><ul><li>$course_name- $stAssignment- $dueDate</li></ul></p>";
+                }
+            ?>
             <a class="btn btn-primary btn-lg" href="new_course_form.php" role="button">Add Course</a>
-<!--could drop a course or edit student here-->
+            <!--could drop a course or edit student here-->
         </div>
 
     </body>
