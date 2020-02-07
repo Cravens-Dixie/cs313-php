@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 require('dbConnect.php');
 $query = 'SELECT student_id, student_name FROM students';
 $stmt = $db->prepare($query);
