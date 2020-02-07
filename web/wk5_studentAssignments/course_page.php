@@ -19,7 +19,7 @@ $stmt->execute();
 $names = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $course_name = $names['course_name'];
 var_dump($names);
-var_dump($name);
+var_dump($course_name);
 ?>
 
 <!doctype html>
