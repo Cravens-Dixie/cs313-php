@@ -79,20 +79,52 @@
         <button type="submit" class="btn btn-default">Submit</button>
     </form>
 </div>
-
-    <!--Courses page-->
+<!--All-courses page-->
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
-        <!--        TODO php tp pull student name into welcome statement-->
         <h1 class="display-4">Courses</h1>
-        <p class="lead"> Listed are all courses. To see a full assignment list, click on the course.</p>
+        <p class="lead"> Listed are all courses. To see a full assignment list or to add an assignment, click on the course.</p>
         <p class="lead">To add a new course, click the "Add Course" button at the bottom of the screen.</p>
     </div>
 </div>
 <div class="container">
-    <!--           TODO php to pull student-assignment table for selected student-->
+    <!--           TODO php to pull courses table as links to related assignments-->
+    <button type="button" class="btn btn-primary btn-lg">See Students</button>
     <a class="btn btn-primary btn-lg" href="new_course_form.php" role="button">Add Course</a>
 
+</div>
+
+    <!--Course page-->
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Course (PHP course name)</h1>
+        <p class="lead"> All assignments for a course are listed. </p>
+        <p class="lead"> To see which students are in the course, click the "See Students" button. </p>
+        <p class="lead">To add a new assignment, click the "Add Assignment" button at the bottom of the screen.</p>
+
+    </div>
+</div>
+<div class="container">
+    <!--           TODO php to pull assignments table for specified course-->
+    <a class="btn btn-primary btn-lg" href="#" role="button">See Students</a>
+    <a class="btn btn-primary btn-lg" href="new_assignment_form.php" role="button">Add Assignment</a>
+
+</div>
+
+<!-- new course form-->
+<div class="container">
+    <h2>Create a new course</h2>
+    <p>Type the new course title in the box below.</p>
+    <form action="#">
+        <div class="form-group">
+            <label for="course">Course Name:</label>
+            <input type="text" class="form-control" id="course">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+</div>
+<div class="container">
+    <a class="btn btn-primary btn-lg" href="new_course_form.php" role="button">Add Assignment</a>
 </div>
 
 
@@ -127,21 +159,7 @@
             </form>
         </div>
 
-<!-- new course form-->
-            <div class="container">
-                <h2>Create a new course</h2>
-                <p>Type the new course title in the box below.</p>
-                <form action="#">
-                    <div class="form-group">
-                        <label for="course">Course Name:</label>
-                        <input type="text" class="form-control" id="course">
-                    </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
-                </form>
-            </div>
-            <div class="container">
-                <a class="btn btn-primary btn-lg" href="new_course_form.php" role="button">Add Assignment</a>
-            </div>
+
 
 </div>
 

@@ -19,7 +19,7 @@ include 'student_header.php';
         <div class="container">
 <!--           TODO php to pull student-assignment table for selected student-->
             <a class="btn btn-primary btn-lg" href="new_course_form.php" role="button">Add Course</a>
-
+<!--could drop a course or edit student here-->
         </div>
 
     </body>
