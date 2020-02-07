@@ -23,6 +23,8 @@ include 'student_header.php';
     <h3>Students</h3>
     <div>
         <?php
+        $_SESSION['student_id'] = $row['student_id'];
+        $_SESSION['student_name'] = $row['student_name'];
 
         foreach ($db->query('SELECT student_id, student_name FROM students') AS $row) {
 
