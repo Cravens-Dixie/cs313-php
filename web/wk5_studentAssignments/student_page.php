@@ -1,7 +1,7 @@
 <?php
-session_start();
-require('dbConnect.php');
 
+require('dbConnect.php');
+$db = get_db();
 $id = htmlspecialchars($_GET["id"]);
 $stmt = $db->prepare('SELECT student_name FROM students WHERE student_id=:id');
 $stmt->bindValue(':id', $id, PDO::PARAM_INT);

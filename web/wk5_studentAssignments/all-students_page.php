@@ -1,6 +1,7 @@
 <?php
 
 require('dbConnect.php');
+$db = get_db();
 $query = 'SELECT student_id, student_name FROM students';
 $stmt = $db->prepare($query);
 $stmt->execute();
