@@ -26,11 +26,11 @@ include 'student_header.php';
 
         foreach ($db->query('SELECT student_id, student_name FROM students') AS $row) {
 
-            echo '<a href="student_page.php?id=' . $row['student_id'] . '">' .  $row['student_name'] . '</a><br>';
+            echo '<p><a href="student_page.php?id=' . $row['student_id'] . '">' .  $row['student_name'] . '</a></p>';
         }
         ?>
     </div>
-    <a class="btn btn-primary btn-lg" href="new_student_form.php" role="button">Add Student</a>
+    <a class="btn btn-primary" href="new_student_form.php" role="button">Add Student</a>
 
 </div>
 
