@@ -11,9 +11,7 @@ $students = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <!doctype html>
 <html lang="en">
-<?php
-include 'student_header.php';
-?>
+<?php include('student_header.php');?>
 <body>
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
