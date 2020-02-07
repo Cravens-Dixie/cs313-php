@@ -23,10 +23,14 @@ include 'student_header.php';
     <h3>Students</h3>
     <div>
         <?php
-        $_SESSION['student_id'] = $row['student_id'];
-        $_SESSION['student_name'] = $row['student_name'];
+        $statement = $db->prepare('SELECT student_id, student_name FROM students');
+        $statement->execute();
 
-        foreach ($db->query('SELECT student_id, student_name FROM students') AS $row) {
+        while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+            $name = $row['student_name'];
+            $id = $row['student_id'];
+            $_SESSION['student_name'] = $name;
+            $_SESSION['student_id'] = $id;
 
             echo '<p><a href="student_page.php?id=' . $row['student_id'] . '">' .  $row['student_name'] . '</a></p>';
         }
