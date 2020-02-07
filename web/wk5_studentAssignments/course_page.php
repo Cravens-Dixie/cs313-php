@@ -18,7 +18,8 @@ $stmt->bindValue(':id', $id, PDO::PARAM_INT);
 $stmt->execute();
 $names = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $course_name = $names[1]['course_name'];
-#var_dump($_POST);
+var_dump($names);
+var_dump($name);
 ?>
 
 <!doctype html>
