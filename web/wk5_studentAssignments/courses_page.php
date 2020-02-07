@@ -10,14 +10,13 @@ include 'student_header.php';
 <body>
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
-        <!--        TODO php tp pull student name into welcome statement-->
-        <h1 class="display-4">Assignments</h1>
-        <p class="lead"> Listed are courses and related assignments for the next 7 days. To see a full assignment list, click on the course.</p>
+        <h1 class="display-4">Courses</h1>
+        <p class="lead"> Listed are all courses. To see a full assignment list, click on the course.</p>
         <p class="lead">To add a new course, click the "Add Course" button at the bottom of the screen.</p>
     </div>
 </div>
 <div class="container">
-    <!--           TODO php to pull student-assignment table for selected student-->
+    <!--           TODO php to pull courses table as links to related assignments-->
     <a class="btn btn-primary btn-lg" href="new_course_form.php" role="button">Add Course</a>
 
 </div>

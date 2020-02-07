@@ -10,6 +10,24 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     </head>
     <body>
+
+<!--    Landing page-->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Student Assignments Landing Page</h1>
+            <p class="lead">Welcome students and teachers! Please select what you would like to do.</p>
+        </div>
+
+        <div class="d-flex p-2">
+            <div class="d-flex flex-row">
+                <div class="d-flex justify-content-center">
+                    <a class="btn btn-primary btn-lg" href="#" role="button">Students</a>
+                    <a class="btn btn-primary btn-lg" href="#" role="button">Courses</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
 <!--All students page  -->
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
@@ -38,22 +56,44 @@
     <a class="btn btn-primary btn-lg" href="new_course_form.php" role="button">Add Course</a>
 
 </div>
-<!--    Landing page-->
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-            <h1 class="display-4">Student Assignments Landing Page</h1>
-            <p class="lead">Welcome students and teachers! Please select what you would like to do.</p>
+<!-- new student form-->
+<div class="container">
+    <h2>Create a new student form</h2>
+    <p>Type in the new student's full name in the box below.</p>
+    <form action="#">
+        <div class="form-group">
+            <label for="name">Full Name:</label>
+            <input type="text" class="form-control" id="name">
         </div>
+        <h2>Select Courses</h2>
+        <p>Check every course student is taking:</p>
+        <div class="checkbox">
+            <label><input type="checkbox" value="">Course 1</label>
+        </div>
+        <div class="checkbox">
+            <label><input type="checkbox" value="">Course 2</label>
+        </div>
+        <div class="checkbox">
+            <label><input type="checkbox" value="">Course 3</label>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+</div>
 
-        <div class="d-flex p-2">
-            <div class="d-flex flex-row">
-                <div class="d-flex justify-content-center">
-                    <a class="btn btn-primary btn-lg" href="#" role="button">Students</a>
-                    <a class="btn btn-primary btn-lg" href="#" role="button">Courses</a>
-                </div>
-            </div>
-        </div>
+    <!--Courses page-->
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <!--        TODO php tp pull student name into welcome statement-->
+        <h1 class="display-4">Courses</h1>
+        <p class="lead"> Listed are all courses. To see a full assignment list, click on the course.</p>
+        <p class="lead">To add a new course, click the "Add Course" button at the bottom of the screen.</p>
     </div>
+</div>
+<div class="container">
+    <!--           TODO php to pull student-assignment table for selected student-->
+    <a class="btn btn-primary btn-lg" href="new_course_form.php" role="button">Add Course</a>
+
+</div>
 
 
 
@@ -103,30 +143,8 @@
                 <a class="btn btn-primary btn-lg" href="new_course_form.php" role="button">Add Assignment</a>
             </div>
 
-<!-- new student form-->
-            <div class="container">
-                <h2>Create a new student</h2>
-                <p>Type in the new student's full name in the box below.</p>
-                <form action="#">
-                    <div class="form-group">
-                        <label for="name">Full Name:</label>
-                        <input type="text" class="form-control" id="name">
-                    </div>
-                    <h2>Select Courses</h2>
-                    <p>Check every course student is taking:</p>
-                    <div class="checkbox">
-                        <label><input type="checkbox" value="">Course 1</label>
-                    </div>
-                    <div class="checkbox">
-                        <label><input type="checkbox" value="">Course 2</label>
-                    </div>
-                    <div class="checkbox">
-                        <label><input type="checkbox" value="">Course 3</label>
-                    </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
-                </form>
-            </div>
-        </div>
+</div>
+
 
     </body>
     </html>
