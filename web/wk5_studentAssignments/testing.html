@@ -10,6 +10,69 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     </head>
     <body>
+<!--    Student page-->
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <!--        TODO php tp pull student name into welcome statement-->
+        <h1 class="display-4">Welcome (student)</h1>
+        <p class="lead"> Listed are courses and related assignments for the next 7 days. To see a full assignment list, click on the course.</p>
+        <p class="lead">To add a new course, click the "Add Course" button at the bottom of the screen.</p>
+    </div>
+</div>
+<div class="container">
+    <!--           TODO php to pull student-assignment table for selected student-->
+    <a class="btn btn-primary btn-lg" href="new_course_form.php" role="button">Add Course</a>
+
+</div>
+<!--    Landing page-->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Courses and Assignments </h1>
+            <p class="lead">Welcome students and teachers! Please select what you would like to do.</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h3>Students</h3>
+                <p><b>Current Student</b> shows courses and assignments for a selected student.</p>
+                <p><b>Add Student</b> allows a new student to be created.</p>
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Current Students
+                        <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <!--  TODO code here to pull students from database, not hard coded like it is now-->
+                        <li><a href="#">Catherine Cravens</a></li>
+                        <li><a href="#">Seth Cravens</a></li>
+                        <li><a href="#">Dixie Cravens</a></li>
+                    </ul>
+                    <a class="btn btn-primary btn-lg" href="#" role="button">Add Student</a>
+                </div>
+
+            </div>
+            <div class="col-sm-6">
+                <h3>Courses and Assignments</h3>
+                <p><b>Current Courses and Assignments</b> allows assignments to be created and viewed at the course level.</p>
+                <p><b>Add Course</b> allows a course to be created and then create related assignments.</p>
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Current Courses & Assignments
+                        <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <!--  TODO code here to pull courses from database, not hard coded like it is now-->
+                        <li><a href="#">Pre-Calculus</a></li>
+                        <li><a href="#">CS 313</a></li>
+                        <li><a href="#">Epsilon</a></li>
+                        <li><a href="#">Spanish</a></li>
+                    </ul>
+                    <a class="btn btn-primary btn-lg" href="#" role="button">Add Course</a>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
 <!--new assignment form-->
         <div class="container">
             <h2>Create a new Assignment</h2>
@@ -51,7 +114,9 @@
                     </div>
                     <button type="submit" class="btn btn-default">Submit</button>
                 </form>
-
+            </div>
+            <div class="container">
+                <a class="btn btn-primary btn-lg" href="new_course_form.php" role="button">Add Assignment</a>
             </div>
 
 <!-- new student form-->

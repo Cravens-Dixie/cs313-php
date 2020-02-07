@@ -21,6 +21,10 @@ include 'student_header.php';
         </form>
 
     </div>
+<!--    TODO maybe hide this until submit button is clicked-->
+    <div class="container">
+        <a class="btn btn-primary btn-lg" href="new_assignment_form.php" role="button">Add Assignment</a>
+    </div>
 
 
     </body>
