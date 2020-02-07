@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 require('dbConnect.php');
 $db = get_db();
 $query = 'SELECT course_id, course_name FROM courses';

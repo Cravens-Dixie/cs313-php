@@ -1,6 +1,13 @@
 <?php
-session_start();
+
 require('dbConnect.php');
+$db = get_db();
+$id = htmlspecialchars($_GET["id"]);
+$stmt = $db->prepare('SELECT course_name FROM courses WHERE course_id=:id');
+$stmt->bindValue(':id', $id, PDO::PARAM_INT);
+$stmt->execute();
+$names = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$name = $names[0]['course_name'];
 #var_dump($_POST);
 ?>
 
@@ -20,7 +27,8 @@ include 'student_header.php';
     </div>
 </div>
 <div class="container">
-    <!--           TODO php to pull assignments table for specified course-->
+    <h1 class="display-4">Course <?php
+        echo $name;?>!</h1>
     <a class="btn btn-primary btn-lg" href="#" role="button">See Students</a>
     <a class="btn btn-primary btn-lg" href="new_assignment_form.php" role="button">Add Assignment</a>
 <!--could add or drop a student here-->
