@@ -42,11 +42,12 @@ include 'student_header.php';
         </div>
         <div class="container">
             <?php
-                foreach ($names as $assignment){
+                foreach ($names as $assignment) {
                     $course_name = $assignment['course_name'];
                     $asmt = $assignment['assignment'];
                     $due_date = $assignment['due_date'];
                     echo "<p><ul><li>$course_name: $asmt --$due_date </li></ul></p>";
+                }
             ?>
             <a class="btn btn-primary btn-lg" href="new_course_form.php" role="button">Add Course</a>
             <!--could drop a course or edit student here-->
