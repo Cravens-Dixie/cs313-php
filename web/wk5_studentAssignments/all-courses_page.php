@@ -1,6 +1,11 @@
 <?php
 session_start();
 require('dbConnect.php');
+$db = get_db();
+$query = 'SELECT course_id, course_name FROM courses';
+$stmt = $db->prepare($query);
+$stmt->execute();
+$courses = $stmt->fetchAll(PDO::FETCH_ASSOC);
 #var_dump($_POST);
 ?>
 
@@ -18,7 +23,17 @@ include 'student_header.php';
     </div>
 </div>
 <div class="container">
-    <!--           TODO php to pull courses table as links to related assignments-->
+    <h3>Course List</h3>
+    <div>
+        <?php
+        foreach ($courses as $course){
+            $id = $course['course_id'];
+            $name = $course['course_name'];
+            echo "<p><a href=\"course_page.php?id=$id\">$name</a></p>";
+        }
+
+        ?>
+    </div>
     <button type="button" class="btn btn-primary btn-lg">See Students</button>
     <a class="btn btn-primary btn-lg" href="new_course_form.php" role="button">Add Course</a>
 
