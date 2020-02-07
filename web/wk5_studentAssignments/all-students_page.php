@@ -29,10 +29,11 @@ include 'student_header.php';
         while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
             $name = $row['student_name'];
             $id = $row['student_id'];
-            $_SESSION['student_name'] = $name;
-            $_SESSION['student_id'] = $id;
+            #$_SESSION['student_name'] = $name;
+            $_SESSION['student_id'] = $_GET["id"];
 
-            echo '<p><a href="student_page.php?id=' . $row['student_id'] . '">' .  $row['student_name'] . '</a></p>';
+
+            echo '<p><a href=\"student_page.php?id=$id\">$name</a></p>';
         }
         ?>
     </div>
