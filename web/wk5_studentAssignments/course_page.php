@@ -12,8 +12,7 @@ FROM students
 INNER JOIN student_assignment ON student_assignment.student_id = students.student_id
 INNER JOIN assignments ON student_assignment.assignment_id = assignments.assignment_id
 INNER JOIN courses ON assignments.course_id = courses.course_id
-WHERE courses.course_id=:id
-ORDER BY courses.course_name';
+WHERE courses.course_id=:id';
 $stmt = $db->prepare($query);
 $stmt->bindValue(':id', $id, PDO::PARAM_INT);
 $stmt->execute();
@@ -45,7 +44,7 @@ include 'student_header.php';
             $name = $assignment['course_name'];
             $stAssignment = $assignment['assignment'];
             $dueDate = $assignment['due_date'];
-            
+
 
             echo "<p><ul><li>$course_name- $stAssignment- $dueDate</li></ul></p>";
         }
