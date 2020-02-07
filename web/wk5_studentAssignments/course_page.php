@@ -3,7 +3,8 @@
 require('dbConnect.php');
 $db = get_db();
 $id = htmlspecialchars($_GET["id"]);
-$stmt = $db->prepare('SELECT course_name FROM courses WHERE course_id=:id');
+$stmt = $db->prepare('SELECT c. course_name, a.assignment, a.due_date FROM assignments AS a JOIN courses AS c
+ ON a.course_id = c.course_id WHERE course_id=:id');
 $stmt->bindValue(':id', $id, PDO::PARAM_INT);
 $stmt->execute();
 $names = $stmt->fetchAll(PDO::FETCH_ASSOC);
