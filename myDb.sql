@@ -39,7 +39,7 @@ VALUES ('Dixie Cravens');
 #('Catherine Cravens'),
 #('Dixie Cravens');
 
-#table courses -------------------------Key(1=Pre-Algebra, 2=Epsilon, 3=LA-11, 4=LA-5,
+#table courses -------------------Key(1=Pre-Algebra, 2=Epsilon, 3=LA-11, 4=LA-5, 5=Physics,
  #---------------------------6=Spanish,7=World History, 8=Piano, 9=Anatomy, 10=CS313)-- 
 INSERT INTO courses(course_name)
 VALUES ('Pre-Algebra');
@@ -75,6 +75,32 @@ INSERT INTO assignments(assignment, due_date, course_id)
 VALUES ('Pre_algebra chapter 17 Exercises A-E', '2020-02-03',
 (SELECT course_id FROM courses WHERE course_id = '2'));
 
+INSERT INTO assignments(assignment, due_date, course_id)
+VALUES ('Pre_algebra chapter 17 Exercises A-C', '2020-02-03',
+(SELECT course_id FROM courses WHERE course_id = '1')),
+('Spanish book chapter 10 Pages 67-77', '2020-02-10',
+(SELECT course_id FROM courses WHERE course_id = '6'));
+
+INSERT INTO assignments(assignment, due_date, course_id)
+VALUES ('LA Lesson 45-46', '2020-12-03',
+(SELECT course_id FROM courses WHERE course_id = '3')),
+('Spanish book chapter 9 Pages 56-66', '2020-02-10',
+(SELECT course_id FROM courses WHERE course_id = '6')),
+('Piano Pages 12-14', '2020-02-10',
+(SELECT course_id FROM courses WHERE course_id = '8')),
+('LA Lesson 44 Pages 120-128', '2020-02-10',
+(SELECT course_id FROM courses WHERE course_id = '4')),
+('Physics Lesson 15', '2020-02-10',
+(SELECT course_id FROM courses WHERE course_id = '5')),
+('World History chapter 32 Pages 200-203', '2020-02-10',
+(SELECT course_id FROM courses WHERE course_id = '7')),
+('Module 5 Read', '2020-02-10',
+(SELECT course_id FROM courses WHERE course_id = '10')),
+('Module 5 Prove', '2020-02-10',
+(SELECT course_id FROM courses WHERE course_id = '6'));
+
+
+
 #table student_assignment --------------------------------------------------
 INSERT INTO student_assignment(student_id, assignment_id)
 VALUES (
@@ -91,4 +117,98 @@ VALUES (
 (SELECT student_id FROM students WHERE student_id = '1'),
 (SELECT assignment_id FROM assignments WHERE assignment_id = '3'));
 
-       
+INSERT INTO student_assignment(student_id, assignment_id)
+VALUES (
+(SELECT student_id FROM students WHERE student_id = '3'),
+(SELECT assignment_id FROM assignments WHERE assignment_id = '13'));
+INSERT INTO student_assignment(student_id, assignment_id)
+VALUES (
+(SELECT student_id FROM students WHERE student_id = '3'),
+(SELECT assignment_id FROM assignments WHERE assignment_id = '14'));
+INSERT INTO student_assignment(student_id, assignment_id)
+VALUES (
+(SELECT student_id FROM students WHERE student_id = '1'),
+(SELECT assignment_id FROM assignments WHERE assignment_id = '7'));
+INSERT INTO student_assignment(student_id, assignment_id)
+VALUES (
+(SELECT student_id FROM students WHERE student_id = '1'),
+(SELECT assignment_id FROM assignments WHERE assignment_id = '11'));
+INSERT INTO student_assignment(student_id, assignment_id)
+VALUES (
+(SELECT student_id FROM students WHERE student_id = '1'),
+(SELECT assignment_id FROM assignments WHERE assignment_id = '12'));
+INSERT INTO student_assignment(student_id, assignment_id)
+VALUES (
+(SELECT student_id FROM students WHERE student_id = '2'),
+(SELECT assignment_id FROM assignments WHERE assignment_id = '12'));
+
+
+
+
+
+
+
+
+
+#queries for class assignments------------------------------------------------
+ SELECT c. course_name, a.assignment, a.due_date 
+ FROM assignments AS a
+ JOIN courses AS c
+ ON a.course_id = c.course_id;
+ 
+ #for assignment listing on course pge
+ SELECT c. course_name, a.assignment, a.due_date 
+ FROM assignments AS a 
+ JOIN courses AS c
+ ON a.course_id = c.course_id
+ WHERE c.course_id='2';
+ #ORDER BY a.due_date;
+ 
+
+ #gives me assignment_id and student_name using student_id 
+ SELECT c.student_name, s.assignment_id   
+ FROM student_assignment AS s 
+ JOIN students AS c
+ ON s.student_id = c.student_id
+ WHERE c.student_id='2';
+ 
+
+#student_id passed in with $_GET
+#using on student_page
+SELECT 
+students.student_name, 
+courses.course_name, 
+assignments.assignment, 
+assignments.due_date    
+FROM students
+INNER JOIN student_assignment ON student_assignment.student_id = students.student_id
+INNER JOIN assignments ON student_assignment.assignment_id = assignments.assignment_id
+INNER JOIN courses ON assignments.course_id = courses.course_id
+WHERE students.student_id='2'#(:id)
+ORDER BY courses.course_name;
+
+#course_id passed in with $_GET
+#using on course_page
+#----needs more data in student_asignment table--------
+SELECT 
+students.student_name, 
+courses.course_name, 
+assignments.assignment, 
+assignments.due_date    
+FROM students
+INNER JOIN student_assignment ON student_assignment.student_id = students.student_id
+INNER JOIN assignments ON student_assignment.assignment_id = assignments.assignment_id
+INNER JOIN courses ON assignments.course_id = courses.course_id
+WHERE courses.course_id='';#(:id)
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
