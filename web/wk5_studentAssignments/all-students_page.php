@@ -1,5 +1,7 @@
 <?php
-
+session_start();
+require('dbConnect.php');
+#var_dump($_POST);
 ?>
 
 <!doctype html>
@@ -18,6 +20,16 @@ include 'student_header.php';
 </div>
 <div class="container">
     <!--           TODO php to pull ALL student as links-->
+    <h3>Students</h3>
+    <div>
+        <?php
+
+        foreach ($db->query('SELECT student_id, student_name FROM students') AS $row) {
+
+            echo '<a href="student_page.php?id=' . $row['student_id'] . '">' .  $row['student_name'] . '</a>';
+        }
+        ?>
+    </div>
     <a class="btn btn-primary btn-lg" href="new_student_form.php" role="button">Add Student</a>
 
 </div>

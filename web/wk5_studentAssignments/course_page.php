@@ -1,5 +1,7 @@
 <?php
-
+session_start();
+require('dbConnect.php');
+#var_dump($_POST);
 ?>
 
 <!doctype html>
