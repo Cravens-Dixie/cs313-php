@@ -26,7 +26,9 @@ $students = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <h3>Students</h3>
     <div>
         <?php
+        var_dump($students);
         foreach ($students as $student){
+            var_dump($student);
             $id = $student['student_id'];
             $name = $student['student_name'];
             echo '<p><a href="student_page.php?id=$id">$name</a></p>';
