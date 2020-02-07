@@ -1,6 +1,11 @@
 <?php
 session_start();
 require('dbConnect.php');
+$db = get_db();
+$query = 'SELECT student_id, student_name FROM students';
+$stmt = $db->prepare($query);
+$stmt->execute();
+$students = $stmt->fetchAll(PDO::FETCH_ASSOC);
 #var_dump($_POST);
 ?>
 
@@ -23,27 +28,21 @@ include 'student_header.php';
     <h3>Students</h3>
     <div>
         <?php
-        $statement = $db->query('SELECT student_id, student_name FROM students');
-        $statement->setFetchMode(PDO::FETCH_ASSOC);
-        while ($row = $statement->fetch())
-        {
-//            $name = $row['student_name'];
-//            $id = $row['student_id'];
-//            #$_SESSION['student_name'] = $name;
-            $_SESSION['student_id'] = $_GET["id"];
-
-            echo '<p><a href="student_page.php?id=' . $row['student_id'] . '">' . $row['student_name'] . '</a></p>';
+        foreach ($students as $student){
+            $id = $student['student_id'];
+            $name = $student['student_name'];
+            echo "<p><a href='student_page.php?id=$id'>$name</a></p>";
         }
-
-//        while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-//            $name = $row['student_name'];
-//            $id = $row['student_id'];
-//            #$_SESSION['student_name'] = $name;
+//        $statement = $db->query('SELECT student_id, student_name FROM students');
+//        $statement->setFetchMode(PDO::FETCH_ASSOC);
+//        while ($row = $statement->fetch())
+//        {
 //            $_SESSION['student_id'] = $_GET["id"];
 //
-//
-//            echo '<p><a href=\"student_page.php?id=$id\">$name</a></p>';
+//            echo '<p><a href="student_page.php?id=' . $row['student_id'] . '">' . $row['student_name'] . '</a></p>';
 //        }
+
+
         ?>
     </div>
     <a class="btn btn-primary" href="new_student_form.php" role="button">Add Student</a>
