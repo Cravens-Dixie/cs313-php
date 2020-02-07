@@ -1,10 +1,10 @@
 <?php
 session_start();
 require('dbConnect.php');
-print_r($_SESSION);
 
-var_dump($_GET);
 $_SESSION['student_id'] = (int)$_GET["id"];
+print_r($_SESSION);
+#var_dump($_GET);
 ?>
 
 <!doctype html>
