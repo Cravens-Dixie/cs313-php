@@ -1,12 +1,11 @@
 <?php
 session_start();
 require('dbConnect.php');
-#$db = get_db();
 $query = 'SELECT student_id, student_name FROM students';
 $stmt = $db->prepare($query);
 $stmt->execute();
 $students = $stmt->fetchAll(PDO::FETCH_ASSOC);
-#var_dump($_POST);
+
 ?>
 
 <!doctype html>
@@ -31,7 +30,7 @@ include 'student_header.php';
         foreach ($students as $student){
             $id = $student['student_id'];
             $name = $student['student_name'];
-            echo "<p><a href='student_page.php?id=$id'>$name</a></p>";
+            echo '<p><a href="student_page.php?id=$id">$name</a></p>';
         }
 //        $statement = $db->query('SELECT student_id, student_name FROM students');
 //        $statement->setFetchMode(PDO::FETCH_ASSOC);

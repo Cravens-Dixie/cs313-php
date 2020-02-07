@@ -6,7 +6,8 @@ $id = htmlspecialchars($_GET["id"]);
 $stmt = $db->prepare('SELECT student_name FROM students WHERE student_id=:id');
 $stmt->bindValue(':id', $id, PDO::PARAM_INT);
 $stmt->execute();
-$name = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$names = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$name = $names[0]['student_name'];
 #print_r($_SESSION);
 #var_dump($_GET);
 ?>
