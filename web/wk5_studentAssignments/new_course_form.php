@@ -10,7 +10,7 @@ include 'student_header.php';
 
     <div class="container">
         <h2>Create a new course</h2>
-        <p>Type in the new course title in the box below.</p>
+        <p>Type the new course title in the box below.</p>
         <!--    TODO create correct form action-->
         <form action="#">
             <div class="form-group">
