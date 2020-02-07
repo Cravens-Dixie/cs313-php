@@ -31,7 +31,7 @@ $students = $stmt->fetchAll(PDO::FETCH_ASSOC);
             var_dump($student);
             $id = $student['student_id'];
             $name = $student['student_name'];
-            echo '<p><a href="student_page.php?id=$id">$name</a></p>';
+            echo "<p><a href=\"student_page.php?id=$id\">$name</a></p>";
         }
 //        $statement = $db->query('SELECT student_id, student_name FROM students');
 //        $statement->setFetchMode(PDO::FETCH_ASSOC);
