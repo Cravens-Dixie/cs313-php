@@ -3,11 +3,14 @@
 require('dbConnect.php');
 $db = get_db();
 $id = htmlspecialchars($_GET["id"]);
-$stmt = $db->prepare('SELECT student_name FROM students WHERE student_id=:id');
+$query = 'SELECT c.student_name, s.assignment_id FROM student_assignment AS s JOIN students AS c
+ ON s.student_id = c.student_id WHERE c.student_id=:id';
+$stmt = $db->prepare($query);
 $stmt->bindValue(':id', $id, PDO::PARAM_INT);
 $stmt->execute();
 $names = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $name = $names[0]['student_name'];
+$asId = $names[1]['assignment_id'];
 #print_r($_SESSION);
 #var_dump($_GET);
 ?>
