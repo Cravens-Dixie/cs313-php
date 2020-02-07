@@ -3,12 +3,22 @@
 require('dbConnect.php');
 $db = get_db();
 $id = htmlspecialchars($_GET["id"]);
-$stmt = $db->prepare('SELECT c. course_name, a.assignment, a.due_date FROM assignments AS a JOIN courses AS c
- ON a.course_id = c.course_id WHERE c.course_id=:id');
+$query = 'SELECT 
+students.student_name, 
+courses.course_name, 
+assignments.assignment, 
+assignments.due_date    
+FROM students
+INNER JOIN student_assignment ON student_assignment.student_id = students.student_id
+INNER JOIN assignments ON student_assignment.assignment_id = assignments.assignment_id
+INNER JOIN courses ON assignments.course_id = courses.course_id
+WHERE courses.course_id=:id
+ORDER BY courses.course_name';
+$stmt = $db->prepare($query);
 $stmt->bindValue(':id', $id, PDO::PARAM_INT);
 $stmt->execute();
 $names = $stmt->fetchAll(PDO::FETCH_ASSOC);
-$course_name = $names[0]['course_name'];
+$course_name = $names[1]['course_name'];
 #var_dump($_POST);
 ?>
 
@@ -35,7 +45,7 @@ include 'student_header.php';
             $name = $assignment['course_name'];
             $stAssignment = $assignment['assignment'];
             $dueDate = $assignment['due_date'];
-            $id = $assignment['course_id'];
+            
 
             echo "<p><ul><li>$course_name- $stAssignment- $dueDate</li></ul></p>";
         }
