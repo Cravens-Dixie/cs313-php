@@ -26,22 +26,11 @@ $students = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <h3>Students</h3>
     <div>
         <?php
-        var_dump($students);
-        foreach ($students as $student){
-            var_dump($student);
-            $id = $student['student_id'];
-            $name = $student['student_name'];
-            echo "<p><a href=\"student_page.php?id=$id\">$name</a></p>";
-        }
-//        $statement = $db->query('SELECT student_id, student_name FROM students');
-//        $statement->setFetchMode(PDO::FETCH_ASSOC);
-//        while ($row = $statement->fetch())
-//        {
-//            $_SESSION['student_id'] = $_GET["id"];
-//
-//            echo '<p><a href="student_page.php?id=' . $row['student_id'] . '">' . $row['student_name'] . '</a></p>';
-//        }
-
+                foreach ($students as $student){
+                    $id = $student['student_id'];
+                    $name = $student['student_name'];
+                    echo "<p><a href=\"student_page.php?id=$id\">$name</a></p>";
+                }
 
         ?>
     </div>
