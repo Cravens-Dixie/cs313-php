@@ -9,7 +9,7 @@ $stmt->execute();
 $names = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $name = $names[0]['student_name'];
 #print_r($_SESSION);
-var_dump($_GET);
+#var_dump($_GET);
 ?>
 
 <!doctype html>
@@ -22,7 +22,6 @@ include 'student_header.php';
             <div class="container">
         <!--        TODO php tp pull student name into welcome statement-->
                 <h1 class="display-4">Welcome <?php
-                    var_dump($name);
                     echo $name;?>!</h1>
                 <p class="lead"> Listed are courses and related assignments for the next 7 days. To see a full assignment list, click on the course.</p>
                 <p class="lead">To add a new course, click the "Add Course" button at the bottom of the screen.</p>
