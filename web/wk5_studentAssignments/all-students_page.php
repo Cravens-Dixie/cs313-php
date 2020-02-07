@@ -23,18 +23,27 @@ include 'student_header.php';
     <h3>Students</h3>
     <div>
         <?php
-        $statement = $db->prepare('SELECT student_id, student_name FROM students');
-        $statement->execute();
-
-        while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-            $name = $row['student_name'];
-            $id = $row['student_id'];
-            #$_SESSION['student_name'] = $name;
+        $statement = $db->query('SELECT student_id, student_name FROM students');
+        $statement->setFetchMode(PDO::FETCH_ASSOC);
+        while ($row = $statement->fetch())
+        {
+//            $name = $row['student_name'];
+//            $id = $row['student_id'];
+//            #$_SESSION['student_name'] = $name;
             $_SESSION['student_id'] = $_GET["id"];
 
-
-            echo '<p><a href=\"student_page.php?id=$id\">$name</a></p>';
+            echo '<p><a href="student_page.php?id=' . $row['student_id'] . '">' . $row['student_name'] . '</a></p>';
         }
+
+//        while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+//            $name = $row['student_name'];
+//            $id = $row['student_id'];
+//            #$_SESSION['student_name'] = $name;
+//            $_SESSION['student_id'] = $_GET["id"];
+//
+//
+//            echo '<p><a href=\"student_page.php?id=$id\">$name</a></p>';
+//        }
         ?>
     </div>
     <a class="btn btn-primary" href="new_student_form.php" role="button">Add Student</a>
