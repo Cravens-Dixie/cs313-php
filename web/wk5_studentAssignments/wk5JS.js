@@ -1,5 +1,5 @@
 function showStudents() {
-    var para = document.createElement("p");
-    var node = document.createTextNode("Students:");
-    para.appendChild(node);
+    const para = document.createElement("p");
+    const node = document.createTextNode("Students:");
+    let text = para.appendChild(node);
 }
