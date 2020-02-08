@@ -54,6 +54,7 @@ include 'student_header.php';
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Add Course
                     <span class="caret"></span></button>
                 <ul class="dropdown-menu">
+<!--                    TODO add ability to list all courses, not just ones associated with student-->
                 <?php
                 foreach ($names as $course) {
                     $course_name = $course['course_name'];
