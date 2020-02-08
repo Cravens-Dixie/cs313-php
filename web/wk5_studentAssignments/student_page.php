@@ -57,9 +57,9 @@ include 'student_header.php';
 <!--                    TODO add ability to list all courses, not just ones associated with student-->
                 <?php
                 foreach ($names as $course) {
-                    $course_name = $course['course_name'];
+                    $courseName = $course['course_name'];
 
-                    echo "<li><a href=\"#\">$course_name</a></li>";
+                    echo "<li><a href=\"#\">$courseName</a></li>";
                 }
                 ?>
                 </ul>
