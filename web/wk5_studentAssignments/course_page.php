@@ -53,12 +53,12 @@ include 'student_header.php';
         ?>
 
     </p>
-    <button type="button" class="btn btn-primary btn-lg" id="seeStudents">See Students</button>
+    <button type="button" class="btn btn-primary btn-lg" id="seeStudents"onclick="showStudents()">See Students</button>
 <!--    <a class="btn btn-primary btn-lg" href="#" role="button">See Students</a>-->
     <a class="btn btn-primary btn-lg" href="new_assignment_form.php" role="button">Add Assignment</a>
 <!--could add or drop a student here-->
 </div>
-
+<script src="wk5JS.js"></script>
 </body>
 
 </html>

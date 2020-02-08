@@ -17,6 +17,6 @@ include 'student_header.php';
 
 </div>
 
-
+<script src="wk5JS.js"></script>
 </body>
 </html>
