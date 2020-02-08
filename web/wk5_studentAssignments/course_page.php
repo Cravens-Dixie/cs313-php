@@ -51,17 +51,25 @@ include('student_header.php');
         }
 
         ?>
-
     </p>
-    <button type="button" class="btn btn-primary btn-lg" id="seeStudents">See Students</button>
-<!--    <a class="btn btn-primary btn-lg" href="#" role="button">See Students</a>-->
+
     <a class="btn btn-primary btn-lg" href="new_assignment_form.php" role="button">Add Assignment</a>
 <!--could add or drop a student here-->
-    <div id="studentsList">
+    <div>
+        <h3>Students in course:</h3>
+        <p id="studentsList">
+            <?php
+            foreach ($names as $students){
+                $student = $students['student_name'];
+
+                echo "<p><ul><li>$student</li></ul></p>";
+            }
+
+            ?>
+
+        </p>
     </div>
 </div>
-
-<script src="wk5JS.js"></script>
 
 </body>
 
