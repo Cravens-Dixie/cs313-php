@@ -121,30 +121,66 @@ INSERT INTO student_assignment(student_id, assignment_id)
 VALUES (
 (SELECT student_id FROM students WHERE student_id = '3'),
 (SELECT assignment_id FROM assignments WHERE assignment_id = '13'));
+
 INSERT INTO student_assignment(student_id, assignment_id)
 VALUES (
 (SELECT student_id FROM students WHERE student_id = '3'),
 (SELECT assignment_id FROM assignments WHERE assignment_id = '14'));
+
 INSERT INTO student_assignment(student_id, assignment_id)
 VALUES (
 (SELECT student_id FROM students WHERE student_id = '1'),
 (SELECT assignment_id FROM assignments WHERE assignment_id = '7'));
+
 INSERT INTO student_assignment(student_id, assignment_id)
 VALUES (
 (SELECT student_id FROM students WHERE student_id = '1'),
 (SELECT assignment_id FROM assignments WHERE assignment_id = '11'));
+
 INSERT INTO student_assignment(student_id, assignment_id)
 VALUES (
 (SELECT student_id FROM students WHERE student_id = '1'),
 (SELECT assignment_id FROM assignments WHERE assignment_id = '12'));
+
 INSERT INTO student_assignment(student_id, assignment_id)
 VALUES (
 (SELECT student_id FROM students WHERE student_id = '2'),
 (SELECT assignment_id FROM assignments WHERE assignment_id = '12'));
 
+INSERT INTO student_assignment(student_id, assignment_id)
+VALUES (
+(SELECT student_id FROM students WHERE student_id = '1'),
+(SELECT assignment_id FROM assignments WHERE assignment_id = '5'));
 
+INSERT INTO student_assignment(student_id, assignment_id)
+VALUES (
+(SELECT student_id FROM students WHERE student_id = '1'),
+(SELECT assignment_id FROM assignments WHERE assignment_id = '6'));
 
+INSERT INTO student_assignment(student_id, assignment_id)
+VALUES (
+(SELECT student_id FROM students WHERE student_id = '2'),
+(SELECT assignment_id FROM assignments WHERE assignment_id = '6'));
 
+INSERT INTO student_assignment(student_id, assignment_id)
+VALUES (
+(SELECT student_id FROM students WHERE student_id = '2'),
+(SELECT assignment_id FROM assignments WHERE assignment_id = '8'));
+
+INSERT INTO student_assignment(student_id, assignment_id)
+VALUES (
+(SELECT student_id FROM students WHERE student_id = '1'),
+(SELECT assignment_id FROM assignments WHERE assignment_id = '8'));
+
+INSERT INTO student_assignment(student_id, assignment_id)
+VALUES (
+(SELECT student_id FROM students WHERE student_id = '2'),
+(SELECT assignment_id FROM assignments WHERE assignment_id = '9'));
+
+INSERT INTO student_assignment(student_id, assignment_id)
+VALUES (
+(SELECT student_id FROM students WHERE student_id = '2'),
+(SELECT assignment_id FROM assignments WHERE assignment_id = '10'));
 
 
 
