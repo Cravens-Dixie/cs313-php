@@ -50,6 +50,17 @@ include 'student_header.php';
                 }
             ?>
             <a class="btn btn-primary btn-lg" href="new_course_form.php" role="button">Add Course</a>
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Add Course
+                    <span class="caret"></span></button>
+                <?php
+                foreach ($names as $course) {
+                    $course_name = $course['course_name'];
+
+                    echo "<ul class=\"dropdown-menu\"><li><a href=\"#\">$course_name</a></li></ul>";
+                }
+                ?>
+            </div>
             <!--could drop a course or edit student here-->
         </div>
 
