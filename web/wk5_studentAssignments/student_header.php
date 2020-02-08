@@ -1,4 +1,4 @@
- '<head>
+ <head>
     <meta charset="UTF-8">
     <meta name="author" content="Dixie Cravens">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -7,4 +7,4 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
    <title>New Assignment Form</title>
-  </head>';
+  </head>
