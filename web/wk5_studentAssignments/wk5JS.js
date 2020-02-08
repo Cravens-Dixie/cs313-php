@@ -1,8 +1,16 @@
 
 document.getElementById("seeStudents").onclick = showStudents;
 function showStudents() {
-    document.getElementById("studentsList").innerHTML = "Students:";
-    // const para = document.createElement("p");
-    // const node = document.createTextNode("Students:");
-    // let text = para.appendChild(node);
+    document.getElementById("studentsList").innerHTML =
+        "<h3>Students:</h3>" +
+        "<?php\n" +
+        "        foreach ($names as $assignment){\n" +
+        "            $students = $assignment['student_name'];\n" +
+        "\n" +
+        "\n" +
+        "            echo \"<p><ul><li>$students</li></ul></p>\";\n" +
+        "        }\n" +
+        "        ?>" +
+        "";
+
 }
