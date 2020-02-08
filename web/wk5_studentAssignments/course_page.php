@@ -57,6 +57,8 @@ include 'student_header.php';
 <!--    <a class="btn btn-primary btn-lg" href="#" role="button">See Students</a>-->
     <a class="btn btn-primary btn-lg" href="new_assignment_form.php" role="button">Add Assignment</a>
 <!--could add or drop a student here-->
+    <div id="studentsList">
+    </div>
 </div>
 
 </body>
