@@ -58,7 +58,7 @@ include 'student_header.php';
     <a class="btn btn-primary btn-lg" href="new_assignment_form.php" role="button">Add Assignment</a>
 <!--could add or drop a student here-->
 </div>
-<script src="wk5JS.js"></script>
+
 </body>
 
 </html>
