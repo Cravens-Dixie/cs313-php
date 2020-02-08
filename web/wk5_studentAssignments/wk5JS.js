@@ -11,14 +11,3 @@ function showStudents() {
         "        ?>";
 
 }
-<?php
-    foreach ($names as $assignment){
-    $name = $assignment['course_name'];
-    $stAssignment = $assignment['assignment'];
-    $dueDate = $assignment['due_date'];
-
-
-    echo "<p><ul><li>$course_name- $stAssignment- $dueDate</li></ul></p>";
-}
-
-    ?>
