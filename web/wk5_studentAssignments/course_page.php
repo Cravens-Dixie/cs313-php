@@ -32,7 +32,7 @@ include('student_header.php');
     <div class="container">
         <h1 class="display-4">Course <?php echo $course_name;?>!</h1>
         <p class="lead"> All assignments for a course are listed. </p>
-        <p class="lead"> To see which students are in the course, click the "See Students" button. Maybe. It's tricky.</p>
+        <p class="lead"> All students assigned to a course are listed.</p>
         <p class="lead">To add a new assignment, click the "Add Assignment" button at the bottom of the screen.</p>
 
     </div>
