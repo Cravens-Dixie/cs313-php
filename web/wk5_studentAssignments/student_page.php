@@ -36,7 +36,7 @@ include 'student_header.php';
             <div class="container">
                 <h1 class="display-4">Welcome <?php
                     echo $name;?>!</h1>
-                <p class="lead"> Listed are courses and related assignments for the next 7 days. To see a full assignment list, click on the course.</p>
+                <p class="lead"> Listed are your courses and related assignments.</p>
                 <p class="lead">To add a new course, click the "Add Course" button at the bottom of the screen.</p>
             </div>
         </div>
