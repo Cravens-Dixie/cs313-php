@@ -34,7 +34,6 @@ include('student_header.php');
 
         ?>
     </div>
-    <button type="button" class="btn btn-primary btn-lg">See Students</button>
     <a class="btn btn-primary btn-lg" href="new_course_form.php" role="button">Add Course</a>
 
 </div>
