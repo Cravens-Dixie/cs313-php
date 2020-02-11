@@ -34,10 +34,13 @@ require ('dbconnect.php');
                         foreach ($db->query('SELECT name FROM topic;') AS $topics)
                             $topicName = $topics['name'];
                         {
-//                            echo '<input type="checkbox" name="' . $topics['name'] . '" value="' . $topics['name'] .
-//                                '"><label for="' . $topics['name'] . '">' . $topics['name']. '</label> <br>';
-                            echo "<input type='checkbox' name='$topicName' value='$topicName'><label for='$topicName>
-                                    $topicName'</label><br>";
+                            echo '<input type="checkbox" name="' . $topics['name'] . '" value="' . $topics['name'] .
+                                '"><label for="' . $topics['name'] . '">' . $topics['name']. '</label> <br>';
+
+                            
+//                            This doesn't work as is because $topicName is still an array
+//                            echo "<input type='checkbox' name='$topicName' value='$topicName'><label for='$topicName>
+//                                    $topicName'</label><br>";
                         }
 
             ?>
