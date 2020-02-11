@@ -22,13 +22,14 @@ require ('dbconnect.php');
          <form action="results.php" method="post">
             Book: <input type="text" name="book"><br>
             <input type="submit">
-        </form>
+        </form><br>
 
+        <h2>New Scripture</h2>
         <form action="insertNew.php" method="post">
             Book: <input type="text" name="book"><br>
             Chapter: <input type="text" name="chapter"><br>
             Verse: <input type="text" name="verse"><br>
-            Content: <textarea name="content"><br>
+            Content: <textarea name="content"></textarea><br>
             <input type="submit">
         </form>
 
