@@ -1,15 +1,19 @@
 <?php
 require ('dbconnect.php');
-$book = $_POST['book'];
-$chapter = $_POST['chapter'];
-$verse = $_POST['verse'];
-$content = $_POST['content'];
-$topic = $_POST['topic'];
-echo "$book\n";
-echo "$chapter\n";
-echo "$verse\n";
-echo "$content\n";
-echo "$topic";
+$book = htmlspecialchars($_POST['book']);
+$chapter = htmlspecialchars($_POST['chapter']);
+$verse = htmlspecialchars($_POST['verse']);
+$content = htmlspecialchars($_POST['content']);
+$topic = htmlspecialchars(array($_POST['topic']));
+$query = 'INSERT INTO scriptures(book, chapter, verse, content)
+VALUES 
+(:book, :chapter, :verse, :content);';
+$stmt = $db->prepare($query);
+$stmt->bindValue(':book', $book, PDO::PARAM_STR);
+$stmt->bindValue(':chapter', $chapter, PDO::PARAM_INT);
+$stmt->bindValue(':verse', $verse, PDO::PARAM_INT);
+$stmt->bindValue(':content', $content, PDO::PARAM_STR);
+$stmt->execute();
 ?>
 
 <!doctype html>
@@ -21,18 +25,6 @@ echo "$topic";
 </head>
 <body>
 <h2>Add was successful!</h2>
-<?php
-//
-//foreach($db->query('SELECT id, book, chapter, verse, content FROM scriptures WHERE id = ' . $_GET['id']) AS $row) {
-//
-//    echo '<b> . '$row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . "- </b>" . $row['content'];
-//
-//}
-//?>
-
-
-
-
 
 
 </body>
