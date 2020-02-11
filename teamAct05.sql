@@ -1,4 +1,5 @@
-Team Activity week 05
+#Team Activity week 05
+#https://morning-wildwood-68647.herokuapp.com/assignmentsPage.php
 
 CREATE TABLE scriptures (
 id SERIAL NOT NULL PRIMARY KEY,
@@ -24,4 +25,18 @@ a light that is endless, that can never be darkened; yea, and also a
  life which is endless, that there can be no more death.');
 
 
-https://morning-wildwood-68647.herokuapp.com/assignmentsPage.php
+#week 06 ads on to week 05:
+
+CREATE TABLE topic (
+id SERIAL NOT NULL PRIMARY KEY,
+name VARCHAR (50) NOT NULL
+);
+
+INSERT INTO topic (name)
+VALUES 'Faith', 'Sacrifice', 'Charity';
+
+CREATE TABLE scripture_link (
+id SERIAL NOT NULL PRIMARY KEY,
+scripture_id INT NOT NULL REFERENCES scriptures(id),
+topic_id INT NOT NULL REFERENCES topic(id)
+);

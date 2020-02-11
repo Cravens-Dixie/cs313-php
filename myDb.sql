@@ -186,7 +186,7 @@ VALUES (
 
 
 
-#queries for class assignments------------------------------------------------
+#queries for class assignments, week 05------------------------------------------------
  SELECT c. course_name, a.assignment, a.due_date 
  FROM assignments AS a
  JOIN courses AS c
