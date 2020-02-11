@@ -32,9 +32,12 @@ require ('dbconnect.php');
             Content: <textarea name="content"></textarea><br>
             Topic/s: <br><?php
                         foreach ($db->query('SELECT name FROM topic;') AS $topics)
+                            $topicName = $topics['name'];
                         {
-                            echo '<input type="checkbox" name="' . $topics['name'] . '" value="' . $topics['name'] .
-                                '"><label for="' . $topics['name'] . '">' . $topics['name']. '</label> <br>';
+//                            echo '<input type="checkbox" name="' . $topics['name'] . '" value="' . $topics['name'] .
+//                                '"><label for="' . $topics['name'] . '">' . $topics['name']. '</label> <br>';
+                            echo "<input type='checkbox' name='$topicName' value='$topicName'><label for='$topicName>
+                                    $topicName'</label><br>";
                         }
 
             ?>
