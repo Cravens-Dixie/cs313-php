@@ -32,13 +32,12 @@ require ('dbconnect.php');
             Content: <textarea name="content"></textarea><br>
             Topic/s: <br><?php
                         foreach ($db->query('SELECT name FROM topic;') AS $topics)
-                            $topicName = $topics['name'];
                         {
                             echo '<input type="checkbox" name="' . $topics['name'] . '" value="' . $topics['name'] .
                                 '"><label for="' . $topics['name'] . '">' . $topics['name']. '</label> <br>';
 
                             
-//                            This doesn't work as is because $topicName is still an array
+//                            This doesn't work as is because $topicName ($topicName = $topics['name'];)is still an array
 //                            echo "<input type='checkbox' name='$topicName' value='$topicName'><label for='$topicName>
 //                                    $topicName'</label><br>";
                         }
