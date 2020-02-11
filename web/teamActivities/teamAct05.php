@@ -33,7 +33,7 @@ require ('dbconnect.php');
             Topic/s: <br><?php
                         foreach ($db->query('SELECT name FROM topic;') AS $topics)
                         {
-                            echo '<input type="checkbox" name="' . $topics['name'] . '" value="' . $topics['name'] .
+                            echo '<input type="checkbox" name="topic" value="' . $topics['name'] .
                                 '"><label for="' . $topics['name'] . '">' . $topics['name']. '</label> <br>';
 
                             
@@ -43,7 +43,7 @@ require ('dbconnect.php');
                         }
 
             ?>
-            <input type="submit">
+            <input type="submit" value="Add Scripture">
         </form>
 
 

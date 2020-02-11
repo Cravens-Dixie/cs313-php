@@ -1,6 +1,15 @@
 <?php
 require ('dbconnect.php');
-var_dump();
+$book = $_POST['book'];
+$chapter = $_POST['chapter'];
+$verse = $_POST['verse'];
+$content = $_POST['content'];
+$topic = $_POST['topic'];
+echo "$book\n";
+echo "$chapter\n";
+echo "$verse\n";
+echo "$content\n";
+echo "$topic";
 ?>
 
 <!doctype html>
