@@ -30,6 +30,13 @@ require ('dbconnect.php');
             Chapter: <input type="text" name="chapter"><br>
             Verse: <input type="text" name="verse"><br>
             Content: <textarea name="content"></textarea><br>
+            Topic/s: <?php
+                        foreach ($db->query('SELECT name FROM topic;') AS $topics)
+                        {
+                            echo '<input type="checkbox" name="' . $topics['name'] . '" value="' . $topics['name'] . '">';
+                        }
+
+            ?>
             <input type="submit">
         </form>
 
