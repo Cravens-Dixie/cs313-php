@@ -30,10 +30,11 @@ require ('dbconnect.php');
             Chapter: <input type="text" name="chapter"><br>
             Verse: <input type="text" name="verse"><br>
             Content: <textarea name="content"></textarea><br>
-            Topic/s: <?php
+            Topic/s: <br><?php
                         foreach ($db->query('SELECT name FROM topic;') AS $topics)
                         {
-                            echo '<input type="checkbox" name="' . $topics['name'] . '" value="' . $topics['name'] . '"><br>';
+                            echo '<input type="checkbox" name="' . $topics['name'] . '" value="' . $topics['name'] .
+                                '"><label for="' . $topics['name'] . '">' . $topics['name']. '</label> <br>';
                         }
 
             ?>
