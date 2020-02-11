@@ -5,15 +5,16 @@ $chapter = htmlspecialchars($_POST['chapter']);
 $verse = htmlspecialchars($_POST['verse']);
 $content = htmlspecialchars($_POST['content']);
 $topic = htmlspecialchars(array($_POST['topic']));
-$query = 'INSERT INTO scriptures(book, chapter, verse, content)
-VALUES 
-(:book, :chapter, :verse, :content);';
-$stmt = $db->prepare($query);
-$stmt->bindValue(':book', $book, PDO::PARAM_STR);
-$stmt->bindValue(':chapter', $chapter, PDO::PARAM_INT);
-$stmt->bindValue(':verse', $verse, PDO::PARAM_INT);
-$stmt->bindValue(':content', $content, PDO::PARAM_STR);
-$stmt->execute();
+echo var_dump($topic);
+//$query = 'INSERT INTO scriptures(book, chapter, verse, content)
+//VALUES
+//(:book, :chapter, :verse, :content);';
+//$stmt = $db->prepare($query);
+//$stmt->bindValue(':book', $book, PDO::PARAM_STR);
+//$stmt->bindValue(':chapter', $chapter, PDO::PARAM_INT);
+//$stmt->bindValue(':verse', $verse, PDO::PARAM_INT);
+//$stmt->bindValue(':content', $content, PDO::PARAM_STR);
+//$stmt->execute();
 ?>
 
 <!doctype html>
