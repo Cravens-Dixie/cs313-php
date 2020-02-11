@@ -4,7 +4,7 @@ $book = htmlspecialchars($_POST['book']);
 $chapter = htmlspecialchars($_POST['chapter']);
 $verse = htmlspecialchars($_POST['verse']);
 $content = htmlspecialchars($_POST['content']);
-$topic = htmlspecialchars(array($_POST['topic']));
+$topic =array($_POST['topic']);
 echo var_dump($topic);
 //$query = 'INSERT INTO scriptures(book, chapter, verse, content)
 //VALUES
@@ -15,6 +15,11 @@ echo var_dump($topic);
 //$stmt->bindValue(':verse', $verse, PDO::PARAM_INT);
 //$stmt->bindValue(':content', $content, PDO::PARAM_STR);
 //$stmt->execute();
+
+//$new_page = "all_scriptures.php";
+
+//header("Location: $new_page");
+//die();
 ?>
 
 <!doctype html>
