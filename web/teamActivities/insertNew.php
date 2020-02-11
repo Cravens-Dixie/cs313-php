@@ -1,6 +1,6 @@
 <?php
 require ('dbconnect.php');
-$topicId = htmlspecialchars($_POST["id"]);
+var_dump();
 ?>
 
 <!doctype html>
