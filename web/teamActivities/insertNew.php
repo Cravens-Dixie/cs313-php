@@ -56,7 +56,6 @@ $stmt = $db->prepare($query);
 $stmt->execute();
 
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-    var_dump($row);
     echo '<p>';
     echo '<strong>' . $row['book'] . ' ' . $row['chapter'] . ':';
     echo $row['verse'] . '</strong>' . ' - ' . $row['content'];
