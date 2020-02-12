@@ -5,7 +5,7 @@ $chapter = htmlspecialchars($_POST['chapter']);
 $verse = htmlspecialchars($_POST['verse']);
 $content = htmlspecialchars($_POST['content']);
 $topicIds = htmlspecialchars($_POST['chkTopics']);
-echo var_dump($topic);
+var_dump($_POST);
 //$query = 'INSERT INTO scriptures(book, chapter, verse, content)
 //VALUES
 //(:book, :chapter, :verse, :content);';
