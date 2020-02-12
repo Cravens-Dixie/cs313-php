@@ -54,8 +54,9 @@ INNER JOIN scripture_link sl ON s.id = sl.scripture_id
 INNER JOIN topic t ON sl.scripture_id = t.id';
 $stmt = $db->prepare($query);
 $stmt->execute();
-var_dump($stmt);
+
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+    var_dump($row);
     echo '<p>';
     echo '<strong>' . $row['book'] . ' ' . $row['chapter'] . ':';
     echo $row['verse'] . '</strong>' . ' - ' . $row['content'];
