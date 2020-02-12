@@ -16,7 +16,7 @@ include 'student_header.php';
     <form action="#">
         <div class="form-group">
             <label for="name">Full Name:</label>
-            <input type="text" class="form-control" id="name">
+            <input type="text" name="name" class="form-control" id="name">
         </div>
         <h2>Select Courses</h2>
         <p>Check every course student is taking:</p>
@@ -29,21 +29,14 @@ include 'student_header.php';
             $id = $course['course_id'];
             $name = $course['course_name'];
             echo '<div class="checkbox">';
-            echo "<input type='checkbox' name='chkTopics[]' id='chkTopics$id' value='$id'>";
-            echo "<label for='chkTopics$id'>$name</label></div>";
+            echo "<input type='checkbox' name='chkCourses[]' id='chkCourses$id' value='$id'>";
+            echo "<label for='chkCourses$id'>$name</label></div>";
+            echo "<input type='hidden' name='courseName[]' value='$name'>";
 
         }
 
         ?>
-<!--        <div class="checkbox">-->
-<!--            <label><input type="checkbox" value="">Course 1</label>-->
-<!--        </div>-->
-<!--        <div class="checkbox">-->
-<!--            <label><input type="checkbox" value="">Course 2</label>-->
-<!--        </div>-->
-<!--        <div class="checkbox">-->
-<!--            <label><input type="checkbox" value="">Course 3</label>-->
-<!--        </div>-->
+
         <button type="submit" class="btn btn-default">Submit</button>
     </form>
 </div>
