@@ -13,7 +13,7 @@ include 'student_header.php';
     <h2>Create a new student</h2>
     <p>Type in the new student's full name in the box below.</p>
 <!--    TODO create correct form action-->
-    <form action="#">
+    <form action="insertStudent.php" method="post">
         <div class="form-group">
             <label for="name">Full Name:</label>
             <input type="text" name="name" class="form-control" id="name">
