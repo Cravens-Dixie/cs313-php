@@ -5,7 +5,7 @@ $studentName = htmlspecialchars($_POST['name']);
 $courseIds = htmlspecialchars($_POST['chkCourses']);
 $courseNames = htmlspecialchars($_POST['courseName']);
 $studentId = null;
-$query = 'INSERT INTO students(student_name) VALUES(:studentName) RETURNING id INTO $studentId ';
+$query = 'INSERT INTO students(student_name) VALUES(:studentName) RETURNING id INTO studentId ';
 $stmt = $db->prepare($query);
 $stmt->bindValue(':studentName', $studentName , PDO::PARAM_STR);
 $stmt->execute();
