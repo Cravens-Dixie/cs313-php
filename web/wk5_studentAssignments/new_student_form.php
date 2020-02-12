@@ -27,7 +27,7 @@ include 'student_header.php';
         foreach ($courses AS $course)
         {
             $id = $course['course_id'];
-            $name = $course['name'];
+            $name = $course['course_name'];
             echo '<div class="checkbox">';
             echo "<input type='checkbox' name='chkTopics[]' id='chkTopics$id' value='$id'>";
             echo "<label for='chkTopics$id'>$name</label></div>";
