@@ -44,27 +44,39 @@ foreach ($topicIds as $topicId) {
 <h1>Scripture and Topic List</h1>
 
 <?php
-$query = 'SELECT book,
- chapter, 
- verse,
- content, 
- t.name
- FROM scriptures s
-INNER JOIN scripture_link sl ON s.id = sl.scripture_id
-INNER JOIN topic t ON sl.scripture_id = t.id';
-$stmt = $db->prepare($query);
-$stmt->execute();
 
-while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-    echo '<p>';
-    echo '<strong>' . $row['book'] . ' ' . $row['chapter'] . ':';
-    echo $row['verse'] . '</strong>' . ' - ' . $row['content'];
-    echo '<br/>';
-    echo 'Topics: ';
+try {
+    $query = 'SELECT book,
+     chapter, 
+     verse,
+     content, 
+     t.name
+     FROM scriptures s
+    INNER JOIN scripture_link sl ON s.id = sl.scripture_id
+    INNER JOIN topic t ON sl.topic_id = t.id';
+    $stmt = $db->prepare($query);
+    $stmt->execute();
+
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        echo '<p>';
+        echo '<strong>' . $row['book'] . ' ' . $row['chapter'] . ':';
+        echo $row['verse'] . '</strong>' . ' - ' . $row['content'];
+        echo '<br/>';
+        echo 'Topics: ';
+
+
 
 //    $topicQuery =
 //    $stmtTopics =
+    }
 }
+catch (PDOException $ex) {
+    echo "Error with DB. Details: $ex";
+    die();
+}
+
+
+
 
 
 
