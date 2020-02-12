@@ -4,11 +4,12 @@ $db = get_db();
 $studentName = htmlspecialchars($_POST['name']);
 $courseIds = htmlspecialchars($_POST['chkCourses']);
 $courseNames = htmlspecialchars($_POST['courseName']);
-$studentId = null;
+
 $query = 'INSERT INTO students(student_name) VALUES(:studentName) RETURNING student_id INTO [STRICT] $studentId ';
 $stmt = $db->prepare($query);
 $stmt->bindValue(':studentName', $studentName , PDO::PARAM_STR);
 $stmt->execute();
+$studentId = null;
 
 
 //$db->lastInsertId("students_student_id_seq")
