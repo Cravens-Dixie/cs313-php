@@ -5,14 +5,14 @@ $studentName = htmlspecialchars($_POST['name']);
 $courseIds = htmlspecialchars($_POST['chkCourses']);
 $courseNames = htmlspecialchars($_POST['courseName']);
 
-$query = 'INSERT INTO students(student_name) VALUES(:studentName) RETURNING student_id INTO [STRICT] studentId ';
+$query = 'INSERT INTO students(student_name) VALUES(:studentName) RETURNING student_id';
 $stmt = $db->prepare($query);
 $stmt->bindValue(':studentName', $studentName , PDO::PARAM_STR);
 $stmt->execute();
-$studentId = 1;
+$studentId = $db->lastInsertId("students_student_id_seq");
+var_dump($studentId);
 
 
-//$db->lastInsertId("students_student_id_seq")
 foreach ($courseIds as $id) {
     $course_id = $id['chkCourses'];
 
