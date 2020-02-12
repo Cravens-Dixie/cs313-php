@@ -9,7 +9,7 @@ $query = 'INSERT INTO students(student_name) VALUES(:studentName) RETURNING stud
 $stmt = $db->prepare($query);
 $stmt->bindValue(':studentName', $studentName , PDO::PARAM_STR);
 $stmt->execute();
-$studentId = null;
+$studentId = 1;
 
 
 //$db->lastInsertId("students_student_id_seq")
