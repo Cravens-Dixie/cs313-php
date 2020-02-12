@@ -22,8 +22,8 @@ foreach ($topicIds as $topicId) {
     $query = 'INSERT INTO scripture_link(scripture_id, topic_id)
                 VALUES (:scriptureId, :topicId)';
     $stmt = $db->prepare($query);
-    $stmt->bindValue(':scriptureId', $scriptureId);
-    $stmt->bindValue(':topicId', $topicId);
+    $stmt->bindValue(':scripture_id', $scriptureId);
+    $stmt->bindValue(':topic_id', $topicId);
     $stmt->execute();
 }
 
@@ -63,11 +63,7 @@ try {
         echo $row['verse'] . '</strong>' . ' - ' . $row['content'];
         echo '<br/>';
         echo 'Topics: ';
-
-
-
-//    $topicQuery =
-//    $stmtTopics =
+=
     }
 }
 catch (PDOException $ex) {
