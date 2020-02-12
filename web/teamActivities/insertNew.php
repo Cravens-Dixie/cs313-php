@@ -49,11 +49,8 @@ try {
     $query = 'SELECT book,
      chapter, 
      verse,
-     content, 
-     t.name
-     FROM scriptures s
-    INNER JOIN scripture_link sl ON s.id = sl.scripture_id
-    INNER JOIN topic t ON sl.topic_id = t.id';
+     content
+     FROM scriptures';
     $stmt = $db->prepare($query);
     $stmt->execute();
 
@@ -63,7 +60,19 @@ try {
         echo $row['verse'] . '</strong>' . ' - ' . $row['content'];
         echo '<br/>';
         echo 'Topics: ';
-=
+        $topicQuery = 'SELECT name 
+                        FROM topic t
+                        INNER JOIN scripture_link sl 
+                        ON sl.topic_id = t.id
+                        WHERE sl.scripture_id = :scripture_id';
+        $stmtTopics = $db->prepare($topicQuery);
+        $stmtTopics->bindValue(':scripture_id', $row['id']);
+        $stmtTopics->execute();
+
+        while ($topicRow = $stmtTopics->fetch(PDO::FETCH_ASSOC)) {
+            echo $topicRow['name'] . ' ';
+        }
+        echo '</p>';
     }
 }
 catch (PDOException $ex) {
