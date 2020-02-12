@@ -1,4 +1,6 @@
 <?php
+require('dbConnect.php');
+$db = get_db();
 ?>
 <!DOCTYPE html>
 <html>
@@ -18,15 +20,30 @@ include 'student_header.php';
         </div>
         <h2>Select Courses</h2>
         <p>Check every course student is taking:</p>
-        <div class="checkbox">
-            <label><input type="checkbox" value="">Course 1</label>
-        </div>
-        <div class="checkbox">
-            <label><input type="checkbox" value="">Course 2</label>
-        </div>
-        <div class="checkbox">
-            <label><input type="checkbox" value="">Course 3</label>
-        </div>
+        <?php
+        $stmt = $db->prepare('SELECT course_id, course_name FROM courses');
+        $stmt->execute();
+        $courses =  $stmt->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($courses AS $course)
+        {
+            $id = $course['course_id'];
+            $name = $course['name'];
+            echo '<div class="checkbox">';
+            echo "<input type='checkbox' name='chkTopics[]' id='chkTopics$id' value='$id'>";
+            echo "<label for='chkTopics$id'>$name</label></div>";
+
+        }
+
+        ?>
+<!--        <div class="checkbox">-->
+<!--            <label><input type="checkbox" value="">Course 1</label>-->
+<!--        </div>-->
+<!--        <div class="checkbox">-->
+<!--            <label><input type="checkbox" value="">Course 2</label>-->
+<!--        </div>-->
+<!--        <div class="checkbox">-->
+<!--            <label><input type="checkbox" value="">Course 3</label>-->
+<!--        </div>-->
         <button type="submit" class="btn btn-default">Submit</button>
     </form>
 </div>
