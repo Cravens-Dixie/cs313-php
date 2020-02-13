@@ -30,7 +30,7 @@ foreach ($assignments as $assignment) {
     $stmt->execute();
 }
 
-$new_page = "students_page.php";
+$new_page = "student_page.php";
 
 header("Location: $new_page");
 die();
