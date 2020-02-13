@@ -5,16 +5,18 @@ $studentName = htmlspecialchars($_POST['name']);
 $courseIds = htmlspecialchars($_POST['chkCourses']);
 $courseNames = htmlspecialchars($_POST['courseName']);
 
-$query = 'INSERT INTO students(student_name) VALUES(:studentName)';
+$query = 'INSERT INTO students(student_name) VALUES(:studentName) ';
 $stmt = $db->prepare($query);
 $stmt->bindValue(':studentName', $studentName , PDO::PARAM_STR);
 $stmt->execute();
 $studentId = $db->lastInsertId("schema.students_student_id_seq");
 
-
+var_dump($studentId);
 
 foreach ($courseIds as $id) {
+    var_dump($courseIds);
     $course_id = $id['chkCourses'];
+    var_dump($id);
 
     $aQuery = 'SELECT assignment_id FROM assignments
                 WHERE course_id = :course_id';
@@ -35,9 +37,9 @@ foreach ($courseIds as $id) {
 
     }
 }
-    $new_page = "all-students_page.php";
-
-header("Location: $new_page");
+//    $new_page = "all-students_page.php";
+//
+//header("Location: $new_page");
 die();
 
 
