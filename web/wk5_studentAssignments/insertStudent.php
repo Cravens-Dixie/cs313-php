@@ -28,13 +28,14 @@ foreach ($courseIds as $id) {
     $assignment_id = $astmt->fetchAll(PDO::FETCH_ASSOC);
 
     foreach ($assignment_id as $aId) {
-        echo "student_id: $studentId, assignment_id: $aId[0]";
-//        $assig_id = $aId['assignment_id'];
+
+        $assig_id = $aId['assignment_id'];
+        echo "student_id: $studentId, assignment_id: $$assig_id ";
         $saQuery = 'INSERT INTO student_assignment(student_id, assignment_id)
                 VALUES (:student_id, :assignment_id)';
         $sastmt = $db->prepare($aQuery);
         $sastmt->bindValue(':student_id', $studentId);
-        $sastmt->bindValue(':assignment_id', $aId);
+        $sastmt->bindValue(':assignment_id', $assig_id );
         $sastmt->execute();
 
 
