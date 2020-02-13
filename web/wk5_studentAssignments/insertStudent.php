@@ -40,7 +40,7 @@ foreach ($courseIds as $id) {
 //    $new_page = "all-students_page.php";
 //
 //header("Location: $new_page");
-die();
+//die();
 
 
 
