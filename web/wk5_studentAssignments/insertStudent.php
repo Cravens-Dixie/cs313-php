@@ -30,7 +30,7 @@ foreach ($courseIds as $id) {
     foreach ($assignment_id as $aId) {
 
         $assig_id = $aId['assignment_id'];
-//        echo "student_id: $studentId, assignment_id: $assig_id ";
+        echo "student_id: $studentId, assignment_id: $assig_id ";
         $saQuery = 'INSERT INTO student_assignment(student_id, assignment_id)
                 VALUES (:student_id, :assignment_id)';
         $sastmt = $db->prepare($aQuery);
