@@ -10,4 +10,8 @@ $stmt->bindValue(':studentName', $studentName , PDO::PARAM_STR);
 $stmt->execute();
 $courseId = $db->lastInsertId("courses_course_id_seq");
 
+//return to page where all courses are listed, including the newly added one.
+$new_page = "all-courses_page.php";
 
+header("Location: $new_page");
+die();
