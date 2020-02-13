@@ -54,15 +54,16 @@ include 'student_header.php';
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Add Course
                     <span class="caret"></span></button>
                 <ul class="dropdown-menu">
-<!--                    TODO add ability to list all courses, not just ones associated with student-->
+
                 <?php
-                $query = 'SELECT course_name FROM courses';
+                $query = 'SELECT course_id, course_name FROM courses';
                 $stmt = $db->prepare($query);
                 $stmt->execute();
                 $courses = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 foreach ($courses as $course){
                     $name = $course['course_name'];
-                    echo "<li><a href=\"#\">$name</a></li>";
+                    $courseId = $course['course_id'];
+                    echo "<li><a href='connectCourse.php?course_id=$courseId&student_id=$id'>$name</a></li>";
                 }
                 ?>
                 </ul>
