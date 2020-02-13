@@ -29,7 +29,7 @@ $students = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 foreach ($students as $student){
                     $id = $student['student_id'];
                     $name = $student['student_name'];
-                    echo "<p><a href=\"student_page.php?id=$id\">$name</a></p>";
+                    echo "<p><a href='student_page.php?id=$id'>$name</a></p>";
                 }
 
         ?>
