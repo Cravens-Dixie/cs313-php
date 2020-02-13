@@ -4,6 +4,7 @@ $db = get_db();
 $studentName = htmlspecialchars($_POST['name']);
 $courseIds = htmlspecialchars($_POST['chkCourses']);
 $courseNames = htmlspecialchars($_POST['courseName']);
+var_dump($courseIds);
 
 $query = 'INSERT INTO students(student_name) VALUES(:studentName) ';
 $stmt = $db->prepare($query);
@@ -37,10 +38,10 @@ foreach ($courseIds as $id) {
 
     }
 }
-//    $new_page = "all-students_page.php";
-//
-//header("Location: $new_page");
-//die();
+    $new_page = "all-students_page.php";
+
+header("Location: $new_page");
+die();
 
 
 
