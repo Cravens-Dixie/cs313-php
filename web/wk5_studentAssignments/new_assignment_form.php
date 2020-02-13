@@ -1,5 +1,8 @@
 <?php
-
+if (isset($_GET['course_id'])) {
+//    TODO make it auto select course in course list
+}
+$courseId = $_GET['course_id'];
 ?>
 <!DOCTYPE html>
 <html>
