@@ -9,8 +9,8 @@ $query = 'INSERT INTO students(student_name) VALUES(:studentName) RETURNING stud
 $stmt = $db->prepare($query);
 $stmt->bindValue(':studentName', $studentName , PDO::PARAM_STR);
 $stmt->execute();
-$studentId = $db->lastInsertId("students_student_id_seq");
-var_dump($studentId);
+$studentId = $db->lastInsertId("schema.students_student_id_seq");
+
 
 
 foreach ($courseIds as $id) {
