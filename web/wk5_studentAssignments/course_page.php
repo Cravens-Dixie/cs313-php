@@ -2,7 +2,7 @@
 
 require('dbConnect.php');
 $db = get_db();
-$id = htmlspecialchars($_GET["id"]);
+$id = htmlspecialchars($_GET["id"]);//course_id
 $query = 'SELECT 
 students.student_name, 
 courses.course_name, 
@@ -52,8 +52,9 @@ include('student_header.php');
 
         ?>
     </p>
-
+<!--TODO add a course id to the href...make the course show up automatically, but have other courses to choose from if wanted-->
     <a class="btn btn-primary btn-lg" href="new_assignment_form.php" role="button">Add Assignment</a>
+
 <!--could add or drop a student here-->
     <div>
         <h3>Students in course:</h3>

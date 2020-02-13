@@ -237,9 +237,46 @@ INNER JOIN assignments ON student_assignment.assignment_id = assignments.assignm
 INNER JOIN courses ON assignments.course_id = courses.course_id
 WHERE courses.course_id='';#(:id)
  
+ #Week 06 add on to project----------------------------------------
+#insertStudent Page------------------
+ #insert new student into students table:
+INSERT INTO students(student_name) VALUES(:studentName);
+ #bind :studentName to $studentName which comes from form
  
+ #for each courseId coming from form checklist as an array, get related assignments in format of assignment_id.
+# May return 1 or more ids in an array.
+
+SELECT assignment_id FROM assignments
+WHERE course_id = :course_id;
+#bind :course_id to $course_id--comes from foreach loop of above array
+
+INSERT INTO student_assignment(student_id, assignment_id)
+VALUES (:student_id, :assignment_id);
+#bind :student_id to $studentId which comes from INSERT into students(lastInsertId)
+#bind :assignment_id to $assig_id which comes from froeach loop of assignment_id array
+
+#connectCourse page------------------
+#use course_id to SELECT assignment(s) as assignment_id from assignments table
+SELECT assignment_id FROM assignments
+WHERE course_id = :course_id;
+#bind :course_id to $courseId--comes from $_GET
+
+# use assignment_id and $student_id to INSERT into student_assignment tab
+INSERT INTO student_assignment(student_id, assignment_id)
+VALUES (:student_id, :assignment_id);
+#bind :student_id to $studentId($_GET) 
+#bind :assignment_id to $assig_id which comes from above SELECT query
+
  
- 
+#insertCourse page---------------------
+#inserts a new course_name into courses table
+INSERT INTO courses(course_name) VALUES(:courseName);
+#bind :courseName to $courseName($_POST)
+#will generate a new course_id
+
+#new_assignment_form
+
+
  
  
  
