@@ -9,14 +9,31 @@ $studentId = htmlspecialchars($_GET['student_id']);
 
 //var_dump($courseId);
 
-//use courseId($_GET) to get assignment(s) as assignment_id from assignments table
+//use courseId($_GET) to SELECT assignment(s) as assignment_id from assignments table
 // use assignment_id and $studentId($_GET) to INSERT into student_assignment table
 
-$query = 'INSERT INTO students(student_name) VALUES(:studentName) ';
+$query = 'SELECT assignment_id FROM assignments WHERE course_id = :course_id';
 $stmt = $db->prepare($query);
-$stmt->bindValue(':studentName', $studentName , PDO::PARAM_STR);
+$stmt->bindValue(':course_id', $courseId, PDO::PARAM_INT);
 $stmt->execute();
-$studentId = $db->lastInsertId("students_student_id_seq");
+$assignments = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-var_dump($studentId);//returns string(2) "25"
+foreach ($assignments as $assignment) {
+    $asgnmt = $assignment['assignment_id'];
+
+    echo "student_id: $studentId, assignment_id: $asgnmt ";
+
+    $query = 'INSERT INTO student_assignment(student_id, assignment_id) VALUES (:student_id, :assignment_id)';
+    $stmt = $db->prepare($query);
+    $stmt->bindValue(':student_id', $studentId, PDO::PARAM_INT);
+    $stmt->bindValue(':assignment_id', $asgnmt, PDO::PARAM_INT);
+    $stmt->execute();
+}
+
+$new_page = "students_page.php";
+
+header("Location: $new_page");
+die();
+
+
 
