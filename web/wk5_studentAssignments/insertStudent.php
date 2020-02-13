@@ -4,7 +4,7 @@ $db = get_db();
 $studentName = htmlspecialchars($_POST['name']);
 $courseIds = $_POST['chkCourses'];
 //$courseNames = htmlspecialchars($_POST['courseName']);
-//var_dump($courseIds);
+var_dump($courseIds);
 
 $query = 'INSERT INTO students(student_name) VALUES(:studentName) ';
 $stmt = $db->prepare($query);
@@ -12,13 +12,13 @@ $stmt->bindValue(':studentName', $studentName , PDO::PARAM_STR);
 $stmt->execute();
 $studentId = $db->lastInsertId("students_student_id_seq");
 
-//var_dump($studentId);
+var_dump($studentId);
 
 foreach ($courseIds as $id) {
 
-//    var_dump($courseIds);
+    var_dump($courseIds);
     $course_id = $id;
-//    var_dump($id);
+    var_dump($id);
 
     $aQuery = 'SELECT assignment_id FROM assignments
                 WHERE course_id = :course_id';
