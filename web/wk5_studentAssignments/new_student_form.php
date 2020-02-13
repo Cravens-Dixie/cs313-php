@@ -31,7 +31,7 @@ include 'student_header.php';
             echo '<div class="checkbox">';
             echo "<input type='checkbox' name='chkCourses[]' id='chkCourses$id' value='$id'>";
             echo "<label for='chkCourses$id'>$name</label></div>";
-            echo "<input type='hidden' name='courseName[]' value='$name'>";
+//            echo "<input type='hidden' name='courseName[]' value='$name'>";
 
         }
 

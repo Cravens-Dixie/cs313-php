@@ -2,8 +2,8 @@
 require('dbConnect.php');
 $db = get_db();
 $studentName = htmlspecialchars($_POST['name']);
-$courseIds = htmlspecialchars($_POST['chkCourses']);
-$courseNames = htmlspecialchars($_POST['courseName']);
+$courseIds = $_POST['chkCourses'];
+//$courseNames = htmlspecialchars($_POST['courseName']);
 var_dump($courseIds);
 
 $query = 'INSERT INTO students(student_name) VALUES(:studentName) ';
