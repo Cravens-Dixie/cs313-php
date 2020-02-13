@@ -29,8 +29,8 @@ foreach ($assignments as $assignment) {
     $stmt->bindValue(':assignment_id', $asgnmt, PDO::PARAM_INT);
     $stmt->execute();
 }
-
-$new_page = "student_page.php";
+//"student_page.php?id=$id\"
+$new_page = "student_page.php?id=$studentId";
 
 header("Location: $new_page");
 die();
