@@ -44,7 +44,7 @@ foreach ($courseIds as $id) {
         //**this is NOT working
         $saQuery = 'INSERT INTO student_assignment(student_id, assignment_id)
                 VALUES (:student_id, :assignment_id)';
-        $sastmt = $db->prepare($aQuery);
+        $sastmt = $db->prepare($saQuery);
         $sastmt->bindValue(':student_id', $studentId);
         $sastmt->bindValue(':assignment_id', $assig_id );
         $sastmt->execute();
