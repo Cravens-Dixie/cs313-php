@@ -15,8 +15,9 @@ $studentId = $db->lastInsertId("schema.students_student_id_seq");
 var_dump($studentId);
 
 foreach ($courseIds as $id) {
+
     var_dump($courseIds);
-    $course_id = $id['chkCourses'];
+    $course_id = $id;
     var_dump($id);
 
     $aQuery = 'SELECT assignment_id FROM assignments
@@ -27,12 +28,13 @@ foreach ($courseIds as $id) {
     $assignment_id = $astmt->fetchAll(PDO::FETCH_ASSOC);
 
     foreach ($assignment_id as $aId) {
-        $assig_id = $aId['assignment_id'];
+        echo "student_id: $studentId, assignment_id: $aId";
+//        $assig_id = $aId['assignment_id'];
         $saQuery = 'INSERT INTO student_assignment(student_id, assignment_id)
                 VALUES (:student_id, :assignment_id)';
         $sastmt = $db->prepare($aQuery);
         $sastmt->bindValue(':student_id', $studentId);
-        $sastmt->bindValue(':assignment_id', $assig_id);
+        $sastmt->bindValue(':assignment_id', $aId);
         $sastmt->execute();
 
 
