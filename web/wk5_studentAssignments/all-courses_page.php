@@ -29,7 +29,7 @@ include('student_header.php');
         foreach ($courses as $course){
             $id = $course['course_id'];
             $name = $course['course_name'];
-            echo "<p><a href=\"course_page.php?id=$id\">$name</a></p>";
+            echo "<p><a href='course_page.php?id=$id'>$name</a></p>";
         }
 
         ?>
