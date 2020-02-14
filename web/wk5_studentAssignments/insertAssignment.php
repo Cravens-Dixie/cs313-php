@@ -1,7 +1,7 @@
 <?php
 require('dbConnect.php');
 $db = get_db();
-$courseId = htmlspecialchars($_GET['course']);
+$courseId = htmlspecialchars($_POST['course']);
 $assignment = htmlspecialchars($_POST['assignment']);
 $dueDate = htmlspecialchars($_POST['dueDate']);
 

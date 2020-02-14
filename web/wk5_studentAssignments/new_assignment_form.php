@@ -18,10 +18,10 @@ include 'student_header.php';
         <p>Select a course from the menu. Note, the course must exist before any assignments are created.</p>
         <p>Click on the desired course and the fields will become available.</p>
 
-        <form action='insertAssignment.php?course_id=<?php $courseId ?>' method="post">
+        <form action='insertAssignment.php' method="post">
             <div class="dropdown">
                 <label for="courses" id="mytext"></label>
-                <select id="dropdownOp">
+                <select id="dropdownOp" name="course">
                     <?php
                     $query = 'SELECT course_id, course_name FROM courses';
                     $stmt = $db->prepare($query);
