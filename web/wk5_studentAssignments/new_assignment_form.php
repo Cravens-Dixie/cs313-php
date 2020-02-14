@@ -29,7 +29,7 @@ include 'student_header.php';
                         $name = $course['course_name'];
                         $course_Id = $course['course_id'];
 
-                        echo '<option value="' . $name . '" ' . 'id="' . $course_Id. '"'.
+                        echo '<option value="' . $name . '" ' . 'id="' . $name. '"'.
                              (($course_Id == $courseId) ? 'selected = "selected"' : "") . '>' . $name . '</option>';
 
                     }
