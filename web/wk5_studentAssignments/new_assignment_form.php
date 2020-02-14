@@ -20,7 +20,7 @@ include 'student_header.php';
 
         <form action="insertAssignment.php" method="post">
             <div class="dropdown">
-                <textarea id="mytext"></textarea><br>
+                <label for="courses" id="mytext"></label>
                 <select id="dropdownOp">
                     <?php
                     $query = 'SELECT course_id, course_name FROM courses';
@@ -31,7 +31,7 @@ include 'student_header.php';
                         $name = $course['course_name'];
                         $courseId = $course['course_id'];
 
-                        echo "<option value='$courseId $name'>$name</option>";
+                        echo "<option value='$name'>$name</option>";
                     }
                     ?>
 
