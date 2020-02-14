@@ -31,7 +31,7 @@ include 'student_header.php';
                         $name = $course['course_name'];
                         $courseId = $course['course_id'];
 
-                        echo "<option value='$courseId'>$name</option>";
+                        echo "<option value='$courseId $name'>$name</option>";
                     }
                     ?>
 
