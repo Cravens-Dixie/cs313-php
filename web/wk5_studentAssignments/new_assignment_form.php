@@ -19,7 +19,7 @@ include 'student_header.php';
         <form action='insertAssignment.php' method="post">
             <div class="dropdown">
                 <label for="courses" id="mytext"></label>
-                <select id="dropdownOp" name="course">
+                <select id="dropdownOp" name="courses">
                     <?php
                     $query = 'SELECT course_id, course_name FROM courses';
                     $stmt = $db->prepare($query);
