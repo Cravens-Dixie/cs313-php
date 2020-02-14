@@ -53,7 +53,7 @@ include('student_header.php');
         ?>
     </p>
 <!--TODO add a course id to the href...make the course show up automatically, but have other courses to choose from if wanted-->
-    <a class="btn btn-primary btn-lg" href="new_assignment_form.php?course_id=<?php $id ?>" role="button">Add Assignment</a>
+    <a class="btn btn-primary btn-lg" href="new_assignment_form.php?id=<?php $id ?>" role="button">Add Assignment</a>
 
 <!--could add or drop a student here-->
     <div>

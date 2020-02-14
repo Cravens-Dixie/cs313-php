@@ -2,7 +2,7 @@
 require('dbConnect.php');
 $db = get_db();
 
-$courseId = $_GET['course_id'];
+$courseId = $_GET['id'];
 ?>
 <!DOCTYPE html>
 <html>
