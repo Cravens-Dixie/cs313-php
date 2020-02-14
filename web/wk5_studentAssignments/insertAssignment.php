@@ -15,7 +15,7 @@ $stmt->execute();
 $assignmentId = $db->lastInsertId("assignments_assignment_id_seq");
 
 //return to page where all courses are listed, including the newly added one.
-$new_page = "all-courses_page.php";
+$new_page = "new_assignment_form.php?course_id=<?php $courseId ?>";
 
 header("Location: $new_page");
 die();

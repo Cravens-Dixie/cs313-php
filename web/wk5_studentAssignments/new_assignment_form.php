@@ -29,10 +29,12 @@ include 'student_header.php';
                     $courses = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     foreach ($courses as $course){
                         $name = $course['course_name'];
-                        $courseId = $course['course_id'];
+                        $course_Id = $course['course_id'];
 
-                        echo "<option value='$name'>$name</option>";
-                    }
+                        echo "<option value='$name' <?php
+                                if ($course_Id = $courseId) {
+                                    echo 'selected';?>>$name</option>";
+                                }
                     ?>
 
             </div>
