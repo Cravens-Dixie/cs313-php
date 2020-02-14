@@ -1,9 +1,7 @@
 <?php
 require('dbConnect.php');
 $db = get_db();
-if (isset($_GET['course_id'])) {
-//    TODO make it auto select course in course list
-}
+
 $courseId = $_GET['course_id'];
 ?>
 <!DOCTYPE html>
@@ -27,14 +25,14 @@ include 'student_header.php';
                     $stmt = $db->prepare($query);
                     $stmt->execute();
                     $courses = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                    foreach ($courses as $course){
+                    foreach ($courses as $course) {
                         $name = $course['course_name'];
                         $course_Id = $course['course_id'];
 
-                        echo "<option value='$name' <?php
-                                if ($course_Id = $courseId) {
-                                    echo 'selected';?>>$name</option>";
-                                }
+                        echo '<option value="' . $name . '" ' .
+                            (($course_Id == $courseId) ? 'selected = "selected"' : "") . '>' . $name . '</option>';
+
+                    }
                     ?>
 
             </div>
