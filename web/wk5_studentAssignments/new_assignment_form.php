@@ -20,7 +20,7 @@ include 'student_header.php';
 
         <form action="insertAssignment.php" method="post">
             <div class="dropdown">
-                <textarea id="mytext"></textarea>
+                <textarea id="mytext"></textarea><br>
                 <select id="dropdownOp">
                     <?php
                     $query = 'SELECT course_id, course_name FROM courses';
