@@ -1,4 +1,6 @@
 <?php
+require('dbConnect.php');
+$db = get_db();
 if (isset($_GET['course_id'])) {
 //    TODO make it auto select course in course list
 }
@@ -18,15 +20,21 @@ include 'student_header.php';
 
         <form action="insertAssignment.php" method="post">
             <div class="dropdown">
-                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Courses
-                    <span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                    <!--  TODO code here to pull courses from database, not hard coded like it is now...NOT an href!-->
-                    <li><a href="#">Pre-Calculus</a></li>
-                    <li><a href="#">CS 313</a></li>
-                    <li><a href="#">Epsilon</a></li>
-                    <li><a href="#">Spanish</a></li>
-                </ul>
+                <textarea id="mytext"></textarea>
+                <select id="dropdownOp">
+                    <?php
+                    $query = 'SELECT course_id, course_name FROM courses';
+                    $stmt = $db->prepare($query);
+                    $stmt->execute();
+                    $courses = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                    foreach ($courses as $course){
+                        $name = $course['course_name'];
+                        $courseId = $course['course_id'];
+
+                        echo "<option value='$courseId'>$name</option>";
+                    }
+                    ?>
+
             </div>
             <div class="form-group">
                 <label for="dueDate">Due Date:</label>
@@ -41,6 +49,14 @@ include 'student_header.php';
 
         </form>
     </div>
+    <script type="text/javascript">
+        var mytextbox = document.getElementById('mytext');
+        var mydropdown = document.getElementById('dropdownOp');
 
+        mydropdown.onchange = function(){
+            mytextbox.value = mytextbox.value  + this.value; //to appened
+            //mytextbox.innerHTML = this.value;
+        }
+    </script>
     </body>
 </html>
