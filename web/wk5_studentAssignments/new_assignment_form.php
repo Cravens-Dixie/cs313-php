@@ -18,7 +18,7 @@ include 'student_header.php';
         <p>Select a course from the menu. Note, the course must exist before any assignments are created.</p>
         <p>Click on the desired course and the fields will become available.</p>
 
-        <form action="insertAssignment.php" method="post">
+        <form action='insertAssignment.php?course_id=$courseId' method="post">
             <div class="dropdown">
                 <label for="courses" id="mytext"></label>
                 <select id="dropdownOp">
@@ -49,14 +49,6 @@ include 'student_header.php';
 
         </form>
     </div>
-    <script type="text/javascript">
-        var mytextbox = document.getElementById('mytext');
-        var mydropdown = document.getElementById('dropdownOp');
 
-        mydropdown.onchange = function(){
-            mytextbox.value = mytextbox.value  + this.value; //to appened
-            //mytextbox.innerHTML = this.value;
-        }
-    </script>
     </body>
 </html>
