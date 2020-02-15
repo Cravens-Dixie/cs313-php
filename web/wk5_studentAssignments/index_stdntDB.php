@@ -11,8 +11,8 @@ include('student_header.php');
     <div class="container">
         <h1 class="display-4">Student Assignments Tracker</h1>
         <p class="lead">Welcome students and teachers! Please select what you would like to do.</p>
-        <a class="btn btn-primary btn-lg" href="all-students_page.php" role="button">Students</a>
-        <a class="btn btn-primary btn-lg" href="all-courses_page.php" role="button">Courses</a>
+        <a class="btn btn-primary btn-lg" href="all-students_page.php" role="button">Take Me to Students!</a>
+        <a class="btn btn-primary btn-lg" href="all-courses_page.php" role="button">Take Me to Courses!</a>
     </div>
 
 </div>
