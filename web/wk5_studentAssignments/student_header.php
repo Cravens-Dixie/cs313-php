@@ -9,13 +9,13 @@
 
    <title>New Assignment Form</title>
   </head>
- <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+ <nav class="navbar fixed-top navbar-expand-sm bg-dark navbar-dark">
      <a class="navbar-brand" href="index_stdntDB.php">Home</a>
-     <button class="navbar-toggler" type="button" data-toggle="collapse"  data-target="#collapsibleNavbar">
+     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>
      </button>
-     <div class="collapse navbar-collapse" id="collapsibleNavbar">
-         <ul class="navbar-nav ml-auto">
+     <div class="collapse navbar-collapse" id="navbarNav">
+         <ul class="navbar-nav">
              <li class="nav-item">
                  <a class="nav-link" href="all-students_page.php">Students</a>
              </li>
