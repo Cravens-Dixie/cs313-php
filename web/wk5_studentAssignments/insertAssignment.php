@@ -6,11 +6,11 @@ $assignment = htmlspecialchars($_POST['assignment']);
 $dueDate = htmlspecialchars($_POST['dueDate']);
 var_dump($_POST);
 //insert course name into courses table
-$query = 'INSERT INTO assignments(course_id, assignment, due_date) VALUES(:courseId, :assignment, :dueDate) ';
+$query = 'INSERT INTO assignments(course_id, due_date, assignment) VALUES(:courseId, :dueDate, :assignment) ';
 $stmt = $db->prepare($query);
-$stmt->bindValue(':courseId', $courseId, PDO::PARAM_INT);
-$stmt->bindValue(':assignment', $assignment, PDO::PARAM_STR_CHAR);
+$stmt->bindValue(':courseId', $courseId, PDO::PARAM_STR);
 $stmt->bindValue(':dueDate', $dueDate, PDO::PARAM_STR);
+$stmt->bindValue(':assignment', $assignment, PDO::PARAM_STR);
 $stmt->execute();
 $assignmentId = $db->lastInsertId("assignments_assignment_id_seq");
 echo "assignment id: $assignmentId";
@@ -18,7 +18,6 @@ echo "assignment id: $assignmentId";
 //return to page where all courses are listed, including the newly added one.
 //$new_page = "new_assignment_form.php?id=$courseId";
 $new_page = "course_page.php?id=$courseId";
-
 
 header("Location: $new_page");
 die();

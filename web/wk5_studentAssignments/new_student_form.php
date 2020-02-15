@@ -2,7 +2,7 @@
 
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <?php
 include 'student_header.php';
 ?>

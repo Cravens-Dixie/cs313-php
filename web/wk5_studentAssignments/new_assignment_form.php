@@ -5,7 +5,7 @@ $db = get_db();
 $courseId = $_GET['id'];
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <?php
 include 'student_header.php';
 ?>
@@ -29,7 +29,7 @@ include 'student_header.php';
                         $name = $course['course_name'];
                         $course_Id = $course['course_id'];
 
-                        echo '<option value="' . $course_Id. '" ' . 'id="' . $course_Id. '"'.
+                        echo '<option value="' . $course_Id. '" ' . 'id="' . $course_Id. '" '.
                              (($course_Id == $courseId) ? 'selected = "selected"' : "") . '>' . $name . '</option>';
 
                     }
