@@ -14,10 +14,10 @@ $query = 'UPDATE assignments
 SET course_id = :courseId, due_date = :dueDate, assignment = :assignment) 
 WHERE assignment_id = :assignmentId';
 $stmt = $db->prepare($query);
-$stmt->bindValue(':courseId', $courseId, PDO::PARAM_INT);
+$stmt->bindValue(':courseId', $courseId, PDO::PARAM_STR);
 $stmt->bindValue(':dueDate', $dueDate, PDO::PARAM_STR);
 $stmt->bindValue(':assignment', $assignment, PDO::PARAM_STR);
-$stmt->bindValue(':assignment_id', $assignment_id, PDO::PARAM_INT);
+$stmt->bindValue(':assignment_id', $assignment_id, PDO::PARAM_STR);
 $stmt->execute();
 $assignmentId = $db->lastInsertId("assignments_assignment_id_seq");
 echo "assignment id: $assignmentId";
