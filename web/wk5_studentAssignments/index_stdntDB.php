@@ -16,6 +16,9 @@ include('student_header.php');
     </div>
 
 </div>
+<?php
+include('nav_assignmentTracker.php');
+?>
 
 
 </body>
