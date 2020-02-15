@@ -11,7 +11,7 @@ include 'student_header.php';
 ?>
     <body>
 
-    <div class="container">
+    <div class="container pt-4">
         <h2>Create a new Assignment</h2>
         <p>Select a course from the menu. Note, the course must exist before any assignments are created.</p>
         <p>Click on the desired course and the fields will become available.</p>
