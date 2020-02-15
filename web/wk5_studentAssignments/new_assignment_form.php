@@ -35,7 +35,7 @@ include 'student_header.php';
                     }
                     ?>
 
-            </div>
+            </div><br>
             <div class="form-group">
                 <label for="dueDate">Due Date:</label>
                 <input type="date" name="dueDate" class="form-control" id="dueDate">
