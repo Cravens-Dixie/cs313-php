@@ -51,7 +51,7 @@ include('student_header.php');
             $aid = $assignment['assignment-id'];
 
             //link to update_assignment page with a push of course_id
-            echo "<p><ul><li><a href='update_assignment.php?id=$aid'>$course_name- $stAssignment- $dueDate</a></li></ul></p>";
+            echo "<p><ul><li><a href='update_assignment.php?assign_id=$aid'>$course_name- $stAssignment- $dueDate</a></li></ul></p>";
         }
 
         ?>

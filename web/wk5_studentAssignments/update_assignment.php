@@ -2,7 +2,7 @@
 require('dbConnect.php');
 $db = get_db();
 
-$assignmentId = htmlspecialchars($_GET['id']);
+$assignmentId = htmlspecialchars($_GET['assign_id']);
 
 
 $query = 'SELECT a.assignment, a.course_id, a.due_date, c.course_name 
