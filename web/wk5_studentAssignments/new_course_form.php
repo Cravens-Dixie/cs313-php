@@ -16,7 +16,7 @@ include 'student_header.php';
                 <label for="course">Course Name:</label>
                 <input type="text" name="course" class="form-control" id="course">
             </div>
-            <button type="submit" class="btn btn-default">Submit</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
         </form>
 
     </div>
