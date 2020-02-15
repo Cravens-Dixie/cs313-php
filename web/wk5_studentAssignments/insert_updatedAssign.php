@@ -8,7 +8,7 @@ $dueDate = htmlspecialchars($_POST['dueDate']);
 $assignment = htmlspecialchars($_POST['assignment']);
 $assignment_id = htmlspecialchars($_POST['assignment_id']);
 
-var_dump($_POST);
+
 //update assignment in assignments table
 $query = 'UPDATE assignments 
 SET course_id = :courseId, 
