@@ -20,7 +20,7 @@ include 'student_header.php';
         </form>
 
     </div>
-
+    <?php include('footer_assignmentTracker.php');?>
     </body>
     </html>
 
