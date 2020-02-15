@@ -73,7 +73,7 @@ include('student_header.php');
         </p>
     </div>
 </div>
-
+<?php include('footer_assignmentTracker.php');?>
 </body>
 
 </html>

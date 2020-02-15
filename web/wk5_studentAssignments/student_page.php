@@ -73,7 +73,7 @@ include 'student_header.php';
             </div>
             <!--could drop a course or edit student here-->
         </div>
-
+        <?php include('footer_assignmentTracker.php');?>
     </body>
 
 </html>

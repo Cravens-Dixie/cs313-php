@@ -38,7 +38,7 @@ include('student_header.php');
     <a class="btn btn-primary btn-lg" href="new_course_form.php" role="button">Add Course</a>
 
 </div>
-
+<?php include('footer_assignmentTracker.php');?>
 </body>
 
 </html>

@@ -37,7 +37,7 @@ $students = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <a class="btn btn-primary" href="new_student_form.php" role="button">Add Student</a>
 
 </div>
-
+<?php include('footer_assignmentTracker.php');?>
 </body>
 
 </html>
