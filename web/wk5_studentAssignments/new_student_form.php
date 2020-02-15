@@ -39,7 +39,7 @@ include 'student_header.php';
         <button type="submit" class="btn btn-default">Submit</button>
     </form>
 </div>
-</div>
+
 
 <?php include('footer_assignmentTracker.php');?>
 </body>
