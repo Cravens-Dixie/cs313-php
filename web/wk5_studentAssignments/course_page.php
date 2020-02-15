@@ -18,8 +18,8 @@ $stmt->bindValue(':id', $id, PDO::PARAM_INT);
 $stmt->execute();
 $names = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $course_name = $names[0]['course_name'];
-#var_dump($names);
-#var_dump($course_name);
+var_dump($names);
+var_dump($course_name);
 ?>
 
 <!doctype html>
@@ -48,12 +48,11 @@ include('student_header.php');
             $dueDate = $assignment['due_date'];
 
 
-            echo "<p><ul><li>$course_name- $stAssignment- $dueDate</li></ul></p>";
+            echo "<p><ul><li><a href='#'>$course_name- $stAssignment- $dueDate</a></li></ul></p>";
         }
 
         ?>
     </p>
-<!--TODO add a course id to the href...make the course show up automatically, but have other courses to choose from if wanted-->
 
     <a class="btn btn-primary btn-lg" href="new_assignment_form.php?id=<?php echo $id ?>" role="button">Add Assignment</a>
 
