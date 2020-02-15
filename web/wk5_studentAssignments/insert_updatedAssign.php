@@ -19,7 +19,7 @@ $stmt = $db->prepare($query);
 $stmt->bindValue(':courseId', $courseId, PDO::PARAM_STR);
 $stmt->bindValue(':dueDate', $dueDate, PDO::PARAM_STR);
 $stmt->bindValue(':assignment', $assignment, PDO::PARAM_STR);
-$stmt->bindValue(':assignment_id', $assignment_id, PDO::PARAM_STR);
+$stmt->bindValue(':assignmentId', $assignment_id, PDO::PARAM_STR);
 $stmt->execute();
 echo 'update was successful';
 
