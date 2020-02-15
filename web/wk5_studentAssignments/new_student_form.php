@@ -8,8 +8,8 @@ include 'student_header.php';
 ?>
 <body>
 
-<div class="container">
-    <h2>Create a new student</h2>
+<div class="container pt-4">
+    <h2 class="pt-5">New Student</h2>
     <p>Type in the new student's full name in the box below.</p>
 
     <form action="insertStudent.php" method="post">

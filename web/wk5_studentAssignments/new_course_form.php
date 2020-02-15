@@ -8,8 +8,8 @@ include 'student_header.php';
 ?>
     <body>
 
-    <div class="container">
-        <h2>Create a new course</h2>
+    <div class="container pt-4">
+        <h2 class="pt-5">New Course</h2>
         <p>Type the new course title in the box below.</p>
         <form action="insertCourse.php" method="post">
             <div class="form-group">
