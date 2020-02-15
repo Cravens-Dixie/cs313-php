@@ -35,7 +35,7 @@ include 'student_header.php';
         }
         ?>
 
-        <button type="submit" class="btn btn-default">Submit</button>
+        <button type="submit" class="btn btn-primary">Add Student</button>
     </form>
 </div>
 <?php
