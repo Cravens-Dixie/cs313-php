@@ -13,6 +13,7 @@ $stmt = $db->prepare($query);
 $stmt->bindValue(':assignment_id', $assignmentId, PDO::PARAM_INT);
 $stmt->execute();
 $assignments = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
