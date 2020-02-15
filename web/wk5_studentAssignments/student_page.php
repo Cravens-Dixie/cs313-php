@@ -51,10 +51,11 @@ include 'student_header.php';
                 }
             ?>
 
-            <div class="dropdown">
-                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Add Course
-                    <span class="caret"></span></button>
-                <ul class="dropdown-menu">
+            <div class="dropdown show">
+                <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Add Course</a>
+
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
 
                 <?php
                 $query = 'SELECT course_id, course_name FROM courses';
@@ -64,10 +65,11 @@ include 'student_header.php';
                 foreach ($courses as $course){
                     $name = $course['course_name'];
                     $courseId = $course['course_id'];
-                    echo "<li><a href='connectCourse.php?course_id=$courseId&student_id=$id'>$name</a></li>";
+                    echo "<a class='dropdown-item' href='connectCourse.php?course_id=$courseId&student_id=$id'>$name</a>";
+//                    echo "<li><a href='connectCourse.php?course_id=$courseId&student_id=$id'>$name</a></li>";
                 }
                 ?>
-                </ul>
+                </div>
             </div>
             <!--could drop a course or edit student here-->
         </div>
