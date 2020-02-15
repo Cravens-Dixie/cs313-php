@@ -30,7 +30,6 @@ include 'student_header.php';
             echo '<div class="checkbox">';
             echo "<input type='checkbox' name='chkCourses[]' id='chkCourses$id' value='$id'>";
             echo "<label for='chkCourses$id'>$name</label></div>";
-//
 
         }
 
@@ -41,6 +40,8 @@ include 'student_header.php';
 </div>
 
 
-<?php include('footer_assignmentTracker.php');?>
+<?php
+include('footer_assignmentTracker.php');
+?>
 </body>
 </html>
