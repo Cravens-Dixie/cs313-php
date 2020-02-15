@@ -45,7 +45,7 @@ include 'student_header.php';
                 <textarea class="form-control"  name="assignment" rows="5" id="assignment"></textarea>
             </div>
 <!--            submit button should stay on this page (give a button or navigation to change pages?)-->
-            <button type="submit" class="btn btn-default">Submit</button>
+            <button type="submit" class="btn btn-primary">Add Assignment</button>
 
         </form>
     </div>
