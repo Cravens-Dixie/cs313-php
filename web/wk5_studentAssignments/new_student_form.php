@@ -27,19 +27,16 @@ include 'student_header.php';
         {
             $id = $course['course_id'];
             $name = $course['course_name'];
-            echo '<div class="checkbox">';
-            echo "<input type='checkbox' name='chkCourses[]' id='chkCourses$id' value='$id'>";
-            echo "<label for='chkCourses$id'>$name</label></div>";
+            echo '<div class="form-check">';
+            echo "<input class='form-check-input' type='checkbox' name='chkCourses[]' id='defaultCheck$id' value='$id'>";
+            echo "<label class='form-check-label' for='defaultCheck$id'>$name</label></div>";
 
         }
-
         ?>
 
         <button type="submit" class="btn btn-default">Submit</button>
     </form>
 </div>
-
-
 <?php
 include('footer_assignmentTracker.php');
 ?>
