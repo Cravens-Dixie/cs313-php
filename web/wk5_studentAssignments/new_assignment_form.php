@@ -12,7 +12,7 @@ include 'student_header.php';
     <body>
 
     <div class="container pt-4">
-        <h2 class="pt-4">New Assignment</h2>
+        <h2 class="pt-5">New Assignment</h2>
         <p>Select a course from the menu. Note, the course must exist before any assignments are created.</p>
         <p>Click on the desired course and the fields will become available.</p>
 
