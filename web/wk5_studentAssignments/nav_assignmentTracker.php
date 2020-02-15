@@ -17,6 +17,6 @@ echo '<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
               </li>
             </ul>
           </div>
-      </nav>'
+      </nav>';
 
-?>
+
