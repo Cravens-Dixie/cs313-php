@@ -22,6 +22,9 @@ include('student_header.php');
         <p class="lead">To add a new course, click the "Add Course" button at the bottom of the screen.</p>
     </div>
 </div>
+<?php
+include('nav_assignmentTracker.php');
+?>
 <div class="container">
     <h3>Course List</h3>
     <div>

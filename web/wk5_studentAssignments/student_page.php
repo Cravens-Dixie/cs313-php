@@ -40,6 +40,9 @@ include 'student_header.php';
                 <p class="lead">To add a new course, click the "Add Course" button at the bottom of the screen.</p>
             </div>
         </div>
+        <?php
+        include('nav_assignmentTracker.php');
+        ?>
         <div class="container">
             <?php
                 foreach ($names as $assignment) {

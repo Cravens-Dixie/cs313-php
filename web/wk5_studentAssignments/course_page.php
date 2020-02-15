@@ -37,6 +37,9 @@ include('student_header.php');
 
     </div>
 </div>
+<?php
+include('nav_assignmentTracker.php');
+?>
 <div class="container">
     <h3>All Assignments for <?php echo $course_name;?> </h3>
     <p>
