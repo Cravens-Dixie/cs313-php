@@ -7,7 +7,7 @@ $dueDate = htmlspecialchars($_POST['dueDate']);
 $assignment = htmlspecialchars($_POST['assignment']);
 $assignment_id = htmlspecialchars($_POST['assignment_id']);
 
-var_dump($_POST);
+
 
 //update assignemnt in assignmnts table
 $query = 'UPDATE assignments 
@@ -19,8 +19,7 @@ $stmt->bindValue(':dueDate', $dueDate, PDO::PARAM_STR);
 $stmt->bindValue(':assignment', $assignment, PDO::PARAM_STR);
 $stmt->bindValue(':assignment_id', $assignment_id, PDO::PARAM_STR);
 $stmt->execute();
-$assignmentId = $db->lastInsertId("assignments_assignment_id_seq");
-echo "assignment id: $assignmentId";
+echo "update successful";
 
 //return to page where all courses are listed, including the newly added one.
 //$new_page = "new_assignment_form.php?id=$courseId";
