@@ -11,7 +11,7 @@ $assignment_id = htmlspecialchars($_POST['assignment_id']);
 
 //update assignment in assignments table
 $query = 'UPDATE assignments 
-SET course_id = :courseId, due_date = :dueDate, assignment = :assignment) 
+SET course_id = :courseId, due_date = :dueDate, assignment = :assignment
 WHERE assignment_id = :assignmentId';
 $stmt = $db->prepare($query);
 $stmt->bindValue(':courseId', $courseId, PDO::PARAM_STR);
