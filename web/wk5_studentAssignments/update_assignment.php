@@ -27,19 +27,19 @@ include 'student_header.php';
 
     <form action="insert_updatedAssign.php" method="post">
         <div class="form-group">
-            <label for="course">Due Date:</label>
-            <input type="text" name="course" class="form-control" id="course" value="<?php echo $assignments['course_name']?>">
+            <label for="course">Course:</label>
+            <input type="text" name="course" class="form-control" id="course" value="<?php echo $assignments['course_name'];?>">
         </div>
         <div class="form-group">
             <label for="dueDate">Due Date:</label>
-            <input type="date" name="dueDate" class="form-control" id="dueDate" value="<?php echo $assignments['due_date']?>">
+            <input type="date" name="dueDate" class="form-control" id="dueDate" value="<?php echo $assignments['due_date'];?>">
         </div>
         <div class="form-group">
             <label for="assignment">Assignment Instructions:</label>
-            <textarea class="form-control"  name="assignment" rows="5" id="assignment"><?php echo $assignments['assignment']?></textarea>
+            <textarea class="form-control"  name="assignment" rows="5" id="assignment"><?php echo $assignments['assignment'];?></textarea>
         </div>
-        <input type="hidden" name="course_id" value="<?php echo $assignments['course_id']?>">
-        <input type="hidden" name="assignment_id" value="<?php echo $assignmentId?>">
+        <input type="hidden" name="course_id" value="<?php echo $assignments['course_id'];?>">
+        <input type="hidden" name="assignment_id" value="<?php echo $assignmentId;?>">
         <button type="submit" class="btn btn-primary">Update Assignment</button>
 
     </form>
