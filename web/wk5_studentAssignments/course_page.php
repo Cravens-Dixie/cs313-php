@@ -7,7 +7,8 @@ $query = 'SELECT
 students.student_name, 
 courses.course_name, 
 assignments.assignment, 
-assignments.due_date    
+assignments.due_date,
+assignments.assignment_id    
 FROM students
 INNER JOIN student_assignment ON student_assignment.student_id = students.student_id
 INNER JOIN assignments ON student_assignment.assignment_id = assignments.assignment_id
@@ -40,15 +41,17 @@ include('student_header.php');
 
 <div class="container">
     <h3>All Assignments for <?php echo $course_name;?> </h3>
+    <p>Click on an assignment to update it.</p>
     <p>
         <?php
         foreach ($names as $assignment){
             $name = $assignment['course_name'];
             $stAssignment = $assignment['assignment'];
             $dueDate = $assignment['due_date'];
+            $id = $assignment['assignment-id'];
 
-
-            echo "<p><ul><li><a href='#'>$course_name- $stAssignment- $dueDate</a></li></ul></p>";
+            //link to update_assignment page with a push of course_id
+            echo "<p><ul><li><a href='update_assignment.php?id=$id'>$course_name- $stAssignment- $dueDate</a></li></ul></p>";
         }
 
         ?>
