@@ -6,11 +6,11 @@ error_reporting(E_ALL);
 //Get $_POST variables from sign_up.php
 $name = htmlspecialchars($_POST['name']);
 $password = htmlspecialchars($_POST['password']);
-var_dump($_POST);
+var_dump($_POST);//array(2) { ["name"]=> string(13) "Dixie Cravens" ["password"]=> string(8) "dingdong" }
 
 
 //hash password before inserting into DB
-$passwordHash = password_hash($password, 'PASSWORD_DEFAULT');
+$passwordHash = password_hash($password, PASSWORD_DEFAULT);
 
 
 $query = 'INSERT INTO users07(user_name, password)
