@@ -62,12 +62,7 @@ if (isset($_POST['submit'])){
 <head>
     <meta charset="UTF-8">
     <title>Sign In week 07</title>
-    <style type="text/css">
-        .messages { margin-bottom: 10px; }
-        .error { margin-bottom: 5px; color: #ff0000; }
-        .form-group { margin-bottom: 10px; }
-        .form-group label { display: inline-block; min-width: 90px; }
-    </style>
+    
 </head>
 <body>
 <h2>Sign in to access your account!</h2>
