@@ -1,5 +1,7 @@
 <?php
 session_start();
+// Report all PHP errors (see changelog)
+error_reporting(E_ALL);
 
 if (isset($_POST['submit'])){
     $name = htmlspecialchars($_POST['name']);
@@ -32,6 +34,7 @@ if (isset($_POST['submit'])){
                 $name === $fetchedUsername &&
                 password_verify($password, $fetchedPasswordHash)
             ) {
+                //set $_SESSION variables
                 header('Location: welcome_page.php');
                 exit();
             } else {

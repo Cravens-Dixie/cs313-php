@@ -1,3 +1,9 @@
+<?php
+session_start();
+// Report all PHP errors (see changelog)
+error_reporting(E_ALL);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
