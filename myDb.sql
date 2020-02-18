@@ -255,6 +255,9 @@ VALUES (:student_id, :assignment_id);
 #bind :student_id to $studentId which comes from INSERT into students(lastInsertId)
 #bind :assignment_id to $assig_id which comes from froeach loop of assignment_id array
 
+#DELETE FROM students:
+DELETE FROM students WHERE student_id = 25;
+
 #connectCourse page------------------
 #use course_id to SELECT assignment(s) as assignment_id from assignments table
 SELECT assignment_id FROM assignments
@@ -272,9 +275,45 @@ VALUES (:student_id, :assignment_id);
 #inserts a new course_name into courses table
 INSERT INTO courses(course_name) VALUES(:courseName);
 #bind :courseName to $courseName($_POST)
-#will generate a new course_id
+#will generate a new course_id (lastInsertId)
 
-#new_assignment_form
+#insertAssignment page------------------
+#inserts a new assignment into assignments table
+INSERT INTO assignments(course_id, assignment, due_date) VALUES(:courseId, :assignment, :dueDate);
+#bind :courseId to $courseId ($_POST)
+#bind :assignment to $assignment($_POST)
+#bind :dueDate to $dueDate ($_POST)
+#will generate a new assignment_id (lastInsertId)
+
+INSERT INTO assignments(course_id, assignment, due_date) 
+VALUES('5', 'Read everything on page 100', '2020-02-17'); 
+
+update_assignment page--------------------
+SELECT a.assignment, a.course_id, a.due_date, c.course_name 
+FROM assignments a
+INNER JOIN courses c ON c.course_id = a.course_id
+WHERE a.assignment_id = :assignment_id;
+#bind :assignment_id to $assignmentId ($_GET)
+
+UPDATE assignments
+SET course_id = '2',
+due_date = '2020-02-21',
+assignment = 'AAAA'
+WHERE assignment_id = '3';
+
+#on couse_page
+SELECT 
+students.student_name, 
+courses.course_name, 
+assignments.assignment, 
+assignments.due_date,
+assignments.assignment_id    
+FROM students
+INNER JOIN student_assignment ON student_assignment.student_id = students.student_id
+INNER JOIN assignments ON student_assignment.assignment_id = assignments.assignment_id
+INNER JOIN courses ON assignments.course_id = courses.course_id
+WHERE courses.course_id= '2';
+
 
 
  

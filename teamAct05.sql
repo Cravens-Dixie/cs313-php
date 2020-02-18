@@ -40,3 +40,19 @@ id SERIAL NOT NULL PRIMARY KEY,
 scripture_id INT NOT NULL REFERENCES scriptures(id),
 topic_id INT NOT NULL REFERENCES topic(id)
 );
+
+
+Team activity week 07
+
+CREATE TABLE users (
+id 	serial	  NOT NULL	  PRIMARY KEY, 
+user_name  	varchar(80)  	NOT NULL  	UNIQUE,
+user_password varchar(255) NOT NULL
+);
+#per PHP 255 characters is recommended for storing hashed passwords from default php setting
+
+INSERT INTO users(user_name, password) 
+VALUES(:userName, :hashPassword);
+#bind :userName to_______
+#bind :hashUserPassword to ______________
+

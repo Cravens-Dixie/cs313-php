@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign In week 07</title>
+</head>
+<body>
+<h2>Sign in to access your account!</h2>
+<form action="#" method="post">
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name" placeholder="John Smith"><br><br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" placeholder="Gr3at pAs$w0rd"><br><br>
+    <button type="submit">Sign In</button>
+    <button  onclick="document.location = 'sign_up.php'">Sign Up</button>
+</form>
+
+</body>
+</html>
