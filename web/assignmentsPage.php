@@ -28,7 +28,7 @@
               <div class="card">
                 <img src="students.jpeg" class="card-img-top" alt="Shopping cart">
                 <div class="card-body">
-                     <h5 class="text-center">Week 5 Assignment</h5>
+                     <h5 class="text-center">Personal Project</h5>
                      <h6 class="text-center">Student Assignment Tracker</h6>
                      <a href="/wk5_studentAssignments/index_stdntDB.php" class="btn btn-info btn-block" role="button">Go To Assignment</a>
                 </div>
@@ -36,7 +36,7 @@
                <div class="card">
                    <img src="notComplete.jpg" class="card-img-top" alt="Shopping cart">
                    <div class="card-body">
-                         <h5 class="text-center">Week 6 Assignment</h5>
+                         <h5 class="text-center">Upcoming Assignment</h5>
                          <h6 class="text-center">Not Completed</h6>
                          <a href="#" class="btn btn-info btn-block" role="button">Go To Assignment</a>
                    </div>
