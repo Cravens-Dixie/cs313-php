@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 //Get $_POST variables from sign_up.php
 $name = htmlspecialchars($_POST['name']);
 $password = htmlspecialchars($_POST['password']);
-
+var_dump($_POST);
 
 
 //hash password before inserting into DB
