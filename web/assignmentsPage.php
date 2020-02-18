@@ -22,7 +22,7 @@
                   <div class="card-body">
                        <h5 class="text-center">Weekly Team Assignments</h5>
                        <h6 class="text-center">Team 4</h6>
-                        <a href="/teamActivities/teamAct05.php" class="btn btn-info btn-block" role="button">Go To Assignment</a>
+                        <a href="/teamActivities/sign_up.php" class="btn btn-info btn-block" role="button">Go To Assignment</a>
                   </div>
              </div>
               <div class="card">
