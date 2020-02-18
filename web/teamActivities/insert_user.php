@@ -10,7 +10,7 @@ $password = htmlspecialchars($_POST['password']);
 $passwordHash = password_hash($password, 'PASSWORD_DEFAULT');
 
 
-$query = 'INSERT INTO users(name, password)
+$query = 'INSERT INTO users07(user_name, password)
 VALUES(:name, :password)';
 $stmt = $db->prepare($query);
 $stmt->bindValue(':name', $name, PDO::PARAM_STR);
