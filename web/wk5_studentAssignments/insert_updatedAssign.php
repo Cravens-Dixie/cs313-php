@@ -21,6 +21,7 @@ $stmt->bindValue(':dueDate', $dueDate, PDO::PARAM_STR);
 $stmt->bindValue(':assignment', $assignment, PDO::PARAM_STR);
 $stmt->bindValue(':assignmentId', $assignment_id, PDO::PARAM_STR);
 $stmt->execute();
+
 echo 'update was successful';
 
 //return to page where all assignments are listed, including the updated one.

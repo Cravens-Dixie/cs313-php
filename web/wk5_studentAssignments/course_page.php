@@ -1,14 +1,19 @@
 <?php
-
+session_start();
 require('dbConnect.php');
 $db = get_db();
-$id = htmlspecialchars($_GET["id"]);//course_id
+//student_id from query as an array
+$_SESSION['students'] = [];
+//course_id from all_courses_page
+$id = htmlspecialchars($_GET["id"]);
+//query database tables students, courses, assignments, student_assignment
 $query = 'SELECT 
 students.student_name, 
 courses.course_name, 
 assignments.assignment, 
 assignments.due_date,
-assignments.assignment_id    
+assignments.assignment_id,
+students.student_id    
 FROM students
 INNER JOIN student_assignment ON student_assignment.student_id = students.student_id
 INNER JOIN assignments ON student_assignment.assignment_id = assignments.assignment_id
@@ -49,8 +54,10 @@ include('student_header.php');
             $stAssignment = $assignment['assignment'];
             $dueDate = $assignment['due_date'];
             $aid = $assignment['assignment_id'];
+            $_SESSION['students']= $assignment['student_id'];
 
-            //link to update_assignment page with a push of assignment_id
+
+            //link to update_assignment page with a push of assignment_id ***also needs array of student_id(s)***
             echo "<p><ul><li><a href='update_assignment.php?assign_id=$aid'>$course_name- $stAssignment- $dueDate</a></li></ul></p>";
         }
 
