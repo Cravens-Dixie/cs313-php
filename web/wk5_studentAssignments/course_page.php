@@ -26,7 +26,7 @@ $course_name = $names[0]['course_name'];
 <html lang="en">
 <?php
 include('student_header.php');
-var_dump($names);
+
 ?>
 <body>
 <div class="jumbotron jumbotron-fluid">
@@ -35,7 +35,7 @@ var_dump($names);
         <p class="lead"> All assignments for a course are listed. </p>
         <p class="lead"> All students assigned to a course are listed.</p>
         <p class="lead">To add a new assignment, click the "Add Assignment" button at the bottom of the screen.</p>
-
+<?php var_dump($names); ?>
     </div>
 </div>
 
