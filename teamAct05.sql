@@ -44,15 +44,18 @@ topic_id INT NOT NULL REFERENCES topic(id)
 
 Team activity week 07
 
-CREATE TABLE users (
+CREATE TABLE users07 (
 id 	serial	  NOT NULL	  PRIMARY KEY, 
 user_name  	varchar(80)  	NOT NULL  	UNIQUE,
-user_password varchar(255) NOT NULL
+password varchar(255) NOT NULL
 );
 #per PHP 255 characters is recommended for storing hashed passwords from default php setting
 
-INSERT INTO users(user_name, password) 
+INSERT INTO users07(user_name, password) 
 VALUES(:userName, :hashPassword);
 #bind :userName to_______
-#bind :hashUserPassword to ______________
-
+#bind :passwordHash to ______________
+INSERT INTO users07(user_name, password)
+VALUES('Louie', 'el stupido');
+INSERT INTO users07(user_name, password)
+VALUES('Dixie Cravens', 'dingdong');

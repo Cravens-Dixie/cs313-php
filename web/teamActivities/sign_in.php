@@ -47,14 +47,14 @@ if (isset($_POST['submit'])) {
 }
 ?>
 
-//if (password_verify('rasmuslerdorf', $hash)) {
-//    echo 'Password is valid!';
-//} else {
-//    echo 'Invalid password.';
-//}
-//
-//// Output: Password is valid!
-//?>
+<!--if (password_verify('rasmuslerdorf', $hash)) {-->
+<!--   echo 'Password is valid!';-->
+<!-- else {-->
+<!--   echo 'Invalid password.';-->
+<!--}-->
+<!---->
+<!--//Output: Password is valid!-->
+<!--?>-->
 
 
 <!DOCTYPE html>
