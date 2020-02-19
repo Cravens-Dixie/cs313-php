@@ -7,7 +7,8 @@ $db = get_db();
 $courseId = htmlspecialchars($_POST['courses']);
 $assignment = htmlspecialchars($_POST['assignment']);
 $dueDate = htmlspecialchars($_POST['dueDate']);
-var_dump($_POST);
+//var_dump($_POST);
+
 //insert course name into courses table
 $query = 'INSERT INTO assignments(course_id, due_date, assignment) VALUES(:courseId, :dueDate, :assignment) ';
 $stmt = $db->prepare($query);
