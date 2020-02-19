@@ -58,7 +58,7 @@ include('student_header.php');
             $dueDate = $assignment['due_date'];
             $aid = $assignment['assignment_id'];
             $_SESSION['students']= $assignment['student_id'];
-            var_dump($_SESSION);
+            var_dump($_SESSION['students']);
 
 
             //link to update_assignment page with a push of assignment_id ***also needs array of student_id(s)***
