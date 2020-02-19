@@ -20,7 +20,7 @@ $stmt->bindValue(':user_name', $name, PDO::PARAM_STR);
 $stmt->bindValue(':password', $passwordHash, PDO::PARAM_STR);
 $stmt->execute();
 
-$newPage = "sign_in.php";
-header('Location: ', $newPage);
+$new_page = "sign_in.php";
+header("Location: $new_page");
 
 die();
