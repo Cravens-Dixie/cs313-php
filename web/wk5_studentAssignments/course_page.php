@@ -35,7 +35,7 @@ include('student_header.php');
         <p class="lead"> All assignments for a course are listed. </p>
         <p class="lead"> All students assigned to a course are listed.</p>
         <p class="lead">To add a new assignment, click the "Add Assignment" button at the bottom of the screen.</p>
-<?php var_dump($names); ?>
+
     </div>
 </div>
 
