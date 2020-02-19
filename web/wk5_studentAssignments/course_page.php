@@ -52,13 +52,14 @@ include('student_header.php');
 
     <p>
         <?php
+        var_dump($_SESSION['students']);
         foreach ($names as $assignment){
             $name = $assignment['course_name'];
             $stAssignment = $assignment['assignment'];
             $dueDate = $assignment['due_date'];
             $aid = $assignment['assignment_id'];
             $_SESSION['students']= $assignment['student_id'];
-            var_dump($_SESSION['students']);
+
 
 
             //link to update_assignment page with a push of assignment_id ***also needs array of student_id(s)***
