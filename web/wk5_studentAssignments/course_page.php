@@ -3,7 +3,7 @@ session_start();
 require('dbConnect.php');
 $db = get_db();
 //student_id from query as an array
-$_SESSION['students'] = [];
+$_SESSION['students'] = array();
 var_dump($_SESSION);
 //course_id from all_courses_page
 $id = htmlspecialchars($_GET["id"]);
