@@ -3,7 +3,7 @@ session_start();
 // Report all PHP errors (see changelog)
 error_reporting(E_ALL);
 
-if (isset($_POST['submit'])){
+if (isset($_POST['submit'])) {
     $name = htmlspecialchars($_POST['name']);
     $password = htmlspecialchars($_POST['password']);
 
@@ -29,11 +29,9 @@ if (isset($_POST['submit'])){
             $fetchedUsername = $credentials['user_name'];
             $fetchedPasswordHash = $credentials['password'];
 
-        }
             if (
                 $name === $fetchedUsername &&
-                password_verify($password, $fetchedPasswordHash)
-            ) {
+                password_verify($password, $fetchedPasswordHash)) {
                 //set $_SESSION variables
                 $_SESSION['name'] = $name;
                 header('Location: welcome_page.php');
@@ -45,6 +43,7 @@ if (isset($_POST['submit'])){
             $errors[] = 'No credentials found for the given user.';
         }
 
+    }
 }
 ?>
 
@@ -72,6 +71,7 @@ if (isset($_POST['submit'])){
     if (isset($errors)) {
         foreach ($errors as $error) {
             echo "<div class='error'> $error</div>";
+        }
     }
     ?>
     </div>
