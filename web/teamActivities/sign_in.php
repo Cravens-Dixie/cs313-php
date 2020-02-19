@@ -25,6 +25,8 @@ if (isset($_POST['submit'])) {
         $stmt->execute();
         $credentials = $stmt->fetch(PDO::FETCH_ASSOC);
 
+        var var_dump($credentials);
+
         if ($credentials) { // Record found.
             $fetchedUsername = $credentials['user_name'];
             $fetchedPasswordHash = $credentials['password'];
