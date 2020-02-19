@@ -66,7 +66,7 @@ if (isset($_POST['submit'])) {
 </head>
 <body>
     <h2>Sign in to access your account!</h2>
-    div class="messages">
+    <div class="messages">
     <?php
     if (isset($errors)) {
         foreach ($errors as $error) {
