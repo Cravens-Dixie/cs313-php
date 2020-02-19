@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['name'])) {
-    //do what?
+    echo "log in successful";
 
 }else {
     $newPage = "sign_in.php";
