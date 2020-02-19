@@ -29,6 +29,8 @@ if (isset($_POST['submit'])) {
             $fetchedUsername = $credentials['user_name'];
             $fetchedPasswordHash = $credentials['password'];
 
+            echo 'records found';
+
             if (
                 $name === $fetchedUsername &&
                 password_verify($password, $fetchedPasswordHash)) {
