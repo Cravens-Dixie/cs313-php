@@ -47,7 +47,9 @@ include('student_header.php');
 
 <div class="container">
     <h3>All Assignments for <?php echo $course_name;?> </h3>
-    <p>Click on an assignment to update it.</p>
+    <p>Click on an assignment to update it.
+    </p>
+
     <p>
         <?php
         foreach ($names as $assignment){
@@ -56,6 +58,7 @@ include('student_header.php');
             $dueDate = $assignment['due_date'];
             $aid = $assignment['assignment_id'];
             $_SESSION['students']= $assignment['student_id'];
+            var_dump($_SESSION);
 
 
             //link to update_assignment page with a push of assignment_id ***also needs array of student_id(s)***
