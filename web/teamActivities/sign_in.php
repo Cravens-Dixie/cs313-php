@@ -17,7 +17,7 @@ if (isset($_POST['submit'])){
 
     if (!isset($errors)) { // No errors yet.
         $sql = 'SELECT user_name, password
-                    FROM users
+                    FROM users07
                     WHERE user_name = :name';
 
         $stmt = $db->prepare($sql);
@@ -35,6 +35,7 @@ if (isset($_POST['submit'])){
                 password_verify($password, $fetchedPasswordHash)
             ) {
                 //set $_SESSION variables
+                $_SESSION['name'] = $name;
                 header('Location: welcome_page.php');
                 exit();
             } else {
@@ -62,31 +63,27 @@ if (isset($_POST['submit'])){
 <head>
     <meta charset="UTF-8">
     <title>Sign In week 07</title>
-    
+
 </head>
 <body>
-<h2>Sign in to access your account!</h2>
-div class="messages">
-<?php
-if (isset($errors)) {
-    foreach ($errors as $error) {
-        ?>
-        <div class="error">
-            <?php echo $error; ?>
-        </div>
-        <?php
+    <h2>Sign in to access your account!</h2>
+    div class="messages">
+    <?php
+    if (isset($errors)) {
+        foreach ($errors as $error) {
+            echo "<div class='error'> $error</div>";
     }
-}
-?>
-</div>
-<form action="#" method="post">
-    <label for="name">Name:</label>
-    <input type="text" name="name" id="name" placeholder="John Smith"><br><br>
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" placeholder="Gr3at pAs$w0rd"><br><br>
-    <button type="submit">Sign In</button>
-    <button  onclick="document.location = 'sign_up.php'">Sign Up</button>
-</form>
+    ?>
+    </div>
+<!--TODO: not sure if the action is right. Would it be the welcome_page.php?-->
+    <form action=" " method="post">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" placeholder="John Smith"><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Gr3at pAs$w0rd"><br><br>
+        <button type="submit">Sign In</button>
+        <button  onclick="document.location = 'sign_up.php'">Sign Up</button>
+    </form>
 
 </body>
 </html>

@@ -1,5 +1,14 @@
 <?php
 session_start();
+if (isset($_SESSION['name'])) {
+    //do what?
+
+}else {
+    $newPage = "sign_in.php";
+    header('Location: ', $newPage);
+}
+
+
 // Report all PHP errors (see changelog)
 error_reporting(E_ALL);
 ?>
@@ -11,7 +20,7 @@ error_reporting(E_ALL);
     <title>Welcome week 07</title>
 </head>
 <body>
-<h2> Welcome!</h2>
+<h2> Welcome <?php echo $_SESSION['name'] ?>!</h2>
 <div> You are now logged in!</div>
 
 </body>
