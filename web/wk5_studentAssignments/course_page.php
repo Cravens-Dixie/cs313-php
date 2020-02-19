@@ -20,13 +20,13 @@ $stmt->execute();
 $names = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $course_name = $names[0]['course_name'];
 
-var_dump($names);
 ?>
 
 <!doctype html>
 <html lang="en">
 <?php
 include('student_header.php');
+var_dump($names);
 ?>
 <body>
 <div class="jumbotron jumbotron-fluid">
