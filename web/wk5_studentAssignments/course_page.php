@@ -84,7 +84,7 @@ include('student_header.php');
             $names = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 
             foreach ($names as $students){
-                $student = $students;
+                $student = $students['student_name'];
 
                 echo "<p><ul><li>$student</li></ul></p>";
             }
