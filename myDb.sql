@@ -17,9 +17,9 @@ assignment  	text  	NOT NULL,
 due_date  	date  	NOT NULL  
 );
 
-CREATE TABLE student_assignment (
+CREATE TABLE student_course (
 student_id  	int  	NOT NULL   	REFERENCES students(student_id), 
-assignment_id 	int 	NOT NULL 	REFERENCES assignments(assignment_id) 
+course_id 	int 	NOT NULL 	REFERENCES courses(course_id) 
 );
 
 
@@ -101,89 +101,61 @@ VALUES ('LA Lesson 45-46', '2020-12-03',
 
 
 
-#table student_assignment --------------------------------------------------
-INSERT INTO student_assignment(student_id, assignment_id)
+#table student_course --------------------------------------------------
+INSERT INTO student_course(student_id, course_id)
 VALUES (
 (SELECT student_id FROM students WHERE student_id = '2'),
-(SELECT assignment_id FROM assignments WHERE assignment_id = '1'));
+(SELECT course_id FROM courses WHERE course_id = '2'));
 
-INSERT INTO student_assignment(student_id, assignment_id)
+INSERT INTO student_course(student_id, course_id)
 VALUES (
 (SELECT student_id FROM students WHERE student_id = '2'),
-(SELECT assignment_id FROM assignments WHERE assignment_id = '2'));
+(SELECT course_id FROM courses WHERE course_id = '8'));
 
-INSERT INTO student_assignment(student_id, assignment_id)
+INSERT INTO student_course(student_id, course_id)
+VALUES (
+(SELECT student_id FROM students WHERE student_id = '2'),
+(SELECT course_id FROM courses WHERE course_id = '9'));
+
+INSERT INTO student_course(student_id, course_id)
+VALUES (
+(SELECT student_id FROM students WHERE student_id = '2'),
+(SELECT course_id FROM courses WHERE course_id = '4'));
+
+INSERT INTO student_course(student_id, course_id)
+VALUES (
+(SELECT student_id FROM students WHERE student_id = '2'),
+(SELECT course_id FROM courses WHERE course_id = '6'));
+
+INSERT INTO student_course(student_id, course_id)
+VALUES (
+(SELECT student_id FROM students WHERE student_id = '2'),
+(SELECT course_id FROM courses WHERE course_id = '7'));
+
+INSERT INTO student_course(student_id, course_id)
 VALUES (
 (SELECT student_id FROM students WHERE student_id = '1'),
-(SELECT assignment_id FROM assignments WHERE assignment_id = '3'));
+(SELECT course_id FROM courses WHERE course_id = '3'));
 
-INSERT INTO student_assignment(student_id, assignment_id)
+INSERT INTO student_course(student_id, course_id)
+VALUES (
+(SELECT student_id FROM students WHERE student_id = '1'),
+(SELECT course_id FROM courses WHERE course_id = '5'));
+
+INSERT INTO student_course(student_id, course_id)
+VALUES (
+(SELECT student_id FROM students WHERE student_id = '1'),
+(SELECT course_id FROM courses WHERE course_id = '7'));
+
+INSERT INTO student_course(student_id, course_id)
+VALUES (
+(SELECT student_id FROM students WHERE student_id = '1'),
+(SELECT course_id FROM courses WHERE course_id = '1'));
+
+INSERT INTO student_course(student_id, course_id)
 VALUES (
 (SELECT student_id FROM students WHERE student_id = '3'),
-(SELECT assignment_id FROM assignments WHERE assignment_id = '13'));
-
-INSERT INTO student_assignment(student_id, assignment_id)
-VALUES (
-(SELECT student_id FROM students WHERE student_id = '3'),
-(SELECT assignment_id FROM assignments WHERE assignment_id = '14'));
-
-INSERT INTO student_assignment(student_id, assignment_id)
-VALUES (
-(SELECT student_id FROM students WHERE student_id = '1'),
-(SELECT assignment_id FROM assignments WHERE assignment_id = '7'));
-
-INSERT INTO student_assignment(student_id, assignment_id)
-VALUES (
-(SELECT student_id FROM students WHERE student_id = '1'),
-(SELECT assignment_id FROM assignments WHERE assignment_id = '11'));
-
-INSERT INTO student_assignment(student_id, assignment_id)
-VALUES (
-(SELECT student_id FROM students WHERE student_id = '1'),
-(SELECT assignment_id FROM assignments WHERE assignment_id = '12'));
-
-INSERT INTO student_assignment(student_id, assignment_id)
-VALUES (
-(SELECT student_id FROM students WHERE student_id = '2'),
-(SELECT assignment_id FROM assignments WHERE assignment_id = '12'));
-
-INSERT INTO student_assignment(student_id, assignment_id)
-VALUES (
-(SELECT student_id FROM students WHERE student_id = '1'),
-(SELECT assignment_id FROM assignments WHERE assignment_id = '5'));
-
-INSERT INTO student_assignment(student_id, assignment_id)
-VALUES (
-(SELECT student_id FROM students WHERE student_id = '1'),
-(SELECT assignment_id FROM assignments WHERE assignment_id = '6'));
-
-INSERT INTO student_assignment(student_id, assignment_id)
-VALUES (
-(SELECT student_id FROM students WHERE student_id = '2'),
-(SELECT assignment_id FROM assignments WHERE assignment_id = '6'));
-
-INSERT INTO student_assignment(student_id, assignment_id)
-VALUES (
-(SELECT student_id FROM students WHERE student_id = '2'),
-(SELECT assignment_id FROM assignments WHERE assignment_id = '8'));
-
-INSERT INTO student_assignment(student_id, assignment_id)
-VALUES (
-(SELECT student_id FROM students WHERE student_id = '1'),
-(SELECT assignment_id FROM assignments WHERE assignment_id = '8'));
-
-INSERT INTO student_assignment(student_id, assignment_id)
-VALUES (
-(SELECT student_id FROM students WHERE student_id = '2'),
-(SELECT assignment_id FROM assignments WHERE assignment_id = '9'));
-
-INSERT INTO student_assignment(student_id, assignment_id)
-VALUES (
-(SELECT student_id FROM students WHERE student_id = '2'),
-(SELECT assignment_id FROM assignments WHERE assignment_id = '10'));
-
-
-
+(SELECT course_id FROM courses WHERE course_id = '10'));
 
 
 #queries for class assignments, week 05------------------------------------------------
@@ -333,11 +305,38 @@ assignments.assignment,
 assignments.due_date,
 assignments.assignment_id
 
+#DELETE student_assignment table
+DELETE FROM student_assignment;
+DROP TABLE student_assignment CASCADE;
+
+#new query for course_page to get course assignments
+SELECT  
+c.course_name, 
+a.assignment, 
+a.due_date,
+a.assignment_id   
+FROM courses c
+JOIN assignments a 
+ON a.course_id = c.course_id
+WHERE c.course_id= '7';
+
+#new query for course_page to get student names in a course
+SELECT  
+s.student_name, 
+s.student_id   
+FROM students s
+JOIN student_course c 
+ON s.student_id = c.student_id
+WHERE c.course_id='7';
 
 
 
  
- 
+#//student_id from query as an array
+#$studentIds = array();
+#$_SESSION['students'] = $studentIds;
+
+#//$_SESSION['students'][] = $assignment['student_id'];
  
  
  

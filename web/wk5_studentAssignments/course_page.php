@@ -2,30 +2,25 @@
 session_start();
 require('dbConnect.php');
 $db = get_db();
-//student_id from query as an array
-$studentIds = array();
-$_SESSION['students'] = $studentIds;
+
 
 //course_id from all_courses_page
 $id = htmlspecialchars($_GET["id"]);
-//query database tables students, courses, assignments, student_assignment
-$query = 'SELECT 
-students.student_name, 
-courses.course_name, 
-assignments.assignment, 
-assignments.due_date,
-assignments.assignment_id,
-students.student_id    
-FROM students
-INNER JOIN student_assignment ON student_assignment.student_id = students.student_id
-INNER JOIN assignments ON student_assignment.assignment_id = assignments.assignment_id
-INNER JOIN courses ON assignments.course_id = courses.course_id
+//query database for all assignments in a course. Use course_id ($_GET)
+$query = 'SELECT  
+c.course_name, 
+a.assignment, 
+a.due_date,
+a.assignment_id   
+FROM courses c
+JOIN assignments a 
+ON a.course_id = c.course_id
 WHERE courses.course_id=:id';
 $stmt = $db->prepare($query);
 $stmt->bindValue(':id', $id, PDO::PARAM_INT);
 $stmt->execute();
-$names = $stmt->fetchAll(PDO::FETCH_ASSOC);
-$course_name = $names[0]['course_name'];
+$assignments = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$course_name = $assignments[0]['course_name'];
 
 
 ?>
@@ -55,13 +50,11 @@ include('student_header.php');
     <p>
         <?php
 
-        foreach ($names as $assignment){
+        foreach ($assignments as $assignment){
             $name = $assignment['course_name'];
             $stAssignment = $assignment['assignment'];
             $dueDate = $assignment['due_date'];
             $aid = $assignment['assignment_id'];
-            $_SESSION['students'][] = $assignment['student_id'];
-
 
             //link to update_assignment page with a push of assignment_id ***also needs array of student_id(s)*Now in $_SESSION
             echo "<p><ul><li><a href='update_assignment.php?assign_id=$aid'>$course_name- $stAssignment- $dueDate</a></li></ul></p>";
@@ -77,6 +70,17 @@ include('student_header.php');
         <h3>Students in course:</h3>
         <p id="studentsList">
             <?php
+            //query for student names that are assigned this course
+            $query = 'SELECT  
+                    s.student_name   
+                    FROM students s
+                    JOIN student_course c 
+                    ON s.student_id = c.student_id
+                    WHERE c.course_id=:id';
+            $stmt = $db->prepare($query);
+            $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+            $stmt->execute();
+            $names = $stmt->fetchAll(PDO::FETCH_ASSOC);
             foreach ($names as $students){
                 $student = $students['student_name'];
 
