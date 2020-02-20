@@ -328,6 +328,7 @@ JOIN student_course c
 ON s.student_id = c.student_id
 WHERE c.course_id='7';
 
+#query on student_page to select all assignments
 SELECT 
 c.course_name,
 a.assignment,
@@ -336,12 +337,15 @@ FROM courses c
 INNER JOIN assignments a ON a.course_id = c.course_id
 INNER JOIN student_course t ON t.course_id = c.course_id
 INNER JOIN students s ON s.student_id = t.student_id
-WHERE s.student_id= :id
+WHERE s.student_id = :id AND due_date BETWEEN NOW()::date AND NOW()::date + 7
 ORDER BY c.course_name;
 
 #student _page---disconnect_course page
 DELETE FROM student_course
 WHERE student_id = '2' AND course_id = '9';
+
+DELETE FROM student_course
+WHERE student_id = :student_id AND course_id = :course_id;
 
 
  
