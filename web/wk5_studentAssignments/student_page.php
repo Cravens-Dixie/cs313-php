@@ -57,13 +57,13 @@ include 'student_header.php';
                     echo "<p><ul><li>$course_name: $asmt --$due_date </li></ul></p>";
                 }
             ?>
-<!--            Link a course to a student using a drop down menu link-->
+<!--            To add a course Link a course to a student using a drop down menu link-->
             <div class="dropdown show">
                 <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Add Course</a>
 
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                //get all courses as a dropdown menu, send courseId and studentId to connectCourse
+<!--                get all courses as a dropdown menu, send courseId and studentId to connectCourse-->
                 <?php
                 $query3 = 'SELECT course_id, course_name FROM courses';
                 $stmt3 = $db->prepare($query3);
@@ -79,14 +79,14 @@ include 'student_header.php';
                 </div>
             </div>
 
-            <!--could drop a course or edit student here-->
-            <!--            Link a course to a student using a drop down menu link-->
+
+            <!-- To drop a course, Link a course to a student using a drop down menu link-->
             <div class="dropdown show">
                 <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Delete Course</a>
 
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    //get all courses as a dropdown menu, send courseId and studentId to connectCourse
+<!--                    get all courses as a dropdown menu, send courseId and studentId to connectCourse-->
                     <?php
                     $query4 = 'SELECT course_id, course_name FROM courses';
                     $stmt4 = $db->prepare($query4);

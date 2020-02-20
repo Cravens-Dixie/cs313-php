@@ -9,9 +9,9 @@ $studentId = htmlspecialchars($_GET['student_id']);
 
 //var_dump($courseId);
 
-//coming from student_page to connect a course to a student. Passing course_id and student_id.
+//coming from student_page to delete a course from a student. Passing course_id and student_id.
 $query = 'DELETE FROM student_course
-WHERE student_id = :student_id AND course_id = :course_id)';
+WHERE student_id = :student_id AND course_id = :course_id';
 $stmt = $db->prepare($query);
 $stmt->bindValue(':student_id', $studentId, PDO::PARAM_INT);
 $stmt->bindValue(':course_id', $courseId, PDO::PARAM_INT);

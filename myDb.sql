@@ -316,9 +316,9 @@ a.assignment,
 a.due_date,
 a.assignment_id   
 FROM courses c
-JOIN assignments a 
+LEFT JOIN assignments a 
 ON a.course_id = c.course_id
-WHERE c.course_id= '7';
+WHERE c.course_id= '17';
 
 #new query for course_page to get student names in a course
 SELECT  
@@ -339,11 +339,9 @@ INNER JOIN students s ON s.student_id = t.student_id
 WHERE s.student_id= :id
 ORDER BY c.course_name;
 
-ORDER BY courses.course_name
-
-$course_name = $names[1]['course_name'];
-$asmt = $names[2]['assignment'];
-$due_date = $names[3]['due_date'];
+#student _page---disconnect_course page
+DELETE FROM student_course
+WHERE student_id = '2' AND course_id = '9';
 
 
  
