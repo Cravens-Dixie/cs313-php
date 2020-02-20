@@ -48,7 +48,7 @@ include('student_header.php');
         <?php
         //get assignment info out of query and display each assignment
         foreach ($assignments as $assignment){
-//            $name = $assignment['course_name'];//already getting this info from above
+            //$name = $assignment['course_name'];//already getting this info from above
             $stAssignment = $assignment['assignment'];
             $dueDate = $assignment['due_date'];
             $aid = $assignment['assignment_id'];
