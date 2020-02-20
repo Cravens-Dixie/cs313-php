@@ -5,7 +5,7 @@ $db = get_db();
 //student_id from query as an array
 $studentIds = array();
 $_SESSION['students'] = $studentIds;
-var_dump($_SESSION);
+
 //course_id from all_courses_page
 $id = htmlspecialchars($_GET["id"]);
 //query database tables students, courses, assignments, student_assignment
@@ -26,8 +26,7 @@ $stmt->bindValue(':id', $id, PDO::PARAM_INT);
 $stmt->execute();
 $names = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $course_name = $names[0]['course_name'];
-var_dump($names);
-var_dump($course_name);
+
 
 ?>
 
@@ -55,16 +54,14 @@ include('student_header.php');
 
     <p>
         <?php
-        echo "before:";
-        var_dump($_SESSION['students']);
+
         foreach ($names as $assignment){
             $name = $assignment['course_name'];
             $stAssignment = $assignment['assignment'];
             $dueDate = $assignment['due_date'];
             $aid = $assignment['assignment_id'];
             $_SESSION['students'][] = $assignment['student_id'];
-            echo "after:";
-            var_dump($_SESSION['students']);
+
 
             //link to update_assignment page with a push of assignment_id ***also needs array of student_id(s)***
             echo "<p><ul><li><a href='update_assignment.php?assign_id=$aid'>$course_name- $stAssignment- $dueDate</a></li></ul></p>";
