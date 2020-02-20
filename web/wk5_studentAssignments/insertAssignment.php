@@ -31,7 +31,7 @@ catch (PDOException $e) {
 var_dump($_SESSION);
     $studentIdArray = $_SESSION['students'];
     foreach ($studentIdArray as $studentId) {
-        $sid = $studentId;
+        $sid = $studentId['students'];
         echo "student_id: $sid assignment_id: $assignmentId";
         try {
         $query = 'INSERT INTO student_assignment(student_id, assignment_id) VALUES(:student_id, :assignment_id) ';
