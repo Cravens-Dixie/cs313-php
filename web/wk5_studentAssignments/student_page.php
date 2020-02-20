@@ -28,7 +28,8 @@ include 'student_header.php';
             <div class="container">
                 <h1 class="display-4">Welcome <?php echo $name;?>!</h1>
                 <p class="lead"> Listed are your courses and related assignments.</p>
-                <p class="lead">To add a new course, click the "Add Course" button at the bottom of the screen.</p>
+                <p class="lead">To add a new course, click the "Add Course" button at
+                    the bottom of the screen. Likewise, to remove a course and related assignments, click the Remove Course button.</p>
             </div>
         </div>
 
@@ -83,7 +84,7 @@ include 'student_header.php';
             <!-- To drop a course, Link a course to a student using a drop down menu link-->
             <div class="dropdown show">
                 <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Delete Course</a>
+                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Remove Course</a>
 
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
 <!--                    get all courses as a dropdown menu, send courseId and studentId to connectCourse-->
