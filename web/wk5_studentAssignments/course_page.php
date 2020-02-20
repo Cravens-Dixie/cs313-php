@@ -63,7 +63,7 @@ include('student_header.php');
             $_SESSION['students'][] = $assignment['student_id'];
 
 
-            //link to update_assignment page with a push of assignment_id ***also needs array of student_id(s)***
+            //link to update_assignment page with a push of assignment_id ***also needs array of student_id(s)*Now in $_SESSION
             echo "<p><ul><li><a href='update_assignment.php?assign_id=$aid'>$course_name- $stAssignment- $dueDate</a></li></ul></p>";
         }
 

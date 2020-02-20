@@ -314,6 +314,26 @@ INNER JOIN assignments ON student_assignment.assignment_id = assignments.assignm
 INNER JOIN courses ON assignments.course_id = courses.course_id
 WHERE courses.course_id= '2';
 
+SELECT 
+students.student_name, 
+courses.course_name, 
+assignments.assignment, 
+assignments.due_date,
+assignments.assignment_id    
+FROM students
+INNER JOIN student_assignment ON student_assignment.student_id = students.student_id
+INNER JOIN assignments ON student_assignment.assignment_id = assignments.assignment_id
+INNER JOIN courses ON assignments.course_id = courses.course_id
+WHERE courses.course_id=:id
+
+SELECT
+students.student_name, 
+courses.course_name, 
+assignments.assignment, 
+assignments.due_date,
+assignments.assignment_id
+
+
 
 
  
