@@ -7,14 +7,14 @@ $id = htmlspecialchars($_GET["id"]);
 
 //query database for all assignments in a course. Use course_id ($_GET)
 $query = 'SELECT  
-c.course_name, 
-a.assignment, 
-a.due_date,
-a.assignment_id   
-FROM courses c
-JOIN assignments a 
-ON a.course_id = c.course_id
-WHERE courses.course_id=:id';
+        c.course_name, 
+        a.assignment, 
+        a.due_date,
+        a.assignment_id   
+        FROM courses c
+        JOIN assignments a 
+        ON a.course_id = c.course_id
+        WHERE c.course_id=:id';
 $stmt = $db->prepare($query);
 $stmt->bindValue(':id', $id, PDO::PARAM_INT);
 $stmt->execute();
