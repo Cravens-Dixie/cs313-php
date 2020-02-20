@@ -32,7 +32,6 @@ $course_name = $assignments[0]['course_name'];
 <html lang="en">
 <?php
 include('student_header.php');
-
 ?>
 <body>
 <div class="jumbotron jumbotron-fluid">
@@ -66,34 +65,33 @@ include('student_header.php');
         ?>
     </p>
 
-<!--    <a class="btn btn-primary btn-lg" href="new_assignment_form.php?id=--><?php //echo $id ?><!--" role="button">Add Assignment</a>-->
-<!---->
-<!----could add or drop a student here-->-->
-<!--    <div>-->
-<!--        <h3>Students in course:</h3>-->
-<!--        <p id="studentsList">-->
-<!--            --><?php
-//            //query for student names that are assigned this course
-//            $query = 'SELECT
-//                    s.student_name
-//                    FROM students s
-//                    JOIN student_course c
-//                    ON s.student_id = c.student_id
-//                    WHERE c.course_id=:id';
-//            $stmt = $db->prepare($query);
-//            $stmt->bindValue(':id', $id, PDO::PARAM_INT);
-//            $stmt->execute();
-//            $names = $stmt->fetchAll(PDO::FETCH_ASSOC);
-//            foreach ($names as $students){
-//                $student = $students['student_name'];
-//
-//                echo "<p><ul><li>$student</li></ul></p>";
-//            }
-//
-//            ?>
-<!---->
-<!--        </p>-->
-<!--    </div>-->
+    <a class="btn btn-primary btn-lg" href="new_assignment_form.php?id=<?php echo $id ?>" role="button">Add Assignment</a>
+
+    <div>
+        <h3>Students in course:</h3>
+        <p id="studentsList">
+            <?php
+            //query for student names that are assigned this course
+            $query2 = 'SELECT
+                    s.student_name
+                    FROM students s
+                    JOIN student_course c
+                    ON s.student_id = c.student_id
+                    WHERE c.course_id=:id';
+            $stmt2 = $db->prepare($query2);
+            $stmt2->bindValue(':id', $id, PDO::PARAM_INT);
+            $stmt2->execute();
+            $names = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($names as $students){
+                $student = $students['student_name'];
+
+                echo "<p><ul><li>$student</li></ul></p>";
+            }
+
+            ?>
+
+        </p>
+    </div>
 </div>
 <?php include('footer_assignmentTracker.php');?>
 </body>
