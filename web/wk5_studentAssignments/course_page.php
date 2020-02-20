@@ -21,11 +21,6 @@ $stmt->execute();
 $assignments = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $course_name = $assignments[0]['course_name'];
 
-//echo 'assignments query results:';
-//var_dump($assignments);
-//echo 'course name';
-//var_dump($course_name);
-
 ?>
 
 <!doctype html>
@@ -51,20 +46,20 @@ include('student_header.php');
 
     <p>
         <?php
-
+        //get assignment info out of query and display each assignment
         foreach ($assignments as $assignment){
-//            $name = $assignment['course_name'];
+//            $name = $assignment['course_name'];//already getting this info from above
             $stAssignment = $assignment['assignment'];
             $dueDate = $assignment['due_date'];
             $aid = $assignment['assignment_id'];
 
-            //link to update_assignment page with a push of assignment_id ***also needs array of student_id(s)*Now in $_SESSION
+            //link to update_assignment page with a push of assignment_id
             echo "<p><ul><li><a href='update_assignment.php?assign_id=$aid'>$course_name- $stAssignment- $dueDate</a></li></ul></p>";
         }
 
         ?>
     </p>
-
+<!--link to add an assignment. Sends course_id to new assignment form.-->
     <a class="btn btn-primary btn-lg" href="new_assignment_form.php?id=<?php echo $id;?>" role="button">Add Assignment</a>
 
     <div>
@@ -83,6 +78,7 @@ include('student_header.php');
             $stmt2->execute();
             $names = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 
+            //pull out individual student names and display them
             foreach ($names as $students){
                 $student = $students['student_name'];
 
