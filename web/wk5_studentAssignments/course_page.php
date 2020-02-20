@@ -1,11 +1,10 @@
 <?php
-session_start();
 require('dbConnect.php');
 $db = get_db();
 
-
 //course_id from all_courses_page
 $id = htmlspecialchars($_GET["id"]);
+
 //query database for all assignments in a course. Use course_id ($_GET)
 $query = 'SELECT  
 c.course_name, 
@@ -21,7 +20,10 @@ $stmt->bindValue(':id', $id, PDO::PARAM_INT);
 $stmt->execute();
 $assignments = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $course_name = $assignments[0]['course_name'];
-
+echo 'assignments query results:';
+var_dump($assignments);
+echo 'course name';
+var_dump($course_name);
 
 ?>
 
@@ -63,9 +65,9 @@ include('student_header.php');
         ?>
     </p>
 
-    <a class="btn btn-primary btn-lg" href="new_assignment_form.php?id=<?php echo $id ?>" role="button">Add Assignment</a>
-
-<!--<!--could add or drop a student here-->-->
+<!--    <a class="btn btn-primary btn-lg" href="new_assignment_form.php?id=--><?php //echo $id ?><!--" role="button">Add Assignment</a>-->
+<!---->
+<!----could add or drop a student here-->-->
 <!--    <div>-->
 <!--        <h3>Students in course:</h3>-->
 <!--        <p id="studentsList">-->
