@@ -5,26 +5,17 @@ $db = get_db();
 
 //get student_id from $_GET. coming from all-student_page
 $id = htmlspecialchars($_GET["id"]);
-
+//select all assignments for a student, ordered by course. Use student_id.
 $query = 'SELECT 
-students.student_name, 
-courses.course_name, 
-assignments.assignment, 
-assignments.due_date    
-FROM students
-INNER JOIN student_assignment ON student_assignment.student_id = students.student_id
-INNER JOIN assignments ON student_assignment.assignment_id = assignments.assignment_id
-INNER JOIN courses ON assignments.course_id = courses.course_id
-WHERE students.student_id=:id
-ORDER BY courses.course_name';
+student_name   
+FROM students 
+WHERE student_id=:id';
 $stmt = $db->prepare($query);
 $stmt->bindValue(':id', $id, PDO::PARAM_INT);
 $stmt->execute();
 $names = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $name = $names[0]['student_name'];
-$course_name = $names[1]['course_name'];
-$asmt = $names[2]['assignment'];
-$due_date = $names[3]['due_date'];
+
 #print_r($_SESSION);
 #var_dump($_GET);
 ?>
@@ -37,8 +28,7 @@ include 'student_header.php';
     <body>
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
-                <h1 class="display-4">Welcome <?php
-                    echo $name;?>!</h1>
+                <h1 class="display-4">Welcome <?php echo $name;?>!</h1>
                 <p class="lead"> Listed are your courses and related assignments.</p>
                 <p class="lead">To add a new course, click the "Add Course" button at the bottom of the screen.</p>
             </div>
@@ -46,6 +36,21 @@ include 'student_header.php';
 
         <div class="container">
             <?php
+            $query2 = 'SELECT 
+                        c.course_name,
+                        a.assignment,
+                        a.due_date
+                        FROM courses c 
+                        INNER JOIN assignments a ON a.course_id = c.course_id
+                        INNER JOIN student_course t ON t.course_id = c.course_id
+                        INNER JOIN students s ON s.student_id = t.student_id
+                        WHERE s.student_id= :id
+                        ORDER BY c.course_name';
+            $stmt2 = $db->prepare($query2);
+            $stmt2->bindValue(':id', $id, PDO::PARAM_INT);
+            $stmt2->execute();
+            $assignments = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+
                 foreach ($names as $assignment) {
                     $course_name = $assignment['course_name'];
                     $asmt = $assignment['assignment'];
@@ -61,10 +66,10 @@ include 'student_header.php';
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
 
                 <?php
-                $query = 'SELECT course_id, course_name FROM courses';
-                $stmt = $db->prepare($query);
-                $stmt->execute();
-                $courses = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                $query3 = 'SELECT course_id, course_name FROM courses';
+                $stmt3 = $db->prepare($query3);
+                $stmt3->execute();
+                $courses = $stmt3->fetchAll(PDO::FETCH_ASSOC);
                 foreach ($courses as $course){
                     $name = $course['course_name'];
                     $courseId = $course['course_id'];

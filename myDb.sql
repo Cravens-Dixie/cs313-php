@@ -322,13 +322,28 @@ WHERE c.course_id= '7';
 
 #new query for course_page to get student names in a course
 SELECT  
-s.student_name, 
-s.student_id   
+s.student_name  
 FROM students s
 JOIN student_course c 
 ON s.student_id = c.student_id
 WHERE c.course_id='7';
 
+SELECT 
+c.course_name,
+a.assignment,
+a.due_date
+FROM courses c 
+INNER JOIN assignments a ON a.course_id = c.course_id
+INNER JOIN student_course t ON t.course_id = c.course_id
+INNER JOIN students s ON s.student_id = t.student_id
+WHERE s.student_id= :id
+ORDER BY c.course_name;
+
+ORDER BY courses.course_name
+
+$course_name = $names[1]['course_name'];
+$asmt = $names[2]['assignment'];
+$due_date = $names[3]['due_date'];
 
 
  
