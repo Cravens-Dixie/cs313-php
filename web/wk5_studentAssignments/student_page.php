@@ -29,7 +29,7 @@ include 'student_header.php';
                 <h1 class="display-4">Welcome <?php echo $name;?>!</h1>
                 <p class="lead"> Listed are your courses and related assignments.</p>
                 <p class="lead">To add a new course, click the "Add Course" button at
-                    the bottom of the screen. Likewise, to remove a course and related assignments, click the Remove Course button.</p>
+                    the bottom of the screen. Likewise, to remove a course and related assignments, click the "Remove Course" button.</p>
             </div>
         </div>
 
