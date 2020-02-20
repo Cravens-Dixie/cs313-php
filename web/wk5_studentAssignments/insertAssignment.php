@@ -46,7 +46,7 @@ catch (PDOException $e) {
 
 
 //return to page where all courses are listed, including the newly added one.
-$new_page = "course_page.php?id=$courseId";
-
-header("Location: $new_page");
-die();
+//$new_page = "course_page.php?id=$courseId";
+//
+//header("Location: $new_page");
+//die();
