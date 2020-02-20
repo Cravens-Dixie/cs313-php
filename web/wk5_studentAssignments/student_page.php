@@ -1,11 +1,11 @@
 <?php
-
 require('dbConnect.php');
 $db = get_db();
 
 //get student_id from $_GET. coming from all-student_page
 $id = htmlspecialchars($_GET["id"]);
-//select all assignments for a student, ordered by course. Use student_id.
+
+//get and display student name using student_id.
 $query = 'SELECT 
 student_name   
 FROM students 
@@ -16,8 +16,6 @@ $stmt->execute();
 $names = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $name = $names[0]['student_name'];
 
-#print_r($_SESSION);
-#var_dump($_GET);
 ?>
 
 <!doctype html>
@@ -36,6 +34,7 @@ include 'student_header.php';
 
         <div class="container">
             <?php
+            //select all assignments for a student, ordered by course. Use student_id. Display.
             $query2 = 'SELECT 
                         c.course_name,
                         a.assignment,
@@ -58,13 +57,13 @@ include 'student_header.php';
                     echo "<p><ul><li>$course_name: $asmt --$due_date </li></ul></p>";
                 }
             ?>
-
+<!--            Link a course to a student using a drop down menu link-->
             <div class="dropdown show">
                 <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Add Course</a>
 
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-
+                //get all courses as a dropdown menu, send courseId and studentId to connectCourse
                 <?php
                 $query3 = 'SELECT course_id, course_name FROM courses';
                 $stmt3 = $db->prepare($query3);
@@ -79,7 +78,29 @@ include 'student_header.php';
                 ?>
                 </div>
             </div>
+
             <!--could drop a course or edit student here-->
+            <!--            Link a course to a student using a drop down menu link-->
+            <div class="dropdown show">
+                <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Delete Course</a>
+
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    //get all courses as a dropdown menu, send courseId and studentId to connectCourse
+                    <?php
+                    $query4 = 'SELECT course_id, course_name FROM courses';
+                    $stmt4 = $db->prepare($query4);
+                    $stmt4->execute();
+                    $courses = $stmt4->fetchAll(PDO::FETCH_ASSOC);
+                    foreach ($courses as $course){
+                        $name = $course['course_name'];
+                        $courseId = $course['course_id'];
+                        echo "<a class='dropdown-item' href='disconnectCourse.php?course_id=$courseId&student_id=$id'>$name</a>";
+//                    echo "<li><a href='connectCourse.php?course_id=$courseId&student_id=$id'>$name</a></li>";
+                    }
+                    ?>
+                </div>
+            </div>
         </div>
         <?php include('footer_assignmentTracker.php');?>
     </body>
