@@ -51,7 +51,7 @@ include 'student_header.php';
             $stmt2->execute();
             $assignments = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 
-                foreach ($names as $assignment) {
+                foreach ($assignments as $assignment) {
                     $course_name = $assignment['course_name'];
                     $asmt = $assignment['assignment'];
                     $due_date = $assignment['due_date'];
