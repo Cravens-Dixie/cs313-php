@@ -33,10 +33,14 @@ foreach ($courseIds as $id) {
 
 }
 
+echo "<script>
+alert('Student Added');
+window.location.href='all-students_page.php';
+</script>";
 //return to page where all students are listed, including the newly added one.
-$new_page = "all-students_page.php";
-
-header("Location: $new_page");
+//$new_page = "all-students_page.php";
+//
+//header("Location: $new_page");
 die();
 
 
