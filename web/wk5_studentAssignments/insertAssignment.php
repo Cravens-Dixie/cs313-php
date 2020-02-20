@@ -31,12 +31,12 @@ catch (PDOException $e) {
 var_dump($_SESSION);
     if(isset($_SESSION['students'])){
         foreach ($_SESSION['students'] as $studentId) {
-//            $sid = $studentId['students'];
+           $sid = $studentId;
             echo "student_id: $sid assignment_id: $assignmentId";
             try {
             $query = 'INSERT INTO student_assignment(student_id, assignment_id) VALUES(:student_id, :assignment_id) ';
             $stmt = $db->prepare($query);
-            $stmt->bindValue(':student_id', $studentId, PDO::PARAM_INT);
+            $stmt->bindValue(':student_id', $sid, PDO::PARAM_INT);
             $stmt->bindValue(':assignment_id', $assignmentId, PDO::PARAM_INT);
             $stmt->execute();
             }
