@@ -12,7 +12,7 @@ $query = 'SELECT
         a.due_date,
         a.assignment_id   
         FROM courses c
-        JOIN assignments a 
+        LEFT JOIN assignments a 
         ON a.course_id = c.course_id
         WHERE c.course_id=:id';
 $stmt = $db->prepare($query);
