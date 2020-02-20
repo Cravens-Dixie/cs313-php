@@ -82,6 +82,7 @@ include('student_header.php');
             $stmt2->bindValue(':id', $id, PDO::PARAM_INT);
             $stmt2->execute();
             $names = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+
             foreach ($names as $students){
                 $student = $students;
 
