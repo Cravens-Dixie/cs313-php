@@ -19,11 +19,12 @@ $stmt = $db->prepare($query);
 $stmt->bindValue(':id', $id, PDO::PARAM_INT);
 $stmt->execute();
 $assignments = $stmt->fetchAll(PDO::FETCH_ASSOC);
-//$course_name = $assignments[0]['course_name'];
-echo 'assignments query results:';
-var_dump($assignments);
-echo 'course name';
-var_dump($course_name);
+$course_name = $assignments[0]['course_name'];
+
+//echo 'assignments query results:';
+//var_dump($assignments);
+//echo 'course name';
+//var_dump($course_name);
 
 ?>
 
