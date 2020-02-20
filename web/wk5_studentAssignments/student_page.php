@@ -44,7 +44,7 @@ include 'student_header.php';
                         INNER JOIN assignments a ON a.course_id = c.course_id
                         INNER JOIN student_course t ON t.course_id = c.course_id
                         INNER JOIN students s ON s.student_id = t.student_id
-                        WHERE s.student_id= :id
+                        WHERE s.student_id = :id AND due_date BETWEEN NOW()::date AND NOW()::date + 7
                         ORDER BY c.course_name';
             $stmt2 = $db->prepare($query2);
             $stmt2->bindValue(':id', $id, PDO::PARAM_INT);
