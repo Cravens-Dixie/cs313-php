@@ -3,7 +3,8 @@ session_start();
 require('dbConnect.php');
 $db = get_db();
 //student_id from query as an array
-$_SESSION['students'] = array();
+$studentIds = array();
+$_SESSION['students'] = $studentIds;
 var_dump($_SESSION);
 //course_id from all_courses_page
 $id = htmlspecialchars($_GET["id"]);
@@ -61,7 +62,7 @@ include('student_header.php');
             $stAssignment = $assignment['assignment'];
             $dueDate = $assignment['due_date'];
             $aid = $assignment['assignment_id'];
-            $_SESSION['students'] = $assignment['student_id'];
+            $_SESSION['students'][] = $assignment['student_id'];
             echo "after:";
             var_dump($_SESSION['students']);
 
