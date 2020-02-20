@@ -60,7 +60,7 @@ include 'student_header.php';
 <!--            To add a course Link a course to a student using a drop down menu link-->
             <div class="dropdown show">
                 <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Add Course</a>
+                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Add Course</a><br><br>
 
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
 <!--                get all courses as a dropdown menu, send courseId and studentId to connectCourse-->
