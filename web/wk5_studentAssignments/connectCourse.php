@@ -9,26 +9,13 @@ $studentId = htmlspecialchars($_GET['student_id']);
 
 //var_dump($courseId);
 
-//use courseId($_GET) to SELECT assignment(s) as assignment_id from assignments table
-// use assignment_id and $studentId($_GET) to INSERT into student_assignment table
-
-$query = 'SELECT assignment_id FROM assignments WHERE course_id = :course_id';
-$stmt = $db->prepare($query);
-$stmt->bindValue(':course_id', $courseId, PDO::PARAM_INT);
-$stmt->execute();
-$assignments = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-foreach ($assignments as $assignment) {
-    $asgnmt = $assignment['assignment_id'];
-
-    echo "student_id: $studentId, assignment_id: $asgnmt ";
-
-    $query = 'INSERT INTO student_assignment(student_id, assignment_id) VALUES (:student_id, :assignment_id)';
+//coming from student_page to connect a course to a student. Passing course_id and student_id.
+    $query = 'INSERT INTO student_course(student_id, course_id) VALUES (:student_id, :course_id)';
     $stmt = $db->prepare($query);
     $stmt->bindValue(':student_id', $studentId, PDO::PARAM_INT);
-    $stmt->bindValue(':assignment_id', $asgnmt, PDO::PARAM_INT);
+    $stmt->bindValue(':course_id', $courseId, PDO::PARAM_INT);
     $stmt->execute();
-}
+
 
 $new_page = "student_page.php?id=$studentId";
 
