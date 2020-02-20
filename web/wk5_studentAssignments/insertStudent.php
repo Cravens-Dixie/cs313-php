@@ -22,32 +22,15 @@ foreach ($courseIds as $id) {
     $course_id = $id;
 //    var_dump($id);//returns string(1)"2"
 
-    //for each courseId, get related assignments in format of assignment_id.
-    // May return 1 or more ids in an array.
-    $aQuery = 'SELECT assignment_id FROM assignments
-                WHERE course_id = :course_id';
+    //for each course_id, add the studentId and insert to student_course table
+    $aQuery = 'INSERT INTO student_course(student_id, course_id)
+                VALUES (:student_id, :course_id)';
     $astmt = $db->prepare($aQuery);
+    $astmt->bindValue(':student_id', $studentId);
     $astmt->bindValue(':course_id', $course_id);
     $astmt->execute();
-    $assignment_id = $astmt->fetchAll(PDO::FETCH_ASSOC);
-
-    //loops through the array of assignment_ids from above query and uses it to INSERT INTO student_assignment table.
-    //student_assignment table links the student to courses, by way of an assignment.
-    // $studentId comes from first query that inserted a student into students table.
-    foreach ($assignment_id as $aId) {
-        $assig_id = $aId['assignment_id'];
-
-        echo "student_id: $studentId, assignment_id: $assig_id ";//returns student_id: 25, assignment_id: 1 (should also iterate through a 2, and 3 for this course_id)
-
-        $saQuery = 'INSERT INTO student_assignment(student_id, assignment_id)
-                VALUES (:student_id, :assignment_id)';
-        $sastmt = $db->prepare($saQuery);
-        $sastmt->bindValue(':student_id', $studentId);
-        $sastmt->bindValue(':assignment_id', $assig_id );
-        $sastmt->execute();
 
 
-    }
 }
 
 //return to page where all students are listed, including the newly added one.
