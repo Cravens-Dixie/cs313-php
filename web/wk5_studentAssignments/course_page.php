@@ -53,7 +53,7 @@ include('student_header.php');
         <?php
 
         foreach ($assignments as $assignment){
-            $name = $assignment['course_name'];
+//            $name = $assignment['course_name'];
             $stAssignment = $assignment['assignment'];
             $dueDate = $assignment['due_date'];
             $aid = $assignment['assignment_id'];
@@ -65,7 +65,7 @@ include('student_header.php');
         ?>
     </p>
 
-    <a class="btn btn-primary btn-lg" href="new_assignment_form.php?id=<?php echo $id ?>" role="button">Add Assignment</a>
+    <a class="btn btn-primary btn-lg" href="new_assignment_form.php?id=<?php echo $id;?>" role="button">Add Assignment</a>
 
     <div>
         <h3>Students in course:</h3>
@@ -83,7 +83,7 @@ include('student_header.php');
             $stmt2->execute();
             $names = $stmt2->fetchAll(PDO::FETCH_ASSOC);
             foreach ($names as $students){
-                $student = $students['student_name'];
+                $student = $students;
 
                 echo "<p><ul><li>$student</li></ul></p>";
             }
