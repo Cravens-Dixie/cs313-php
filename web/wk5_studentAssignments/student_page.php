@@ -2,7 +2,10 @@
 
 require('dbConnect.php');
 $db = get_db();
+
+//get student_id from $_GET. coming from all-student_page
 $id = htmlspecialchars($_GET["id"]);
+
 $query = 'SELECT 
 students.student_name, 
 courses.course_name, 

@@ -58,7 +58,7 @@ include('student_header.php');
             $stAssignment = $assignment['assignment'];
             $dueDate = $assignment['due_date'];
             $aid = $assignment['assignment_id'];
-            $_SESSION['students']= $assignment['student_id'];
+            $_SESSION['students'] = $assignment['student_id'];
 
 
 
