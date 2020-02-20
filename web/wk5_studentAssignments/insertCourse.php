@@ -12,7 +12,7 @@ $courseId = $db->lastInsertId("courses_course_id_seq");
 
 //alert and return to page where all courses are listed, including the newly added one.
 echo "<script>
-alert('Student Added');
+alert('Course Added');
 window.location.href='all-courses_page.php';
 </script>";
 //$new_page = "all-courses_page.php";
