@@ -28,6 +28,7 @@ catch (PDOException $e) {
 
     //insert new assignment_id and student_id(s) into student_assignment, linking course assignments to students
     //get student id array from course_page query with $_SESSION
+var_dump($_SESSION);
     $studentIdArray = $_SESSION['students'];
     foreach ($studentIdArray as $studentId) {
         $sid = $studentId['students'];
