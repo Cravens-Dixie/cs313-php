@@ -1,5 +1,4 @@
 <?php
-session_start();
 require('dbConnect.php');
 $db = get_db();
 
@@ -24,28 +23,6 @@ try {
 catch (PDOException $e) {
     echo "connection failed";
 }
-
-
-    //insert new assignment_id and student_id(s) into student_assignment, linking course assignments to students
-    //get student id array from course_page query with $_SESSION
-
-//    if(isset($_SESSION['students'])){
-//        foreach ($_SESSION['students'] as $studentId) {
-//           $sid = $studentId;
-//            echo "student_id: $sid assignment_id: $assignmentId";
-//            try {
-//            $query = 'INSERT INTO student_assignment(student_id, assignment_id) VALUES(:student_id, :assignment_id) ';
-//            $stmt = $db->prepare($query);
-//            $stmt->bindValue(':student_id', $sid, PDO::PARAM_INT);
-//            $stmt->bindValue(':assignment_id', $assignmentId, PDO::PARAM_INT);
-//            $stmt->execute();
-//            }
-//            catch (PDOException $e) {
-//                echo "connection failed";
-//            }
-//        }
-//    }
-
 
 //return to page where all courses are listed, including the newly added one.
 $new_page = "course_page.php?id=$courseId";
